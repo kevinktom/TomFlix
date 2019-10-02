@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .containerSplash {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr auto 1fr 1fr 1fr 1fr;
+     grid-template-rows: 1fr 1fr 1fr 1fr 2fr 2fr 1fr 1fr 1fr 1fr;
+     /* justify-items: center. (CURRENTLY USES STRETCH WHICH FILLS WHOLE GRID) */
+     /* align-items: center; */
+ }
+
+ .containerSplash .logo{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: maroon;
+ }
+
