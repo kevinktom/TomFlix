@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import { Session } from 'inspector';
+import {handleDemo} from '../greeting/greeting_container'
 
 class SessionForm extends React.Component{
   constructor(props){
@@ -37,15 +38,21 @@ class SessionForm extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.update('email')} type="text" value={this.state.email}/>
-        <input onChange={this.update('password')} type="password" value={this.state.password}/>
-        <input type="submit" value={this.props.formType}/>
-        <ul>
-          {this.renderErrors()}
-        </ul>
-        {this.props.navLink}
-      </form>
+      <div>
+        <Link to='/'>Tomflix</Link>
+        <button onClick={handleDemo}>Demo Login</button> 
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="email">Email: </label>
+          <input id="email" onChange={this.update('email')} type="text" value={this.state.email}/>
+          <label htmlFor="password">Password: </label>
+          <input id="password" onChange={this.update('password')} type="password" value={this.state.password}/>
+          <input type="submit" value={this.props.formType}/>
+          <ul>
+            {this.renderErrors()}
+          </ul>
+          {this.props.navLink}
+        </form>
+      </div>
       
     )
   }

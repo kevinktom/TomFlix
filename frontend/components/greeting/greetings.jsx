@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import {login} from '../../actions/session_actions'
 
 export const Greeting = ({ currentUser, logoutCurrentUser }) => {
   const logged_in = () => {
@@ -15,12 +16,27 @@ export const Greeting = ({ currentUser, logoutCurrentUser }) => {
     return (
       <div>
         <Link to='/signup'>Sign Up</Link>
-        <Link to='/signin'>Sign In</Link>
+        <br/>
+        <label htmlFor="signup">Have an account?</label>
+        <Link id="signup" to='/signin'>Sign In</Link>
+        <button onClick={handleDemo}>Try a Demo!</button> 
       </div>
     )
   }
 
+  // const handleDemo = (e) => {
+  //   const testUser = {email: "demo@demo.com", password: "password"}
+  //   e.preventDefault();
+  //   dispatch(login(testUser))
+  // }
+
   return currentUser ? logged_in() : logged_out()
+}
+
+export const handleDemo = (e) => {
+  const testUser = { email: "demo@demo.com", password: "password" }
+  e.preventDefault();
+  dispatch(login(testUser))
 }
 
 
