@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import * as actions from './actions/session_actions'
-import { createStore } from '../../../Library/Caches/typescript/3.5/node_modules/redux';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   let root = document.getElementById('root');

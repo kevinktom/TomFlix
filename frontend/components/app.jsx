@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpContainer from './session_form/signup_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
+import Splash from './splash/splash'
 
 
 const App = () => {
@@ -11,12 +12,12 @@ const App = () => {
     <div>
       <header>
         <h1>TomFlix</h1>
-        <GreetingContainer/>
+        {/* <GreetingContainer/> */}
       </header>
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 
-        {/* <AuthRoute path='/' component={GreetingContainer}/> */}
+        {/* <AuthRoute path='/' component={Splash}/> */}
       </Switch>
     </div>
   )
