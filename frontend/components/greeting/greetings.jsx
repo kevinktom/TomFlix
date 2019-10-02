@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom'
 export const Greeting = ({ currentUser, logoutCurrentUser }) => {
   const logged_in = () => {
     return (
-      <>
+      <div>
         <h1>Welcome to the best version of Netflix</h1>
         <button onClick={logoutCurrentUser}>Logout</button>
-      </>
+      </div>
     )
   }
 
   const logged_out = () => {
     return (
-      <>
+      <div>
         <Link to='/signup'>Sign Up</Link>
         <Link to='/signin'>Sign In</Link>
-
-      </>
+      
+      </div>
     )
   }
 

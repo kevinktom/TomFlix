@@ -20,15 +20,16 @@ class SessionForm extends React.Component{
 
   handleSubmit(e){
     // debugger
-    e.preventDefault;
-    this.props.action(this.state);
+    e.preventDefault();
+    this.props.action(this.state).then(() => this.props.history.push({pathname: '/'}));
   }
 
   renderErrors(){
-    let errors = Object.values(this.props.errors).map((error, i) => {
+    let errors = this.props.errors.map((error, i) => {
       return (
         <li key={i}
-          error={error}>{error}</li>
+          error={error}>{error}
+        </li>
       )
     })
     return errors;
@@ -40,8 +41,9 @@ class SessionForm extends React.Component{
         <input onChange={this.update('email')} type="text" value={this.state.email}/>
         <input onChange={this.update('password')} type="password" value={this.state.password}/>
         <input type="submit" value={this.props.formType}/>
-        <ul>{this.renderErrors()}</ul>
-
+        <ul>
+          {this.renderErrors()}
+        </ul>
         {this.props.navLink}
       </form>
       

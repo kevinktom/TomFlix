@@ -26,7 +26,7 @@ export const receiveErrors = errors => {
 export const login = user => dispatch => {
   return AjaxRequests.login(user).then(
     user => dispatch(receiveCurrentUser(user)),
-    failedResponse => dispatch(receiveErrors(failedResponse))
+    failedResponse => dispatch(receiveErrors(failedResponse.responseJSON))
   );
 };
 
@@ -36,6 +36,6 @@ export const logout = () => dispatch => {
 
 export const signup = user => dispatch => {
   return AjaxRequests.signup(user).then(user =>
-    dispatch(receiveCurrentUser(user))
+    dispatch(receiveCurrentUser(user)), failedResponse => dispatch(receiveErrors(failedResponse.responseJSON))
   );
 };

@@ -1,8 +1,10 @@
 import React from "react";
-import GreetingContainer from './greeting/greeting_container'
-import { Route, Switch } from 'react-router-dom'
-import LoginFormContainer from './session_form/login_form_container'
-import SignUpContainer from './session_form/signup_form_container'
+import GreetingContainer from './greeting/greeting_container';
+import { Route, Switch } from 'react-router-dom';
+import LoginFormContainer from './session_form/login_form_container';
+import SignUpContainer from './session_form/signup_form_container';
+import {AuthRoute} from '../util/route_util'
+
 
 const App = () => {
   return(
@@ -12,8 +14,8 @@ const App = () => {
         <GreetingContainer/>
       </header>
       <Switch>
-        <Route path='/signin' component={LoginFormContainer}/> 
-        <Route path='/signup' component={SignUpContainer}/> 
+        <AuthRoute path='/signin' component={LoginFormContainer}/> 
+        <AuthRoute path='/signup' component={SignUpContainer}/> 
       </Switch>
     </div>
   )
