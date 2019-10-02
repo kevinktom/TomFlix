@@ -16,7 +16,6 @@ export const Greeting = ({ currentUser, logoutCurrentUser }) => {
       <div>
         <Link to='/signup'>Sign Up</Link>
         <Link to='/signin'>Sign In</Link>
-      
       </div>
     )
   }
