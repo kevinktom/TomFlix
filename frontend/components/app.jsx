@@ -11,7 +11,7 @@ const App = () => {
   return(
     <div>
       <header>
-        <h1>TomFlix</h1>
+        {/* <h1>TomFlix</h1> */}
         {/* <GreetingContainer/> */}
       </header>
       <Switch>

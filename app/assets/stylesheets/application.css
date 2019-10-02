@@ -19,13 +19,68 @@
      display: grid;
      grid-template-columns: 1fr 1fr 1fr 1fr auto 1fr 1fr 1fr 1fr;
      grid-template-rows: 1fr 1fr 1fr 1fr 2fr 2fr 1fr 1fr 1fr 1fr;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     /* background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/5ccb8ea5-2184-43c0-a67f-b87d3e662a27/70014b0f-6941-4916-ba76-27f214918366/US-en-20190930-popsignuptwoweeks-perspective_alpha_website_small.jpg); */
+     /* opacity: .5; */
+     
      /* justify-items: center. (CURRENTLY USES STRETCH WHICH FILLS WHOLE GRID) */
      /* align-items: center; */
  }
 
  .containerSplash .logo{
-    grid-column: 1/2;
+    grid-column: 1/3;
     grid-row: 1/2;
-    color: maroon;
+    height: 85%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
  }
 
+.containerSplash .background{
+    grid-column: 1/9;
+    grid-row: 1/10;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .2;
+}
+
+.containerSplash .signin{
+    grid-column: 8/9;
+    grid-row: 1/2;
+}
+
+.containerSplash .textone{
+    grid-column: 5/6;
+    grid-row: 4/5;
+    font-family: Arial, Helvetica, sans-serif;
+    /* color: white; */
+
+    text-align: center;
+}
+
+.containerSplash .texttwo{
+    grid-column: 5/6;
+    grid-row: 5/6;
+    /* color: white; */
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerSplash .demo{
+    grid-column: 5/6;
+    grid-row: 6/7;
+}
+
+.containerSplash .haveAccount{
+    grid-column: 5/6;
+    grid-row: 7/8;
+}
+
+/* .test{
+    height: 200px;
+    width: auto;
+} */
