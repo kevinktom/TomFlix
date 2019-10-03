@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { Session } from 'inspector';
 // import {handleDemo} from '../greeting/greeting_container'
-import {handleDemo} from '../splash/splash'
+// import {handleDemo} from '../splash/splash'
 
 class SessionForm extends React.Component{
   constructor(props){
@@ -12,12 +12,19 @@ class SessionForm extends React.Component{
       password: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field){
     return (e) => {
       this.setState({[field]:e.target.value});
     }
+  }
+
+  handleDemo(e){
+    const testUser = { email: "hire@me.please", password: "password" }
+    e.preventDefault();
+    this.props.action(testUser);
   }
 
   handleSubmit(e){
@@ -41,7 +48,7 @@ class SessionForm extends React.Component{
     return(
       <div>
         <Link to='/'>Tomflix</Link>
-        <button onClick={handleDemo}>Demo Login</button> 
+        <button onClick={this.handleDemo}>Demo Login</button> 
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="email">Email: </label>
           <input id="email" onChange={this.update('email')} type="text" value={this.state.email}/>

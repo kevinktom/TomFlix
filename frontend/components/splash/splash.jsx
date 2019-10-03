@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GreetingContainer from '../greeting/greeting_container';
-import {logout} from '../../actions/session_actions';
-
+// import GreetingContainer from '../greeting/greeting_container';
+import {login} from '../../actions/session_actions';
+import {connect} from 'react-redux'
 
 export const Splash = () => {
     return(

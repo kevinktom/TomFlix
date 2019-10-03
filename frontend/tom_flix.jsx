@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     store = configureStore(preloadedState)
   }
 
-  window.login = actions.login;
+  // window.login = actions.login;
   window.signup = actions.signup;
   window.logout = actions.logout;
-  window.dispatch = store.dispatch;
+  // window.dispatch = store.dispatch;
   // window.
   window.getState = store.getState();
   ReactDOM.render(<Root store={store}/>, root)
