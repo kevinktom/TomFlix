@@ -14,7 +14,7 @@ export const Splash = () => {
             <h2 className='texttwo'>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
             {/* <button onClick={logout}>Test Logout</button>  */}
             {/* <GreetingContainer/> */}
-            <Link to='/signin' className="signin">Sign In</Link>
+            <Link to='/signin' className="signin"> <button> Sign In </button> </Link>
             <br/>
             <label className='haveAccount'>Have an account? 
                 <Link to='/signin'> Sign In</Link>
@@ -25,7 +25,7 @@ export const Splash = () => {
 }
 
 export const handleDemo = (e) => {
-    const testUser = { email: "demo@demo.com", password: "password" }
+    const testUser = { email: "hire@me.please", password: "password" }
     e.preventDefault();
     dispatch(login(testUser))
 }

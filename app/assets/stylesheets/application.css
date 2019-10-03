@@ -47,12 +47,16 @@
     width: 100%; */
     background-size: auto 100%;
     z-index: -1;
-    opacity: .2;
+    /* opacity: .2; */
 }
 
 .containerSplash .signin{
     grid-column: 9/10;
     grid-row: 1/2;
+    
+}
+
+.containerSplash .signin button{
     background-color: red;
     color: white;
     font-size: 16px;
@@ -61,10 +65,13 @@
     width: 100px;
     border-radius: 3px;
     text-align: center;
-    padding-top: 30px;
-    padding-right: 20px;
+    /* padding-top: 30px;
+    padding-right: 20px; */
     text-decoration: none;
-
+    cursor: pointer;
+    border-radius: 3px;
+    /* opacity: 0.80;
+    transition: 0.3s; */
 }
 
 .containerSplash .textone{
@@ -72,7 +79,8 @@
     grid-row: 3/5;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 75px;
-    /* color: white; */
+    text-shadow: 1px 1px 10px black;
+    color: white;
 
     text-align: center;
 }
@@ -81,11 +89,12 @@
     grid-column: 2/9;
     grid-row: 4/6;
     padding-top: 10px;
-    /* color: white; */
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
     align-items: center;
     font-size: 28px;
+    text-shadow: 1px 1px 10px black;
 }
 
 .containerSplash .demo{
@@ -100,7 +109,7 @@
     border-radius: 3px;
     padding-left: 10px;
     margin: 0 auto;
-    
+    cursor: pointer;
 }
 
 .containerSplash .haveAccount{
@@ -109,13 +118,16 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     /* text-decoration: none; */
-    /* color: white; */
+    color: white;
 }
 
 .containerSplash .haveAccount a{
     text-decoration: none;
 }
 
+button:hover{
+    color
+}
 
 /* .test{
     height: 200px;
