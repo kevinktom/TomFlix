@@ -182,26 +182,30 @@
     top: 11%;
     left: 37%;
     border-radius: 4px;
-    padding-top: 68px;
-    padding-right: 68px;
+    padding-top: 42px;
+    padding-right: 38px;
     padding-bottom: 40px;
-    padding-left: 68px;
-    margin-bottom: 90px;
+    padding-left: 38px;
+    margin-bottom: 75px;
+    text-align: start;
 }
 
 .containerSplash .sessionSignin{
     background-color: red;
+    border-color: red;
     color: white;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    height: 40px;
-    width: 100px;
-    border-radius: 3px;
+    height: 48px;
+    width: 290px;
+    border-radius: 4px;
     text-align: center;
     text-decoration: none;
+    line-height: 50px;
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 16px;
+    margin-left: 34px;
     cursor: pointer;
-    border-radius: 5px;
-    border-color: red;
 }
 
  .containerSplash .sessionlogo{
@@ -218,11 +222,18 @@
  .containerSplash .head{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    padding-left: 35px;
     /* align-content: left; */
     /* justify-content: center; */
  }
 
- .containerSplash .textthree{
+ /* .containerSplash .textthree{
+     text-decoration: none;
+     color: white;
+     font-family: Arial, Helvetica, sans-serif;
+ } */
+
+ .containerSplash .textthree div > a{
      text-decoration: none;
      color: white;
      font-family: Arial, Helvetica, sans-serif;
@@ -231,6 +242,34 @@
  .containerSplash .textthreelabel{
      font-family: Arial, Helvetica, sans-serif;
      color: #737373;
+     display: flex;
+     /* align-content: baseline; */
+     position: relative;
+     top: 280px;
+     left: 33px;
+     text-decoration: none;
+ }
+
+ .containerSplash .sessionBox .textField{
+     background: #333;
+     border-radius: 4px;
+     border: 0;
+     color: #fff;
+     font-size: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+     height: 50px;
+     line-height: 50px;
+     padding: 8px 20px 0px 20px;
+     margin-bottom: 16px;
+     margin-left: 34px;
+     width: 250px;
+     height: 40px;
+ }
+
+ .containerSplash .sessionBox .errors{
+     color: #E87c03;
+     list-style-type: none;
+     font-family: Arial, Helvetica, sans-serif;
  }
 
 /* .test{
