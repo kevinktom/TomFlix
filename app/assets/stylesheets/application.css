@@ -17,8 +17,8 @@
 
  .containerSplash {
      display: grid;
-     grid-template-columns: 1fr 1fr 1fr 1fr auto 1fr 1fr 1fr 1fr;
-     grid-template-rows: 1fr 1fr 1fr 1fr 2fr 2fr 1fr 1fr 1fr 1fr;
+     grid-template-columns: 1fr 1fr 1fr 1fr 3.5fr 1fr 1fr 1fr 1fr;
+     grid-template-rows: 1fr 1fr 1fr 2fr 2fr 2fr 1fr 1fr 1fr 1fr;
      align-items: center;
      justify-content: center;
      text-align: center;
@@ -32,53 +32,90 @@
  .containerSplash .logo{
     grid-column: 1/3;
     grid-row: 1/2;
-    height: 85%;
-    width: 100%;
+    height: 78%;
+    width: 53%;
     justify-items: center;
     align-items: center;
+    padding-left: 40px;
+    padding-top: 30px;
  }
 
 .containerSplash .background{
-    grid-column: 1/9;
-    grid-row: 1/10;
-    height: 100%;
-    width: 100%;
+    grid-column: 1/10;
+    grid-row: 1/11;
+    /* height: 100%;
+    width: 100%; */
+    background-size: auto 100%;
     z-index: -1;
     opacity: .2;
 }
 
 .containerSplash .signin{
-    grid-column: 8/9;
+    grid-column: 9/10;
     grid-row: 1/2;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 20px;
+    text-decoration: none;
+
 }
 
 .containerSplash .textone{
-    grid-column: 5/6;
-    grid-row: 4/5;
+    grid-column: 2/9;
+    grid-row: 3/5;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
     /* color: white; */
 
     text-align: center;
 }
 
 .containerSplash .texttwo{
-    grid-column: 5/6;
-    grid-row: 5/6;
+    grid-column: 2/9;
+    grid-row: 4/6;
+    padding-top: 10px;
     /* color: white; */
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
     align-items: center;
+    font-size: 28px;
 }
 
 .containerSplash .demo{
     grid-column: 5/6;
-    grid-row: 6/7;
+    grid-row: 5/7;
+    background-color: red;
+    color: white;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 90px;
+    width: 400px;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin: 0 auto;
+    
 }
 
 .containerSplash .haveAccount{
     grid-column: 5/6;
-    grid-row: 7/8;
+    grid-row: 6/8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    /* text-decoration: none; */
+    /* color: white; */
 }
+
+.containerSplash .haveAccount a{
+    text-decoration: none;
+}
+
 
 /* .test{
     height: 200px;

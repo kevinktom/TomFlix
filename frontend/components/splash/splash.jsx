@@ -14,10 +14,11 @@ export const Splash = () => {
             <h2 className='texttwo'>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
             {/* <button onClick={logout}>Test Logout</button>  */}
             {/* <GreetingContainer/> */}
-            <Link to='/signin'>Sign In</Link>
+            <Link to='/signin' className="signin">Sign In</Link>
             <br/>
-            <label htmlFor="signin" className='haveAccount'>Have an account?</label>
-            <Link id="signin" to='/signin' className="signin">Sign In</Link>
+            <label className='haveAccount'>Have an account? 
+                <Link to='/signin'> Sign In</Link>
+            </label>
             <button onClick={handleDemo} className='demo'>Try a Demo!</button>   
         </div>
     )
