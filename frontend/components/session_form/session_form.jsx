@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 // import { Session } from 'inspector';
 // import {handleDemo} from '../greeting/greeting_container'
 // import {handleDemo} from '../splash/splash'
+// import {sessionConnector} from './login_form_container';
+
+// sessionConnector();
 
 class SessionForm extends React.Component{
   constructor(props){
