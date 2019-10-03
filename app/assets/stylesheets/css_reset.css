@@ -46,3 +46,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/*  */
+input:focus, textarea:focus{
+	outline:none;
+}

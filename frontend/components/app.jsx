@@ -11,15 +11,13 @@ const App = () => {
   return(
     <div>
       <header>
-        {/* <h1>TomFlix</h1> */}
-        {/* <GreetingContainer/> */}
+
       </header>
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 
         <ProtectedRoute path='/videos' component={GreetingContainer}/>
         <AuthRoute exact path='/' component={SplashContainer}/>
-        {/* <AuthRoute path='/' component={Splash}/> */}
       </Switch>
     </div>
   )

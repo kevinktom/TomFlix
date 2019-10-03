@@ -70,8 +70,9 @@ class SessionForm extends React.Component{
                 {this.renderErrors()}
               </ul>
             </form>
-              
           </div>
+          <a href="https://github.com/kevinktom" className="github"><img src={window.github} /> </a>
+          <a href="https://www.linkedin.com/in/kevin-tom-b36951a9/" className="linkedin"><img src={window.linkedin} /> </a>
           <label className='textthreelabel'>New to Tomflix? 
             <div className='textthreediv'> 
               {this.props.navLink}
