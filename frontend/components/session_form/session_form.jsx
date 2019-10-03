@@ -49,8 +49,10 @@ class SessionForm extends React.Component{
 
   render(){
     return(
-      <div>
-        <Link to='/'>Tomflix</Link>
+      <div className='containerSplash'>
+        
+        <img src={window.splash} className="background" />
+        <Link to='/'><img src={window.logo} className="logo" /> </Link>
         <button onClick={this.handleDemo}>Demo Login</button> 
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="email">Email: </label>

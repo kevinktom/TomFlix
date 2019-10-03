@@ -3,8 +3,8 @@ import GreetingContainer from './greeting/greeting_container';
 import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpContainer from './session_form/signup_form_container';
-import {AuthRoute, ProtectedRoute} from '../util/route_util'
-import {Splash} from './splash/splash'
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import SplashContainer from './splash/splash_form_container';
 
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 
         <ProtectedRoute path='/videos' component={GreetingContainer}/>
-        <AuthRoute exact path='/' component={Splash}/>
+        <AuthRoute exact path='/' component={SplashContainer}/>
         {/* <AuthRoute path='/' component={Splash}/> */}
       </Switch>
     </div>

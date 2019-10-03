@@ -2,9 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import GreetingContainer from '../greeting/greeting_container';
 import {login} from '../../actions/session_actions';
-import {connect} from 'react-redux'
 
-export const Splash = () => {
+export const Splash = (props) => {
+    debugger
+    const handleDemo = (e) => {
+        const testUser = { email: "hire@me.please", password: "password" }
+        e.preventDefault();
+        debugger
+        props.action(testUser);
+    }
     return(
         <div className="containerSplash" >
             <img src={window.logo} className="logo"/>
@@ -24,11 +30,14 @@ export const Splash = () => {
     )
 }
 
-export const handleDemo = (e) => {
-    const testUser = { email: "hire@me.please", password: "password" }
-    e.preventDefault();
-    dispatch(login(testUser))
-}
+
+
+// export const handleDemo = (e) => {
+//     const testUser = { email: "hire@me.please", password: "password" }
+//     e.preventDefault();
+//     debugger
+//     props.action(testUser);
+// }
 
 // class Splash extends React.Component{
 
