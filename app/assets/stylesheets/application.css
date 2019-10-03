@@ -142,7 +142,76 @@
     text-decoration: none;
     color: white;
 }
+/* 
+.containerSplash .demoSession{
+    grid-column: 9/10;
+    grid-row: 1/2;   
+} */
 
+.containerSplash .demoSession{
+    grid-column: 9/10;
+    grid-row: 1/2;   
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    /* padding-top: 30px;
+    padding-right: 20px; */
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+    /* opacity: 0.80;
+    transition: 0.3s; */
+    border-color: red;
+    margin-left: 40px;
+}
+
+.containerSplash .sessionBox{
+    grid-column: 3/7;
+    grid-row: 3/7;
+    background-color: lightgrey;
+    height: 610px;
+    width: 430px;
+    min-height: 515px;
+    min-width: 380px;
+    position: absolute;
+    top: 11%;
+    left: 39%;
+}
+
+.containerSplash .sessionSignin{
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    /* padding-top: 30px;
+    padding-right: 20px; */
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* opacity: 0.80;
+    transition: 0.3s; */
+    border-color: red;
+}
+
+ .containerSplash .sessionlogo{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    height: 48px;
+    width: 177px;
+    justify-items: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-top: 21px;
+ }
 
 
 /* .test{

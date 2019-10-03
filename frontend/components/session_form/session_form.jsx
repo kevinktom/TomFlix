@@ -52,19 +52,31 @@ class SessionForm extends React.Component{
       <div className='containerSplash'>
         
         <img src={window.splash} className="background" />
-        <Link to='/'><img src={window.logo} className="logo" /> </Link>
-        <button onClick={this.handleDemo}>Demo Login</button> 
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="email">Email: </label>
-          <input id="email" onChange={this.update('email')} type="text" value={this.state.email}/>
-          <label htmlFor="password">Password: </label>
-          <input id="password" onChange={this.update('password')} type="password" value={this.state.password}/>
-          <input type="submit" value={this.props.formType}/>
-          <ul>
-            {this.renderErrors()}
-          </ul>
-          {this.props.navLink}
-        </form>
+        <Link to='/'><img src={window.logo} className="sessionlogo" /> </Link>
+        <button onClick={this.handleDemo} className='demoSession'>Demo</button>
+
+        <div className='sessionBox'>
+          <div>
+            <h1>{this.props.formType}</h1>
+            <form onSubmit={this.handleSubmit}>
+              <label htmlFor="email">Email: </label>
+              <input id="email" onChange={this.update('email')} type="text" value={this.state.email}/>
+              <br/>
+              <label htmlFor="password">Password: </label>
+              <input id="password" onChange={this.update('password')} type="password" value={this.state.password}/>
+              <br/>
+              <input type="submit" value={this.props.formType} className='sessionSignin'/>
+              <ul>
+                {this.renderErrors()}
+              </ul>
+              <label>New to Tomflix?
+                {this.props.navLink}
+              </label>
+              
+            </form>
+          </div>
+        </div> 
+
       </div>
       
     )
