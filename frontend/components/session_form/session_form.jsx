@@ -53,7 +53,7 @@ class SessionForm extends React.Component{
         
         <img src={window.splash} className="background" />
         <Link to='/'><img src={window.logo} className="sessionlogo" /> </Link>
-        <button onClick={this.handleDemo} className='demoSession'>Demo</button>
+        <Link className='signin'> <button onClick={this.handleDemo} >Demo</button> </Link>
 
         <div className='sessionBox'>
           <div>
@@ -73,7 +73,7 @@ class SessionForm extends React.Component{
               
           </div>
           <label className='textthreelabel'>New to Tomflix? 
-            <div> 
+            <div className='textthreediv'> 
               {this.props.navLink}
             </div>
           </label>

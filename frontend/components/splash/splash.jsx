@@ -13,7 +13,7 @@ export const Splash = (props) => {
     }
     return(
         <div className="containerSplash" >
-            <img src={window.logo} className="logo"/>
+            <img src={window.logo} className="sessionlogo"/>
             <img src={window.splash} className="background"/>
             {/* <div className="containerSplash logo">ge</div> */}
             <h1 className='textone'>See what's next.</h1>
