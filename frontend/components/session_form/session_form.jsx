@@ -57,20 +57,22 @@ class SessionForm extends React.Component{
 
         <div className='sessionBox'>
           <div>
-            <h1>{this.props.formType}</h1>
+            <h1 className='head'>{this.props.formType}</h1>
             <form onSubmit={this.handleSubmit}>
               <label htmlFor="email">Email: </label>
               <input id="email" onChange={this.update('email')} type="text" value={this.state.email}/>
               <br/>
-              <label htmlFor="password">Password: </label>
+              <label htmlFor="password" placeholder='Password'>Password: </label>
               <input id="password" onChange={this.update('password')} type="password" value={this.state.password}/>
               <br/>
               <input type="submit" value={this.props.formType} className='sessionSignin'/>
               <ul>
                 {this.renderErrors()}
               </ul>
-              <label>New to Tomflix?
-                {this.props.navLink}
+              <label className='textthreelabel'>New to Tomflix?
+                <div className='textthree'> 
+                  {this.props.navLink}
+                </div>
               </label>
               
             </form>
