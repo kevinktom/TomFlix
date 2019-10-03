@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import {login} from '../../actions/session_actions';
 
 export const Splash = (props) => {
-    debugger
+    // debugger
     const handleDemo = (e) => {
         const testUser = { email: "hire@me.please", password: "password" }
         e.preventDefault();
-        debugger
+        // debugger
         props.action(testUser);
     }
     return(

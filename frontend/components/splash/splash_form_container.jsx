@@ -13,7 +13,7 @@ import {Splash} from './splash';
 // }
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return ({
         action: (user) => dispatch(login(user))
     })

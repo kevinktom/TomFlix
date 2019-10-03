@@ -1,6 +1,6 @@
 import * as ACTIONS from "../actions/session_actions.js";
 
-export default (oldstate = {}, action) => {
+export default (oldstate = {currentUser: null}, action) => {
   Object.freeze(oldstate);
   switch (action.type) {
     case ACTIONS.RECEIVE_CURRENT_USER:
