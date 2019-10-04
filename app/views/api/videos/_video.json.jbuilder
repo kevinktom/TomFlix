@@ -1,0 +1,1 @@
+json.extract! video, :id, :description, :year, :maturity_rating, :runtime, :video_type

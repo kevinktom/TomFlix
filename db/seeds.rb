@@ -8,3 +8,5 @@
 
 testUser = User.create(email: "hire@me.please", password:"password")
 testUser2 = User.create(email: "demo@demo.com", password:"password")
+testvideo = Video.create!(title: "ya", description: "yeet", maturity_rating: "PG13", runtime: "43", video_type: "video")
+testvideo.video_url.attach(io: File.open("/Users/kevintom/Documents/lookchickens.mp4"), filename:"lookchickens.mp4")

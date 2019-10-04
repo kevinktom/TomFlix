@@ -8,4 +8,9 @@ class Video < ApplicationRecord
     has_many :genres,
     through: :video_genres,
     source: :genre
+
+    has_one_attached :video_url
+
+    has_one_attached :photo
+
 end
