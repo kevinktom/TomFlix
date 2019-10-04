@@ -136,12 +136,16 @@
 
  .containerSplash .sessionBox .github{
      /* opacity: 1.0; */
-     opacity: 1;
+     opacity: 0.5;
      position: absolute;
      left: 110px;
      color: white;
      top: 480px;
      z-index: 1;
+ }
+
+ a.github:hover{
+     opacity: 1.0;
  }
 
  .github a img{
