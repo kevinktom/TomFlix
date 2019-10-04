@@ -10,6 +10,11 @@ export default (oldstate = [], action) => {
       // let newstate2 = Object.assign({}, { [errors]: action.errors });
       // return newstate2;
       return [];
+    case ACTIONS.CLEAR_SESSION_ERRORS:
+      // let newstate = merge({}, oldstate);
+      // delete newstate[action.sessions.errors];
+      // return newstate;
+      return [];
     default:
       return oldstate;
   }

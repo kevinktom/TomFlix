@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import {handleDemo} from '../greeting/greeting_container'
 // import {handleDemo} from '../splash/splash'
 // import {sessionConnector} from './login_form_container';
+// import {deleteErrors} from '../../actions/session_actions';
 
 // sessionConnector();
 
@@ -59,6 +60,10 @@ class SessionForm extends React.Component{
       return error;
     }
   }
+  
+  componentWillUnmount(){
+    this.props.clearErrors()
+  }
 
   render(){
     const invalidPassword = "Your password must contain between 4 and 60 characters."
@@ -91,7 +96,7 @@ class SessionForm extends React.Component{
           <div>
             <a href="https://github.com/kevinktom" className="github"><img src={window.github} /> </a>
             <a href="https://www.linkedin.com/in/kevin-tom-b36951a9/" className="linkedin"><img src={window.linkedin} /> </a>
-            <label className='textthreelabel'>New to Tomflix? 
+            <label className='textthreelabel'>New to Tomflix?&nbsp;
               <div className='textthreediv'> 
                 {this.props.navLink}
               </div>

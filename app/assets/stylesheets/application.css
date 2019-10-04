@@ -55,7 +55,7 @@
 }
 
 .containerSplash .signin button{
-    background-color: red;
+    background-color: rgb(229, 9, 20);
     color: white;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -66,7 +66,7 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 3px;
-    border-color: red;
+    border-color: rgb(229, 9, 20);
     position: relative;
     right: 40px;
     top: 20px;
@@ -97,7 +97,7 @@
 .containerSplash .demo{
     grid-column: 5/6;
     grid-row: 5/7;
-    background-color: red;
+    background-color: rgb(229, 9, 20);
     color: white;
     font-size: 26px;
     font-family: Arial, Helvetica, sans-serif;
@@ -107,7 +107,7 @@
     padding-left: 10px;
     margin: 0 auto;
     cursor: pointer;
-    border-color: red;
+    border-color: rgb(229, 9, 20);
 }
 
 .containerSplash .haveAccount{
