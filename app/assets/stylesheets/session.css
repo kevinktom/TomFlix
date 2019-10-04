@@ -135,27 +135,32 @@
  }
 
  .containerSplash .sessionBox .github{
-     /* opacity: 1.0; */
-     opacity: 0.5;
+     /* opacity: .5; */
+     /* transition-property: opacity;
+     transition-duration: 200ms; */
+     /* filter:brightness(50%); */
      position: absolute;
      left: 110px;
      color: white;
      top: 480px;
      z-index: 1;
  }
-
- a.github:hover{
-     opacity: 1.0;
+ .github img{
+     opacity: .5;
  }
 
- .github a img{
+ .github img:hover{
+     opacity: 1;
+ }
+
+ /* .github a img{
      transition: 1s; 
      /* -webkit-transition: 1s; */
-     -webkit-filter: grayscale(100%);
+     /* -webkit-filter: grayscale(100%);
 	 filter: grayscale(100%);
 	 -webkit-transition: .3s ease-in-out;
 	 transition: .3s ease-in-out;
- }
+ } */ 
 
  .containerSplash .sessionBox .linkedin{
      opacity: 1.0;
@@ -164,4 +169,12 @@
      color: white;
      top: 485px;
      z-index: 1;
+ }
+
+  .linkedin img{
+     opacity: .5;
+ }
+
+ .linkedin img:hover{
+     opacity: 1;
  }
