@@ -11,7 +11,7 @@ const App = () => {
   return(
     <div>
       <header>
-
+        {/* <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/> */}
       </header>
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 

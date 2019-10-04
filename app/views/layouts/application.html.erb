@@ -14,6 +14,8 @@
       window.linkedin = "<%= image_url('linkedin_logo.png') %>";
     </script>
 
+    <%= favicon_link_tag asset_path('favicon.png') %>
+
     <% if current_user %>
       <script>
         window.currentUser = {

@@ -22,7 +22,7 @@
 .containerSplash .sessionBox{
     grid-column: 3/7;
     grid-row: 3/7;
-    background: rgba(0, 0, 0, 0.60);
+    background: rgba(0, 0, 0, 0.67);
     height: 590px;
     min-height: 515px;
     min-width: 380px;
@@ -31,7 +31,7 @@
     left: 37%;
     border-radius: 4px;
     padding-top: 42px;
-    padding-right: 38px;
+    padding-right: 23px;
     padding-bottom: 40px;
     padding-left: 38px;
     margin-bottom: 75px;
@@ -84,13 +84,17 @@
      font-family: Arial, Helvetica, sans-serif;
  }
 
+ .textthreediv{
+     color: white;
+ }
+
  .containerSplash .textthreelabel{
      font-family: Arial, Helvetica, sans-serif;
      color: #737373;
      display: flex;
-     position: relative;
-     top: 180px;
-     left: 33px;
+     position: absolute;
+     top: 610px;
+     left: 69px;
      text-decoration: none;
  }
 
@@ -110,32 +114,50 @@
      height: 40px;
  }
 
- .textField[type="text"]:focus {
+ .textField[type="email"]:focus, 
+ .textField[type="password"]:focus {
      filter: brightness(150%);
  }
 
  .containerSplash .sessionBox .errors{
-     color: #E87c03;
+     background: #E87c03;
+     color: white;
+     border-radius: 4px;
+     font-size: 15px;
      list-style-type: none;
      font-family: Arial, Helvetica, sans-serif;
-     margin-left: 34px;
      margin-top: 15px;
+     padding: 10px 8px 0px 15px;
+     margin-bottom: 20px;
+     margin-left: 34px;
+     width: 267px;
+     height: 43px;
  }
 
  .containerSplash .sessionBox .github{
-     opacity: 1.0;
-     position: relative;
-     left: 75px;
+     /* opacity: 1.0; */
+     opacity: 1;
+     position: absolute;
+     left: 110px;
      color: white;
-     top: 120px;
+     top: 480px;
      z-index: 1;
+ }
+
+ .github a img{
+     transition: 1s; 
+     /* -webkit-transition: 1s; */
+     -webkit-filter: grayscale(100%);
+	 filter: grayscale(100%);
+	 -webkit-transition: .3s ease-in-out;
+	 transition: .3s ease-in-out;
  }
 
  .containerSplash .sessionBox .linkedin{
      opacity: 1.0;
-     position: relative;
-     left: 140px;
+     position: absolute;
+     left: 260px;
      color: white;
-     top: 120px;
+     top: 485px;
      z-index: 1;
  }
