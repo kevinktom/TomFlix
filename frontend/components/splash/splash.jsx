@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import GreetingContainer from '../greeting/greeting_container';
+
 import {login} from '../../actions/session_actions';
 
 export const Splash = (props) => {
@@ -18,8 +18,6 @@ export const Splash = (props) => {
             {/* <div className="containerSplash logo">ge</div> */}
             <h1 className='textone'>See what's next.</h1>
             <h2 className='texttwo'>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
-            {/* <button onClick={logout}>Test Logout</button>  */}
-            {/* <GreetingContainer/> */}
             <Link to='/signin' className="signin"> <button> Sign In </button> </Link>
             <br/>
             <label className='haveAccount'>Have an account? 
@@ -32,25 +30,5 @@ export const Splash = (props) => {
 
 
 
-// export const handleDemo = (e) => {
-//     const testUser = { email: "hire@me.please", password: "password" }
-//     e.preventDefault();
-//     debugger
-//     props.action(testUser);
-// }
-
-// class Splash extends React.Component{
-
-//     render(){
-//         return (
-//             <div>
-//                 <h1>Steph Curry with the Splash</h1>
-//                 <GreetingContainer/>
-//             </div>
-//         )
-//     }
-// }
-
-// export default Splash
 
 
