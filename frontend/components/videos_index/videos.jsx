@@ -1,6 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import {logout} from '../../actions/session_actions'
+import {logout} from '../../actions/session_actions';
+// import Nav from '../navbar/navbar';
+import NavBarContainer from '../navbar/navbar_container'
 
 // export const Videos = (props) => {
 //   return (
@@ -17,15 +19,17 @@ class Videos extends React.Component{
   }
   
   componentDidMount(){
-    const allProps = this.props
+    // const allProps = this.props;
     this.props.renderVideos();
   }
 
   render(){
+    
     return (
     <div>
+      <NavBarContainer />
       <h1>Welcome to the best version of Netflix</h1>
-      <button onClick={this.props.logoutCurrentUser}>Logout</button>
+      {/* <button onClick={this.props.logoutCurrentUser}>Logout</button> */}
     </div>
   )
   }
