@@ -11,6 +11,6 @@ const receiveAllVideos = videos => {
 
 export const renderVideos = videos => dispatch => {
     return allvids(videos).then( videos => {
-        debugger
+        // debugger
         dispatch(receiveAllVideos(videos))});
 }

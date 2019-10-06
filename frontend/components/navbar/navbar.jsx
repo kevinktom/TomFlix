@@ -34,6 +34,32 @@ class Nav extends React.Component {
         this.setState({showMenu: false})
         }
     }
+
+    componentDidMount(){
+        var scrollpos = window.scrollY;
+        let root = document.getElementById('root').getElementsByTagName("div")[0].getElementsByClassName("indexGrid")[0];
+        var navbar = root.getElementsByClassName("entireNav")[0].getElementsByClassName("navLinks")[0];
+
+        function add_class_on_scroll() {
+            navbar.classList.add("navfaded");
+        }
+
+        function remove_class_on_scroll() {
+            navbar.classList.remove("navfaded");
+        }
+        
+        window.addEventListener('scroll', function () {
+            //Here you forgot to update the value
+            scrollpos = window.scrollY;
+
+            if (scrollpos > 0) {
+                add_class_on_scroll();
+            }
+            else {
+                remove_class_on_scroll();
+            }
+        });
+    }
     
     render() {
         

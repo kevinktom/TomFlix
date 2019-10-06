@@ -1,7 +1,7 @@
 .indexGrid{
      display: grid;
      /* grid-template-columns: 1fr 2.5fr 6fr 2fr; */
-     grid-template-rows: 1fr 8fr 3.5fr 3.5fr 3.5fr 3.5fr;
+     /* grid-template-rows: .5fr 8fr 3.5fr 3.5fr 3.5fr 3.5fr; */
      background: lightgrey;
      /* align-items: center;
      justify-content: center;
@@ -9,18 +9,19 @@
 }
 
 .entireNav{
-    height: 140px;
-    background-color: lightgoldenrodyellow;
+    /* height: 140px; */
+    background-color: transparent;
+    z-index: 1;
 }
 
 .navlogo{    
-    height: 28px;
-    width: 85px;
+    height: 36px;
+    width: 110px;
     justify-items: center;
     align-items: center;
     position: relative;
     left: 40px;
-    top: 4px;
+    /* top: 4px; */
     /* padding-left: 40px;
     padding-top: 21px; */
 
@@ -39,8 +40,10 @@
     justify-content: space-between;
     align-items: center;
     /* background-color: transparent; */
-    background-color: bisque;
-    max-height: 52px;
+    background-color: transparent;
+    transition: background-color 1s ease;
+    max-height: 68px;
+    opacity: .93;
 }
 
 .sticky {
@@ -134,7 +137,11 @@
     position: relative;
     left: 16px;
     top: 6px;
+}
 
+.navfaded{
+    transition: background-color 1s ease;
+    background-color: black;
 }
 
 

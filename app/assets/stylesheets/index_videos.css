@@ -1,0 +1,7 @@
+.mainVideo{
+    display: grid;
+    grid-row:1/2;
+    width: 100%;
+    /* z-index: -1; */
+    /* position: fixed; */
+}
