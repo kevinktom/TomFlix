@@ -80,7 +80,7 @@
 .linksSecond{
     display: flex;
     justify-content: space-between;
-    width: 130px;
+    width: 160px;
     height: 70px;
     align-items: center;
     position: relative;
@@ -88,13 +88,39 @@
 }
 
 .userIcon img{
-    max-height: 28px;
+    max-height: 35px;
+}
+
+.caretdown {
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.caretdown img{
+    width: 66%;
+}
+
+.userandcaret{
+    display: flex;
 }
 
 .dropdown{
     position: relative;
     display: inline-block;
 }
+
+.divdropcaret{
+    height: 5px;
+}
+
+.divdropcaret img{
+    position: relative;
+    width: 10%;
+    bottom: 13px;
+    left: 86px;
+}
+
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content{
@@ -105,8 +131,8 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: -18px;
-    bottom: -135px;
-    opacity: .88;
+    bottom: -141px;
+    opacity: .91;
     height: 120px;
 }
 

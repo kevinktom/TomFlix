@@ -83,13 +83,20 @@ class Nav extends React.Component {
                             <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github} /> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
                             <div className="dropdown">
-                                <div className="userIcon" onMouseEnter={this.showMenu} onMouseLeave={this.closeMenu}><img src={window.usericon} /></div>
+                                    <div onMouseEnter={this.showMenu} onMouseLeave={this.closeMenu} className='userandcaret'>
+                                        <div className="userIcon" ><img src={window.usericon} /></div>
+                                        <div className="caretdown"><img src={window.downcaret} /></div>
+                                            
+                                    </div>
                                 {(this.state.showMenu === true) ? 
-                                <div className="dropdown-content" onMouseLeave={this.closeMenu}>
+                                        <div className="dropdown-content">
+                                <div onMouseLeave={this.closeMenu}>
+                                    <div  className="divdropcaret"><img src={window.upcaret} /></div>
                                     <Link to='/Account' className='dropitem'> Account </Link>
                                     <Link to='/Help' className='dropitem'> Help </Link>
                                     <button onClick={this.props.logoutCurrentUser} className="signoutbutton">Sign out of Tomflix</button>
-                                </div> : null
+                                </div> 
+                                        </div>: null
                                 }
                             </div>
                         </div>
