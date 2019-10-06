@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Video.destroy_all
+
 testUser = User.create(email: "hire@me.please", password:"password")
 testUser2 = User.create(email: "demo@demo.com", password:"password")
 testvideo = Video.create!(title: "Chickens!", description: "Look at all those chickens!", year: 2019 , maturity_rating: "PG13", runtime: "43", video_type: "video")

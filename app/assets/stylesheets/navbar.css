@@ -1,0 +1,142 @@
+.indexGrid{
+     display: grid;
+     /* grid-template-columns: 1fr 2.5fr 6fr 2fr; */
+     grid-template-rows: 1fr 8fr 3.5fr 3.5fr 3.5fr 3.5fr;
+     background: lightgrey;
+     /* align-items: center;
+     justify-content: center;
+     text-align: center; */
+}
+
+.entireNav{
+    height: 140px;
+    background-color: lightgoldenrodyellow;
+}
+
+.navlogo{    
+    height: 28px;
+    width: 85px;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    left: 40px;
+    top: 4px;
+    /* padding-left: 40px;
+    padding-top: 21px; */
+
+}
+
+.singleLinks{
+    font-size: 14px;
+    /* color:#e5e5e5; */
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: transparent; */
+    background-color: bisque;
+    max-height: 52px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky .navLinks {
+  padding-top: 60px;
+}
+
+.firstBox{
+    display: flex;
+    align-items: center;
+}
+
+.linksFirst{
+    display: flex;
+    justify-content: space-between;
+    width: 380px;
+    position: relative;
+    left: 75px;
+}
+
+.githubLink{
+    height: 28px;
+}
+.iconSizes img{
+    max-height: 24px;
+}
+
+.linksSecond{
+    display: flex;
+    justify-content: space-between;
+    width: 130px;
+    height: 70px;
+    align-items: center;
+    position: relative;
+    right: 50px;
+}
+
+.userIcon img{
+    max-height: 28px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content{
+    /* display: none; */
+    position: absolute;
+    background-color: black;
+    min-width: 145px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: -18px;
+    bottom: -135px;
+    opacity: .88;
+    height: 120px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content .dropitem {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content {display: block;} */
+
+.signoutbutton{
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    left: 16px;
+    top: 6px;
+
+}
+
+
+
+

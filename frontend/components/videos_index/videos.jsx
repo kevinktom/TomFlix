@@ -26,7 +26,7 @@ class Videos extends React.Component{
   render(){
     
     return (
-    <div>
+    <div className='indexGrid'>
       <NavBarContainer />
       <h1>Welcome to the best version of Netflix</h1>
       {/* <button onClick={this.props.logoutCurrentUser}>Logout</button> */}
