@@ -20,5 +20,5 @@ testUser = User.create(email: "hire@me.please", password:"password")
 # theoffice.photo.attach(io: open('https://tomflix-dev.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
 
 theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG13", runtime: "1 Minute 27 Seconds", video_type: "video")
-theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.mp4')
+theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/seedtheoffice.mp4'), filename: 'seedtheoffice.mp4')
 theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')

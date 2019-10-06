@@ -30,8 +30,9 @@ class Videos extends React.Component{
     return (
     <div className='indexGrid'>
       <NavBarContainer />
-      {this.props.videos ? 
-      <video src={this.props.videos[21].video_url}></video> : null}
+      {this.props.videos.length >= 1 ? 
+        <div>
+          <video controls width="250" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> </div> : <p>no video</p>}
       <h1>Welcome to the best version of Netflix</h1>
       {/* <button onClick={this.props.logoutCurrentUser}>Logout</button> */}
     </div>
