@@ -6,6 +6,7 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
+        # render "api/"
     end
 
     private

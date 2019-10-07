@@ -5,3 +5,10 @@ export const allvids = videos => {
         data: {videos}
     });
 };
+
+export const fetchVideo = id => {
+    return $.ajax ({
+        method: "get",
+        url: `api/videos${id}`
+    })
+}

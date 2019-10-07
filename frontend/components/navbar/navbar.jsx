@@ -36,9 +36,9 @@ class Nav extends React.Component {
     }
 
     componentDidMount(){
-        var scrollpos = window.scrollY;
+        let scrollpos = window.scrollY;
         let root = document.getElementById('root').getElementsByTagName("div")[0].getElementsByClassName("indexGrid")[0];
-        var navbar = root.getElementsByClassName("entireNav")[0].getElementsByClassName("navLinks")[0];
+        let navbar = root.getElementsByClassName("entireNav")[0].getElementsByClassName("navLinks")[0];
 
         function add_class_on_scroll() {
             navbar.classList.add("navfaded");

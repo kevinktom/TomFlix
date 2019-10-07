@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { logout } from '../../actions/session_actions';
 import Videos from './videos';
 import {renderVideos} from '../../actions/video_actions';
 

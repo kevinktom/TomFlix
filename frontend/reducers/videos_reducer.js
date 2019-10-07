@@ -7,6 +7,8 @@ export default (oldstate = {}, action) => {
         case videoActions.RECEIVE_VIDEOS:
             // let newstate = Object.assign({}, oldstate, {[videos]: action.videos });
             return action.videos;
+        case videoActions.FETCH_VIDEO:
+            return action.video;
         default:
             return oldstate;
     }

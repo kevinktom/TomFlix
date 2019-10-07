@@ -35,6 +35,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.singleLinks:hover{
+     color: #e5e5e5;
+     transition: color .75s ease;
+ }
+
 .navLinks{
     display: flex;
     justify-content: space-between;
