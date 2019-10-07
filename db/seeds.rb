@@ -22,3 +22,9 @@ testUser = User.create(email: "hire@me.please", password:"password")
 theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG13", runtime: "1 Minute 27 Seconds", video_type: "video")
 theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/seedtheoffice.mp4'), filename: 'seedtheoffice.mp4')
 theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
+
+
+inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "movie")
+inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptiontest.mp4'), filename: 'inceptiontest.mp4')
+inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
+
