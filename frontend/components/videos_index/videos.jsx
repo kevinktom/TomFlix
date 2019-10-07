@@ -39,7 +39,7 @@ class Videos extends React.Component{
             {/* <div className='mainVideoDescription'>{this.props.videos[1].description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
-          <div className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
+          <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[1].id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
 
 
         </div> : <div className='mainBackground'> </div>}

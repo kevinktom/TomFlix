@@ -11,7 +11,7 @@ class VideoShow extends React.Component {
         return (
             <div className='showVideoBackground'>
                 {this.props.video ? <div className='showVideoParent'>
-                    <video controls className="showVideo"> <source src={this.props.video.video_url} type="video/mp4" /> </video> </div> : <p>no video</p>}
+                    <video controls autoplay className="showVideo"> <source src={this.props.video.video_url} type="video/mp4" /> </video> </div> : <p>no video</p>}
             </div>
         )
     }

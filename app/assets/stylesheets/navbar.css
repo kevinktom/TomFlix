@@ -132,9 +132,8 @@
 }
 
 
-/* Dropdown Content (Hidden by Default) */
+
 .dropdown-content{
-    /* display: none; */
     position: absolute;
     background-color: black;
     min-width: 145px;
@@ -144,10 +143,10 @@
     bottom: -141px;
     opacity: .91;
     height: 120px;
-    transition: all 1s ease;
+    /* transition: all 1s ease; */
+    animation: fade 2s linear forwards;
 }
 
-/* Links inside the dropdown */
 .dropdown-content .dropitem {
     color: white;
     padding: 12px 16px;

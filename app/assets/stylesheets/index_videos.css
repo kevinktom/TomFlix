@@ -31,20 +31,31 @@
 }
 
 .playButton{
-    width: 115px;
-    height: 35px;
+    width: 165px;
+    height: 55px;
     /* background-color: black; */
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 260px;
+    bottom: 241px;
     left: 55px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.playButton img{
+    height: 22px;
+    position:relative;
+    right: 10px;
 }
 
 .playText{
     color:  white;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    position: relative;
+    left: 5px;
 }
 
 .showVideoBackground{
