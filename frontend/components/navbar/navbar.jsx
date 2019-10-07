@@ -22,14 +22,15 @@ class Nav extends React.Component {
         // debugger
         e.persist();
         e.stopPropagation();
-        if (!e.target.className === "dropdown" && !e.target.className === "userIcon" && !e.target.className === "dropdown-content"){
+        if (!e.currentTarget.className === "dropdown" && !e.currentTarget.className === "userIcon" && !e.currentTarget.className === "dropdown-content"){
             return this.closeMenu(e);
         }
         this.setState({showMenu: true});
     }
 
     closeMenu(e){
-        if (!e.target.className === "dropdown"){
+        // debugger
+        if (e.currentTarget.className === "dropdown-content" || e.currentTarget.className === "dropdown"){
 
         this.setState({showMenu: false})
         }
@@ -82,20 +83,20 @@ class Nav extends React.Component {
                             <a href="" className="iconSizes"><img src={window.search} /></a>
                             <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github} /> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
-                            <div className="dropdown">
-                                    <div onMouseEnter={this.showMenu} onMouseLeave={this.closeMenu} className='userandcaret'>
+                                <div className="dropdown" onMouseLeave={this.closeMenu}>
+                                    <div onMouseEnter={this.showMenu} className='userandcaret'>
                                         <div className="userIcon" ><img src={window.usericon} /></div>
                                         <div className="caretdown"><img src={window.downcaret} /></div>
                                             
                                     </div>
                                 {(this.state.showMenu === true) ? 
-                                        <div className="dropdown-content">
-                                <div onMouseLeave={this.closeMenu}>
-                                    <div  className="divdropcaret"><img src={window.upcaret} /></div>
-                                    <Link to='/Account' className='dropitem'> Account </Link>
-                                    <Link to='/Help' className='dropitem'> Help </Link>
-                                    <button onClick={this.props.logoutCurrentUser} className="signoutbutton">Sign out of Tomflix</button>
-                                </div> 
+                                        <div className="dropdown-content" onMouseLeave={this.closeMenu}>
+                                     
+                                            <div  className="divdropcaret"><img src={window.upcaret} /></div>
+                                            <Link to='/Account' className='dropitem'> Account </Link>
+                                            <Link to='/Help' className='dropitem'> Help </Link>
+                                            <button onClick={this.props.logoutCurrentUser} className="signoutbutton">Sign out of Tomflix</button>
+                                        
                                         </div>: null
                                 }
                             </div>

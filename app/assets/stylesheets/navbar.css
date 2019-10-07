@@ -35,8 +35,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.singleLinks:hover{
+/* .singleLinks:hover{
      color: #e5e5e5;
+     transition: color .75s ease;
+ } */
+.singleLinks:hover{
+     color: #a8a8a8;
      transition: color .75s ease;
  }
 

@@ -35,10 +35,14 @@ class Videos extends React.Component{
       <NavBarContainer />
       {this.props.videos.length >= 1 ? 
         <div>
-          <video controls className="mainVideo"> <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
+          <video controls className="mainVideo"> <source src={this.props.videos[1].video_url} type="video/mp4"/> </video> 
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
         </div> : <div className='mainBackground'> </div>}
       <h1>Welcome to the best version of Netflix</h1>
+        {this.props.videos.length >= 1 ?
+          <div>
+      <video controls > <source src={this.props.videos[0].video_url} type="video/mp4" /> </video> 
+          </div> : <div className='mainBackground'> </div>}
       {/* <button onClick={this.props.logoutCurrentUser}>Logout</button> */}
     </div>
   )
