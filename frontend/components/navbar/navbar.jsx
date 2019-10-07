@@ -30,7 +30,7 @@ class Nav extends React.Component {
 
     closeMenu(e){
         // debugger
-        if (e.currentTarget.className === "dropdown-content" || e.currentTarget.className === "dropdown"){
+        if (e.currentTarget.className === "dropdown-content" || e.currentTarget.className === "dropdown" || e.currentTarget.className === "hiddenbridge"){
 
         this.setState({showMenu: false})
         }
@@ -87,6 +87,7 @@ class Nav extends React.Component {
                                     <div onMouseEnter={this.showMenu} className='userandcaret'>
                                         <div className="userIcon" ><img src={window.usericon} /></div>
                                         <div className="caretdown"><img src={window.downcaret} /></div>
+                                        <div className="hiddenbridge"></div>
                                             
                                     </div>
                                 {(this.state.showMenu === true) ? 

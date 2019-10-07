@@ -144,6 +144,7 @@
     bottom: -141px;
     opacity: .91;
     height: 120px;
+    transition: all 1s ease;
 }
 
 /* Links inside the dropdown */
@@ -186,6 +187,11 @@
     background-color: black;
 }
 
+.hiddenbridge{
+    position: fixed;
+    height: 70px;
+    width: 40px;
+}
 
 
 
