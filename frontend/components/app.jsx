@@ -5,6 +5,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignUpContainer from './session_form/signup_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SplashContainer from './splash/splash_form_container';
+import VideoPlayerContainer from './video_player/video_player_container';
 
 
 const App = () => {
@@ -16,7 +17,8 @@ const App = () => {
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 
-        <ProtectedRoute path='/browse' component={VideosContainer}/>
+        <ProtectedRoute exact path='/browse' component={VideosContainer}/>
+        <ProtectedRoute path='/browse/:videoId' component={VideoPlayerContainer}/>
         <AuthRoute exact path='/' component={SplashContainer}/>
       </Switch>
     </div>

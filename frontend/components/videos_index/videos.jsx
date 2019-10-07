@@ -38,7 +38,10 @@ class Videos extends React.Component{
           <video controls className="mainVideo"> <source src={this.props.videos[1].video_url} type="video/mp4"/> </video> 
             {/* <div className='mainVideoDescription'>{this.props.videos[1].description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
-          <img src={window.inceptionlogo} />
+          <img src={window.inceptionlogo} className="mainvideoLogo"/>
+          <div className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
+
+
         </div> : <div className='mainBackground'> </div>}
       <h1>Welcome to the best version of Netflix</h1>
         {this.props.videos.length >= 1 ?

@@ -3,14 +3,15 @@ import React from 'react';
 
 class VideoShow extends React.Component {
     componentDidMount(){
-        this.props.fetchPost(this.props.match.params.videoId)
+        debugger
+        this.props.fetchVideo(this.props.match.params.videoId)
     }
 
     render(){
         return (
-            <div>
-                {this.props.video ? <div>
-                    <video controls className="mainVideo"> <source src={this.props.video.video_url} type="video/mp4" /> </video> </div> : <p>no video</p>}
+            <div className='showVideoBackground'>
+                {this.props.video ? <div className='showVideoParent'>
+                    <video controls className="showVideo"> <source src={this.props.video.video_url} type="video/mp4" /> </video> </div> : <p>no video</p>}
             </div>
         )
     }

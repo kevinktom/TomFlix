@@ -19,3 +19,51 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
     margin-top: .1vw;
 }
+
+.mainvideoLogo{
+    position: absolute;
+    bottom: 340px;
+    left: 51px;
+}
+
+.transparentPlay{
+  background:rgba(39, 39, 39, 0.5);
+}
+
+.playButton{
+    width: 115px;
+    height: 35px;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 260px;
+    left: 55px;
+}
+
+.playText{
+    color:  white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.showVideoBackground{
+    background-color: black;
+    /* display: flex; */
+    /* align-items: center; */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.showVideo{
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.showVideoParent{
+    display: flex;
+    justify-content: center;
+}
