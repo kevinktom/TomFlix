@@ -12,6 +12,7 @@ const receiveAllVideos = videos => {
 }
 
 const receiveVideo = video => {
+    // debugger
     return {
         type: FETCH_VIDEO,
         video

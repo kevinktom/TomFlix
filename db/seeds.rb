@@ -55,3 +55,15 @@ ratatouille.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/ratato
 wreckitralph = Video.create!(title: "Ralph Breaks the Internet", description: "The bunny gets the pancake!", year: 2018, maturity_rating: "PG", runtime: "1h 56m", video_type: "Movie")
 wreckitralph.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/wreckitralph.mp4'), filename: 'wreckitralph.mp4')
 wreckitralph.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/wreckitralph2.jpg'), filename: 'wreckitralph2.jpg')
+
+guardiansofthegalaxy = Video.create!(title: "Guardians of the Galaxy", description: "I am Groot.", year: 2014, maturity_rating: "PG-13", runtime: "2h 5m", video_type: "Movie")
+guardiansofthegalaxy.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/guardiansofthegalaxy.mp4'), filename: 'guardiansofthegalaxy.mp4')
+guardiansofthegalaxy.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/guardiansofthegalaxy.jpg'), filename: 'guardiansofthegalaxy.jpg')
+
+thorragnarok = Video.create!(title: "Thor: Ragnarok", description: "Thor, son of Oden.", year: 2017, maturity_rating: "PG-13", runtime: "1h 52m", video_type: "Movie")
+thorragnarok.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/thorragnarok.mp4'), filename: 'thorragnarok.mp4')
+thorragnarok.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/thorragnarok.jpg'), filename: 'thorragnarok.jpg')
+
+thematrix = Video.create!(title: "The Matrix", description: "Blue pill or Red pill?", year: 1999, maturity_rating: "R", runtime: "2h 30m", video_type: "Movie")
+thematrix.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/thematrix.mp4'), filename: 'thematrix.mp4')
+thematrix.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/thematrix.jpg'), filename: 'thematrix.jpg')

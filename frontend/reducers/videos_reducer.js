@@ -8,7 +8,9 @@ export default (oldstate = {}, action) => {
             // let newstate = Object.assign({}, oldstate, {[videos]: action.videos });
             return action.videos;
         case videoActions.FETCH_VIDEO:
-            return action.video;
+            // return action.video;
+            // debugger
+            return Object.assign({}, oldstate, {[action.video.id]: action.video});
         default:
             return oldstate;
     }

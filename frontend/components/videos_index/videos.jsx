@@ -33,13 +33,20 @@ class Videos extends React.Component{
 
     <div className='indexGrid'>
       <NavBarContainer />
-      {this.props.videos.length >= 1 ? 
+      {this.props.videos.length >= 2 ? 
         <div>
           <video controls className="mainVideo"> <source src={this.props.videos[1].video_url} type="video/mp4"/> </video> 
             {/* <div className='mainVideoDescription'>{this.props.videos[1].description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
           <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[1].id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
+
+
+
+
+          <div className="rowsection"> row </div>
+          
+
 
 
         </div> : <div className='mainBackground'> </div>}

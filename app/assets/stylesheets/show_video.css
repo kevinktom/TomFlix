@@ -3,6 +3,7 @@
     left: 50px;
     top: 50px;
     width: 280px;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -12,4 +13,27 @@
 
 .backarrow{
     width: 17%;
+
+}
+
+.showVideoBackground{
+    background-color: black;
+    /* display: flex; */
+    /* align-items: center; */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.showVideo{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.showVideoParent{
+    display: flex;
+    justify-content: center;
 }

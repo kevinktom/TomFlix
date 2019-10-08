@@ -5,7 +5,7 @@ import {fetchVideo} from '../../actions/video_actions';
 const mapStateToProps = (state, ownProps) => {
     // debugger
     let videoId = ownProps.match.params.videoId;
-    debugger
+    // debugger
     return ({
         video: state.entities.videos[videoId]
 
