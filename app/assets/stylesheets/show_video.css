@@ -1,0 +1,15 @@
+.backbutton{
+    position:absolute;
+    left: 50px;
+    top: 50px;
+    width: 280px;
+    cursor: pointer;
+}
+
+.hiddenbutton{
+    position: hidden;
+}
+
+.backarrow{
+    width: 17%;
+}
