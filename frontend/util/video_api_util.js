@@ -1,8 +1,8 @@
-export const allvids = videos => {
+export const allvids = () => {
     return $.ajax({
         method: "get",
         url: "api/videos",
-        data: {videos}
+        // data: {videos}
     });
 };
 
@@ -11,6 +11,6 @@ export const fetchVideo = id => {
         method: "get",
         url: `api/videos${id}`,
         // url: `api/videos/${id}`,
-        data: {id}
+        // data: {id}
     })
 }
