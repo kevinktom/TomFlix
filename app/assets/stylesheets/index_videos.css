@@ -6,6 +6,10 @@
     /* position: fixed; */
 }
 
+.mainVideoDiv{
+    position:relative
+}
+
 .mainBackground{
     background-color: #141414;
 }
@@ -22,12 +26,16 @@
 
 .mainvideoLogo{
     position: absolute;
-    bottom: 340px;
+    bottom: 480px;
     left: 51px;
 }
 
 .transparentPlay{
   background:rgba(39, 39, 39, 0.5);
+}
+
+.testvid{
+    width: 50%;
 }
 
 .playButton{
@@ -38,7 +46,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 241px;
+    bottom: 381px;
     left: 55px;
     border-radius: 4px;
     cursor: pointer;
@@ -61,8 +69,53 @@
 .rowsection{
     position: absolute;
     display: flex;
-    height: 400px;
+    height: 280px;
     width: 100%;
+    /* top: 800px; */
+    bottom: 0;
+    /* background-color: grey; */
+}
+
+.blockrow{
+    position: absolute;
+    display: flex;
+    height: 230px;
+    width: 100%;
+    bottom: 0;
+    /* background-color: lightpink; */
+    justify-content: center;
+    align-items: center;
+}
+
+.rowvideo{
+    display: inline-block;
+    height: 100%;
+    width: 301px;
+    background-color: black;
+    
+
 }
 
 
+.videodiv{
+    display: inline-block;
+    background-color: transparent;
+    padding: 1.5px;
+    height: 169px;
+    width: 301px;
+    transition-duration: 750ms;
+}
+
+.videodiv:hover{
+    margin: 0 40px;
+    transform: scale(1.75);
+}
+
+.genreName{
+    color: white;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 42px;
+    top: 48px;
+}
