@@ -50,6 +50,20 @@
     left: 55px;
     border-radius: 4px;
     cursor: pointer;
+    transition-duration: 250ms;
+}
+
+.playButton:hover{
+    background-color: white;
+    transform: scale(1.05);
+}
+
+.playButton:hover img{
+    filter: brightness(0)
+}
+
+.playButton:hover .playText{
+    color:  black;
 }
 
 .playButton img{
@@ -118,4 +132,19 @@
     position: relative;
     left: 42px;
     top: 48px;
+}
+
+.bottomhalf{
+    background-color: #141414;
+    height: 100px
+}
+
+.secondsection{
+    position: absolute;
+    display: flex;
+    height: 280px;
+    width: 100%;
+    /* top: 800px; */
+    bottom: 0;
+    /* background-color: grey; */
 }
