@@ -139,12 +139,20 @@
 
 .middlebottomhalf{
     background-color: #141414;
-    height: 300px
+    height: 1100px;
+    position: relative;
 }
 
 .bottomhalf{
     background-color: #141414;
-    height: 100px
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 4px solid #222;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .secondsection{
@@ -193,4 +201,52 @@
 .videodiv:hover p{
     visibility: visible;
     opacity: 1;
+}
+
+
+.footertext{
+    color: #a6a6a6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bottomdivtext{
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.soundindex{
+    width: 100%;
+    position: absolute;
+    right: 140px;
+    bottom: 370px;
+    border-radius: 50%;
+    border: 2px solid #b2b2b2;
+    padding: 10px;
+    background: rgba(0,0,0,0.45);
+    width: 25px;
+    transition: border .2s ;
+    cursor: pointer;
+}
+
+.soundindex:hover{
+    transform: scale(1.15);
+    border-color: white;
+}
+
+#mainvid{
+    width:100%;
+}
+
+#soundon{
+    width: 25px;
+}
+
+#soundoff{
+    width: 25px;
+}
+
+.nosound{
+    visibility: hidden;
 }
