@@ -12,6 +12,9 @@
 
 .mainBackground{
     background-color: #141414;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 .mainVideoDescription{
@@ -134,17 +137,60 @@
     top: 48px;
 }
 
+.middlebottomhalf{
+    background-color: #141414;
+    height: 300px
+}
+
 .bottomhalf{
     background-color: #141414;
     height: 100px
 }
 
 .secondsection{
-    position: absolute;
+    position: relative;
     display: flex;
     height: 280px;
     width: 100%;
     /* top: 800px; */
     bottom: 0;
     /* background-color: grey; */
+}
+
+.genreName2{
+    color: white;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 42px;
+    top: 48px;
+}
+
+.blockrow2{
+    position: absolute;
+    display: flex;
+    height: 230px;
+    width: 100%;
+    bottom: 0;
+    /* background-color: lightpink; */
+    justify-content: center;
+    align-items: center;
+}
+
+.videotitle{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background: rgba(29, 106, 154, 0.72); */
+  color: #fff;
+  visibility: hidden;
+  opacity: 0; 
+  transition: opacity .2s, visibility .2s;
+}
+
+.videodiv:hover p{
+    visibility: visible;
+    opacity: 1;
 }
