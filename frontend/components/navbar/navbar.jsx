@@ -72,10 +72,10 @@ class Nav extends React.Component {
                         <Link to='/browse'><img src={window.logo} className="navlogo" /> </Link>
                         <div className='linksFirst'>
                             <Link to='/browse' className='singleLinks'> Home </Link>
-                            <Link to='/browse/test1' className='singleLinks'> TV Shows </Link>
-                            <Link to='/browse/test2' className='singleLinks'> Movies </Link>
-                            <Link to='/browse/test3' className='singleLinks'> Recently Added </Link>
-                            <Link to='/browse/my-list' className='singleLinks'> My List </Link>
+                            <Link  className='singleLinks'> TV Shows </Link>
+                            <Link  className='singleLinks'> Movies </Link>
+                            <Link  className='singleLinks'> Recently Added </Link>
+                            <Link  className='singleLinks'> My List </Link>
                         </div>
                     </div>
                     <div>
@@ -94,8 +94,8 @@ class Nav extends React.Component {
                                         <div className="dropdown-content" onMouseLeave={this.closeMenu}>
                                      
                                             <div  className="divdropcaret"><img src={window.upcaret} /></div>
-                                            <Link to='/Account' className='dropitem'> Account </Link>
-                                            <Link to='/Help' className='dropitem'> Help </Link>
+                                            <Link  className='dropitem'> Account </Link>
+                                            <Link  className='dropitem'> Help </Link>
                                             <button onClick={this.props.logoutCurrentUser} className="signoutbutton">Sign out of Tomflix</button>
                                         
                                         </div>: null
