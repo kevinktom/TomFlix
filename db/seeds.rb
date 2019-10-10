@@ -62,9 +62,9 @@ himym = Video.create!(title: "How I Met Your Mother", description: "The gang tak
 himym.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/himym.mp4'), filename: 'himym.mp4')
 himym.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/himym.jpg'), filename: 'himym.jpg')
 
-22jumpstreet = Video.create!(title: "22 Jump Street", description: "My name Jeff", year: 2014, maturity_rating: "R", runtime: "1h 52m", video_type: "Movie")
-22jumpstreet.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/22jumpst.mp4'), filename: '22jumpst.mp4')
-22jumpstreet.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/22jumpstreet.jpg'), filename: '22jumpstreet.jpg')
+jumpstreet = Video.create!(title: "22 Jump Street", description: "My name Jeff", year: 2014, maturity_rating: "R", runtime: "1h 52m", video_type: "Movie")
+jumpstreet.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/22jumpst.mp4'), filename: '22jumpst.mp4')
+jumpstreet.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/22jumpstreet.jpg'), filename: '22jumpstreet.jpg')
 
 theinterview = Video.create!(title: "The Interview", description: "Same same, but different... but still same!", year: 2014, maturity_rating: "R", runtime: "1h 52m", video_type: "Movie")
 theinterview.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theinterview.mp4'), filename: 'theinterview.mp4')
@@ -107,8 +107,8 @@ harrypotter.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/harryp
 
 #4th row
 bohemianrhapysody = Video.create!(title: "Bohemian Rhapsody", description: "Good thoughts, good words, good deeds", year: 2018, maturity_rating: "PG-13", runtime: "2h 13m", video_type: "Movie")
-bohemianrhapysody.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/bohemianrhapysody.mp4'), filename: 'bohemianrhapysody.mp4')
-bohemianrhapysody.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/bohemianrhapysody.jpg'), filename: 'bohemianrhapysody.jpg')
+bohemianrhapysody.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/bohemianrhapsody.mp4'), filename: 'bohemianrhapysody.mp4')
+bohemianrhapysody.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/bohemianrhapsody.jpg'), filename: 'bohemianrhapysody.jpg')
 
 forrestgump = Video.create!(title: "Forrest Gump", description: "Life's like a box of chocolates", year: 1994, maturity_rating: "PG-13", runtime: "2h 22m", video_type: "Movie")
 forrestgump.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/forrestgump.mp4'), filename: 'forrestgump.mp4')
