@@ -11,7 +11,7 @@
 .entireNav{
     /* height: 140px; */
     background-color: transparent;
-    z-index: 1;
+    z-index: 3;
 }
 
 .navlogo{    
@@ -41,6 +41,7 @@
  } */
 .singleLinks:hover{
      color: #a8a8a8;
+     /* color: #8c8c8c; */
      transition: color .75s ease;
  }
 
@@ -140,7 +141,7 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: -18px;
-    bottom: -141px;
+    bottom: -137px;
     opacity: .91;
     height: 120px;
     /* transition: all 1s ease; */
