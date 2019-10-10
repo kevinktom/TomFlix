@@ -91,6 +91,7 @@
     /* top: 800px; */
     bottom: 0;
     /* background-color: grey; */
+    z-index: 1;
 }
 
 .blockrow{
