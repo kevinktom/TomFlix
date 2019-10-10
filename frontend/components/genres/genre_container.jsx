@@ -6,7 +6,7 @@ import { renderVideos } from '../../actions/video_actions';
 const mapStateToProps = (state, ownProps) => {
     
     let genreId = ownProps.match.params.genreId;
-    debugger
+    // debugger
     return ({
         genre: state.entities.genres[genreId],
         videos: Object.values(state.entities.videos)

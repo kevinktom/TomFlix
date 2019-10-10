@@ -1,0 +1,39 @@
+.bottomhalftvshows{
+    background-color: #141414;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 4px solid #222;
+    bottom: 0;
+    /* position: absolute; */
+    width: 100%;
+}
+
+.blockrowtvshows{
+    position: absolute;
+    display: flex;
+    height: 230px;
+    width: 100%;
+    bottom: 75px;
+    /* background-color: lightpink; */
+    /* justify-content: center; */
+    align-items: center;
+    /* z-index: 1; */
+    left: 50px;
+}
+
+.middlebottomhalfmovies{
+    background-color: #141414;
+    height: 800px;
+    position: relative;
+}
+
+.genrenametvshows{
+    color: white;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 53px;
+    top: -34px;
+}

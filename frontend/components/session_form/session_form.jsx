@@ -78,10 +78,10 @@ class SessionForm extends React.Component{
               {this.renderErrors()}
               {/* <div className="errors">{this.props.errors[0]}</div> */}
               <label htmlFor="email"></label>
-              <input id="email" onChange={this.update('email')} type="email" placeholder="Email" className='textField'/>
+              <input id="email" onChange={this.update('email')} type="email" placeholder="Email" className='textField' autoComplete="off"/>
               <br/>
               <label htmlFor="password"> </label>
-              <input id="password" placeholder="Password" onChange={this.update('password')} type="password"  className='textField'/>
+              <input id="password" placeholder="Password" onChange={this.update('password')} type="password" className='textField' autoComplete="off"/>
               {/* <p className='errors'>{this.renderIndividualErrors(invalidPassword)}</p> */}
               <br/>
               <input type="submit" value={this.props.formType} className='sessionSignin'/>
