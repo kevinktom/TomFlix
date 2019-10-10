@@ -8,7 +8,11 @@
 require 'open-uri'
 
 User.destroy_all
+Genre.destroy_all
 Video.destroy_all
+VideoGenre.destroy_all
+
+
 
 testUser = User.create(email: "hire@me.please", password:"password")
 # testUser2 = User.create(email: "demo@demo.com", password:"password")
@@ -19,6 +23,8 @@ testUser = User.create(email: "hire@me.please", password:"password")
 # theoffice.video_url.attach(io: open('https://tomflix-dev.s3.amazonaws.com/theoffice.mp4'), filename: 'theoffice.mp4')
 # theoffice.photo.attach(io: open('https://tomflix-dev.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
 
+movies = Genre.create!(genre: "Movies");
+tvshows = Genre.create!(genre: "TV Shows");
 
 
 #first row
@@ -130,3 +136,7 @@ fightclub = Video.create!(title: "Fight Club", description: "First rule of Fight
 fightclub.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/fightclub.mp4'), filename: 'fightclub.mp4')
 fightclub.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/fightclub.jpg'), filename: 'fightclub.jpg')
 
+moviesVidGenre1 = VideoGenre.create(video_id: avengers.id, genre_id: movies.id)
+moviesVidGenre2 = VideoGenre.create(video_id: wolfofwallstreet.id, genre_id: movies.id)
+moviesVidGenre3 = VideoGenre.create(video_id: lalaland.id, genre_id: movies.id)
+moviesVidGenre4 = VideoGenre.create(video_id: thepursuitofhappyness.id, genre_id: movies.id)
