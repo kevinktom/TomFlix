@@ -20,7 +20,8 @@ Alt-Features
 Alt-Video Hover
 ---------------
 
-![Alt Text](https://giphy.com/gifs/tomflix-WsuVzWBDQGZd3N06dC)
+![Alt Text](https://media.giphy.com/media/WsuVzWBDQGZd3N06dC/giphy.gif)
+
 
 * Uses event listeners to play, pause, and set the time of the video with "onMouseOver" and "onMouseLeave"
 * On click of the video will bring the user to the video player where the video will play
