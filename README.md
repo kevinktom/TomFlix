@@ -12,11 +12,11 @@ Tomflix is a personal rendition and clone of the media-streaming website Netflix
 Features
 ------------
 1. Frontend and Backend User Authentication
-⋅⋅1. Demo login
-⋅⋅1. Main video upon login autoplays and can be muted/unmuted on the index page
-⋅⋅1. Movies are split up into genres with the ability for the user to play the video on hover
-⋅⋅1. Videos can be played on a fullscreen video player 
-⋅⋅1. Users can navigate to different links on the navbar which display different categories such as Movies & TV Shows
+  1. Demo login
+  1. Main video upon login autoplays and can be muted/unmuted on the index page
+  1. Movies are split up into genres with the ability for the user to play the video on hover
+  1. Videos can be played on a fullscreen video player 
+  1. Users can navigate to different links on the navbar which display different categories such as Movies & TV Shows
 
 Video Hover
 ---------------
