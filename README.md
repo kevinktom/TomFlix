@@ -1,6 +1,7 @@
 # README
 
 Tomflix
+![alt text](https://github.com/kevinktom/TomFlix/blob/master/app/assets/images/logo.png)
 =======
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-netflix.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
