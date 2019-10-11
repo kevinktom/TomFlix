@@ -3,6 +3,7 @@
 Alt-Tomflix
 =======
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-netflix.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+
 Tomflix is a personal rendition and clone of the media-streaming website Netflix that allows users to view Movies and TV Shows at their leisure. It is built using **Ruby on Rails** for the backend, **PostgreSQL** for the database, and **React & Redux** for the frontend. The website is hosted on **Heroku** while the media is stored on **AWS**.
 Website: [Tomflix](https://tom-flix.herokuapp.com/)
 
