@@ -1,6 +1,6 @@
 # README
 
-Alt-Tomflix
+Tomflix
 =======
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-netflix.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
@@ -8,7 +8,7 @@ Tomflix is a personal rendition and clone of the media-streaming website Netflix
 Website: [Tomflix](https://tom-flix.herokuapp.com/)
 
 
-Alt-Features
+Features
 ------------
 1. Frontend and Backend User Authentication
 ⋅⋅1. Demo login
@@ -17,7 +17,7 @@ Alt-Features
 ⋅⋅1. Videos can be played on a fullscreen video player 
 ⋅⋅1. Users can navigate to different links on the navbar which display different categories such as Movies & TV Shows
 
-Alt-Video Hover
+Video Hover
 ---------------
 
 ![Alt Text](https://media.giphy.com/media/WsuVzWBDQGZd3N06dC/giphy.gif)
@@ -44,13 +44,13 @@ handleHoverLeave(e){
 }
 ```
 
-Alt-Updates to come
+Updates to come
 -------------------
 * Descriptions on videos
 * Search functionality
 * MyList
 
-Alt-Contact Me
+Contact Me
 -----------------------
 Email: KevinKTom@gmail.com
 Github: https://github.com/kevinktom 
