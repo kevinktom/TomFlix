@@ -3,6 +3,7 @@
      /* grid-template-columns: 1fr 2.5fr 6fr 2fr; */
      /* grid-template-rows: .5fr 8fr 3.5fr 3.5fr 3.5fr 3.5fr; */
      background: lightgrey;
+     overflow: hidden;
      /* align-items: center;
      justify-content: center;
      text-align: center; */
