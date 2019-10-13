@@ -29,6 +29,7 @@ class Videos extends React.Component{
       e.target.muted = true
       e.target.play();
     });
+  }
     // e.currentTarget.play().then(e.currentTarget.muted=false, e.currentTarget.muted = true);
     // e.currentTarget.play().then(null, e.currentTarget.setAttribute("muted", null));
     // return e => {
@@ -38,17 +39,16 @@ class Videos extends React.Component{
     // if (play){
     //   play.catch(function(error) {console.error(error)})
     // }
-  }
 
   handleHoverLeave(e){
     e.currentTarget.pause();
     e.currentTarget.currentTime = 0;
     e.currentTarget.load();
+  }
     // let pause = e.currentTarget.pause();
     // if (pause) {
     //   pause.catch(function (error) { console.error(error) })
     // }
-  }
 
 
   handleMute(){

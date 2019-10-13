@@ -108,7 +108,29 @@
     margin: 0 auto;
     cursor: pointer;
     border-color: rgb(229, 9, 20);
+    animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    /* animation: glow 1s ease-in-out infinite alternate; */
+    transition: all 0.5s;
 }
+
+@keyframes demo {
+  from {
+      text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+}
+    to {
+    text-shadow: 0 0 20px rgb(255, 255, 255), 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
+  }
+}
+
+.containerSplash .demo:hover{
+    animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+
+
 
 .containerSplash .haveAccount{
     grid-column: 5/6;
