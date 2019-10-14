@@ -24,11 +24,14 @@ class Videos extends React.Component{
   }
 
   handleHoverPlay(e){
+    let vid = document.getElementById("mainvid");
     e.persist();
     e.target.play().then(null, () => {
       e.target.muted = true
       e.target.play();
     });
+    this.setState({ muted: true });
+    vid.muted = true;
   }
     // e.currentTarget.play().then(e.currentTarget.muted=false, e.currentTarget.muted = true);
     // e.currentTarget.play().then(null, e.currentTarget.setAttribute("muted", null));
@@ -80,7 +83,7 @@ class Videos extends React.Component{
       {this.props.videos.length >= 2 ? 
         <div className="mainVideoDiv">
             {/* autoPlay loop */}
-            <video autoPlay loop muted={false} className="mainVideo" id="mainvid"  > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
+            <video autoPlay loop muted={false} className="mainVideo" id="mainvid" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
             {/* <div className='mainVideoDescription'>{this.props.videos[1].description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
