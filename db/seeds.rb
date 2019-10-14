@@ -28,13 +28,13 @@ tvshows = Genre.create!(genre: "TV Shows");
 
 
 #first row
-# inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "Movie")
-# inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptiontest.mp4'), filename: 'inceptiontest.mp4')
-# inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
-
 inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "Movie")
-inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptionmain.mp4'), filename: 'inceptionmain.mp4')
+inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptiontest.mp4'), filename: 'inceptiontest.mp4')
 inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
+
+# inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "Movie")
+# inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptionmain.mp4'), filename: 'inceptionmain.mp4')
+# inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
 
 avengers = Video.create!(title: "Avengers: Endgame", description: "I Love You 3000.", year: 2019, maturity_rating: "PG-13", runtime: "3h 2m", video_type: "Movie")
 avengers.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/avengers.mp4'), filename: 'avengers.mp4')
@@ -60,8 +60,12 @@ thematrix.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/thematri
 #second row comedy
 
 theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG-13", runtime: "1 Minute 27 Seconds", video_type: "TV Show")
-theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.mp4'), filename: 'theoffice.mp4')
+theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/seedtheoffice.mp4'), filename: 'seedtheoffice.mp4')
 theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
+
+# theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG-13", runtime: "1 Minute 27 Seconds", video_type: "TV Show")
+# theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.mp4'), filename: 'theoffice.mp4')
+# theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
 
 
 community = Video.create!(title: "Community", description: "Cool cool cool.", year: 2009, maturity_rating: "PG-13", runtime: "25m", video_type: "TV Show")
