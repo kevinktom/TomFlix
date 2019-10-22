@@ -1,0 +1,1 @@
+json.extract! mylist, :id, :user_ids, :video_ids
