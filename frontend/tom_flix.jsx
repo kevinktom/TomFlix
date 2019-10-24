@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import * as actions from './actions/session_actions'
-import * as genreactions from './actions/genre_actions'
+import * as actions from './actions/session_actions';
+import * as genreactions from './actions/genre_actions';
+import * as mylists from './actions/mylist_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   let root = document.getElementById('root');
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   // window.login = actions.login;
   window.signup = actions.signup;
   window.logout = actions.logout;
+  window.createlist = mylists.createMyList;
   window.getgenre = genreactions.getGenre;
   window.dispatch = store.dispatch;
   // window.
