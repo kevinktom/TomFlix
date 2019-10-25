@@ -1,8 +1,12 @@
-class Api::MyListController < ApplicationController
+class Api::MylistsController < ApplicationController
 
     def show
         # @mylist = MyList.find(params[:id])
         render :show
+    end
+
+    def index
+        @mylists = MyList.all
     end
 
     def create

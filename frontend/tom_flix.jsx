@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.signup = actions.signup;
   window.logout = actions.logout;
   window.createlist = mylists.createMyList;
+  window.getlists = mylists.fetchLists;
   window.getgenre = genreactions.getGenre;
   window.dispatch = store.dispatch;
   // window.

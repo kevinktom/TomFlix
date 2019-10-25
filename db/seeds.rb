@@ -11,6 +11,7 @@ User.destroy_all
 Genre.destroy_all
 Video.destroy_all
 VideoGenre.destroy_all
+MyList.destroy_all
 
 
 
@@ -23,8 +24,8 @@ testUser = User.create(email: "hire@me.please", password:"password")
 # theoffice.video_url.attach(io: open('https://tomflix-dev.s3.amazonaws.com/theoffice.mp4'), filename: 'theoffice.mp4')
 # theoffice.photo.attach(io: open('https://tomflix-dev.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
 
-movies = Genre.create!(genre: "Movies");
-tvshows = Genre.create!(genre: "TV Shows");
+movies = Genre.create!(genre: "Movies")
+tvshows = Genre.create!(genre: "TV Shows")
 
 
 #first row
@@ -176,3 +177,5 @@ tvshowsVidGenre1 = VideoGenre.create(video_id: theoffice.id, genre_id: tvshows.i
 tvshowsVidGenre2 = VideoGenre.create(video_id: community.id, genre_id: tvshows.id)
 tvshowsVidGenre3 = VideoGenre.create(video_id: himym.id, genre_id: tvshows.id)
 tvshowsVidGenre4 = VideoGenre.create(video_id: thefreshprince.id, genre_id: tvshows.id)
+
+list1 = MyList.create(user_id: testUser.id, video_id: wolfofwallstreet.id)
