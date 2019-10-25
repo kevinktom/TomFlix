@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :videos, only: [:index, :show]
     resources :genres, only: [:show]
-    resources :mylists, only: [:index, :show]
+    resources :mylists, only: [:index, :show, :create, :destroy]
   end
 end

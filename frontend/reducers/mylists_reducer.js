@@ -1,4 +1,5 @@
 import * as myListActions from '../actions/mylist_actions';
+import { merge } from 'lodash';
 
 export default (oldstate = {}, action) => {
     Object.freeze(oldstate);
@@ -6,7 +7,7 @@ export default (oldstate = {}, action) => {
         case myListActions.FETCH_MYLISTS:
             return action.videos;
         case myListActions.CREATEMYLIST:
-            return Object.assign({}, oldstate, {[action.mylistId.id]: mylistId});
+            return Object.assign({}, oldstate, { [action.videoId.id]: videoId});
         case myListActions.DELETEMYLIST:
             let newstate = merge({}, oldstate);
             delete newstate[action.videoId];

@@ -6,11 +6,11 @@ export const getMyLists = () => {
     })
 }
 
-export const updateMyList = (mylistId) => {
+export const createList = (videoId) => {
     return $.ajax({
         method: 'post',
         url: "api/mylists",
-        data: { mylistId }
+        data: { videoId }
     })
 }
 

@@ -26,14 +26,15 @@ const deleteList = videoId => {
     }
 }
 
-export const fetchLists = videos => {
-    myListActions.getMyLists(videos).then(() => dispatch(fetchMyLists(videos)))
+export const fetchLists = videos => dispatch => {
+    return myListActions.getMyLists(videos).then((videos) => dispatch(fetchMyLists(videos)))
 }
 
-export const createMyList = videoId => {
-    myListActions.updateMyList(videoId).then((vid) => dispatch(createList(vid)))
+export const createMyList = (videoId) => dispatch => {
+    // debugger
+    return myListActions.createList(videoId).then((vid) => dispatch(createList(vid)))
 }
 
-export const deleteMyList = id => {
-    myListActions.deleteMyList(id).then(videoId => dispatch(deleteList(videoId)))
+export const deleteMyList = id => dispatch => {
+    return myListActions.deleteMyList(id).then(videoId => dispatch(deleteList(videoId)))
 }
