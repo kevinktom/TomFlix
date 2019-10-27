@@ -7,6 +7,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SplashContainer from './splash/splash_form_container';
 import VideoPlayerContainer from './video_player/video_player_container';
 import GenreContainer from './genres/genre_container';
+import MylistContainer from './mylists/mylist_container';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 
         <ProtectedRoute exact path='/browse' component={VideosContainer}/>
+        <ProtectedRoute exact path='/browse/my-list' component={MylistContainer}/>
         <ProtectedRoute exact path='/browse/:videoId' component={VideoPlayerContainer}/>
         <ProtectedRoute exact path='/genre/:genreId' component={GenreContainer}/>
         <AuthRoute exact path='/' component={SplashContainer}/>

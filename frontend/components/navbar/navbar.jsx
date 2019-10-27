@@ -39,6 +39,7 @@ class Nav extends React.Component {
     componentDidMount(){
         let scrollpos = window.scrollY;
         let root = document.getElementById('root').getElementsByTagName("div")[0].getElementsByClassName("indexGrid")[0];
+        // debugger
         let navbar = root.getElementsByClassName("entireNav")[0].getElementsByClassName("navLinks")[0];
 
         function add_class_on_scroll() {
