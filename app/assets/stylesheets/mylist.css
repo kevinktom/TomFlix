@@ -44,10 +44,24 @@
 
 .secondsectionList{
     position: relative;
+    /* display: block; */
     display: flex;
+    flex-wrap: wrap;
     height: 260px;
     width: 100%;
-    /* top: 800px; */
+    top: 220px;
     bottom: 0;
+    text-align: center;
     /* background-color: grey; */
+
+    margin-left: 2.5%;
+}
+
+#mylisttext{
+    color: #fff;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 38px;
+    font-family: Arial, Helvetica, sans-serif;
 }

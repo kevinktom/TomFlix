@@ -5,10 +5,11 @@ import { renderVideos } from '../../actions/video_actions';
 
 const mapStateToProps = (state) => {
     // debugger
-    let userId = state.sessions.id;
+    let userId = state.sessions.currentUser.id;
+    // debugger
     return ({
         // currentUser: state.entities.users[userId],
-        currentUser: currentUser,
+        currentUser: userId,
         mylists: Object.values(state.entities.mylists),
         videos: Object.values(state.entities.videos)
     })
