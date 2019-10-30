@@ -11,6 +11,13 @@ class Nav extends React.Component {
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
     }
+
+    //SEARCH BAR
+    //MSP MDP to get videos
+    //create a separate search bar component in a different file
+    //state that contains the search term
+    //onchange callback that changes the state based on user input
+    //have a timer in the state 0.5 seconds and reset when the user types. debunce function. 
     
     // componentDidMount() {
     //     // debugger

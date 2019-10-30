@@ -17,10 +17,11 @@ import NavBarContainer from '../navbar/navbar_container';
 class Videos extends React.Component{
   constructor(props){
     super(props);
+    this.state = {muted: false, indexlist: false};
     this.handleHoverPlay = this.handleHoverPlay.bind(this);
     this.handleHoverLeave = this.handleHoverLeave.bind(this);
-    this.state = {muted: false};
     this.handleMute = this.handleMute.bind(this);
+    this.handleMyList = this.handleMyList.bind(this);
   }
 
   handleHoverPlay(e){
@@ -33,25 +34,13 @@ class Videos extends React.Component{
     this.setState({ muted: true });
     vid.muted = true;
   }
-    // e.currentTarget.play().then(e.currentTarget.muted=false, e.currentTarget.muted = true);
-    // e.currentTarget.play().then(null, e.currentTarget.setAttribute("muted", null));
-    // return e => {
-    //   e.currentTarget.play();
-    // }
-    // let play = e.currentTarget.play();
-    // if (play){
-    //   play.catch(function(error) {console.error(error)})
-    // }
+
 
   handleHoverLeave(e){
     e.currentTarget.pause();
     e.currentTarget.currentTime = 0;
     e.currentTarget.load();
   }
-    // let pause = e.currentTarget.pause();
-    // if (pause) {
-    //   pause.catch(function (error) { console.error(error) })
-    // }
 
 
   handleMute(){
@@ -59,11 +48,22 @@ class Videos extends React.Component{
     let vid = document.getElementById("mainvid")
     if (this.state.muted){
       this.setState({muted: false});
-      vid.muted = false;
     }
     else{
       this.setState({muted: true});
       vid.muted = true;
+    }
+  }
+
+  handleMyList(){
+    // let listbutton = document.getElementById("addlistbutton")
+    if (this.state.indexlist) {
+      this.props.deleteMyList(this.props.videos[0].id);
+      this.setState({ indexlist: false });
+    }
+    else {
+      this.props.createMyList(this.props.videos[0].id);
+      this.setState({ indexlist: true });
     }
   }
   
@@ -71,11 +71,39 @@ class Videos extends React.Component{
     // const allProps = this.props;
     this.props.renderVideos();
     // debugger
+    this.props.fetchLists();
+    // debugger
 
+  }
+  componentDidUpdate(prevProps){
+    // debugger
+    if (((prevProps.mylists.length !== this.props.mylists.length || this.props.videos.length !== prevProps.videos.length)) && (this.props.videos[0])){
+      this.props.mylists.forEach(list => {
+        // debugger
+        
+        if (list.video_id === this.props.videos[0].id) {
+          this.setState({indexlist: true});
+        }
+        else {
+          this.setState({ indexlist: false });
+        }
+      })
+    }
   }
 
   render(){
     // debugger
+    // let listbutton = <div></div>
+  //   if (this.props.mylists.length > 0){
+  //   this.props.mylists.forEach(list => {
+  //     if (list.video_id === this.props.videos[0].id) {
+  //       this.state.indexlist = true;
+  //     }
+  //     else{
+  //       this.state.indexlist = false;
+  //     }
+  //   })
+  // }
     return (
 
     <div className='indexGrid'>
@@ -94,7 +122,20 @@ class Videos extends React.Component{
             <p >{this.props.videos[0].maturity_rating}</p>
           </div>
           <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[0].id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
-
+          {this.state.indexlist ? 
+              <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
+              <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
+          {/* {this.props.mylists.forEach(list => {
+            if (list.video_id === this.props.videos[0].id){
+              listbutton = <div onClick={() => this.props.deleteMyList(this.props.videos[0].id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div>
+            }
+            else{
+              listbutton = <div onClick={() => this.props.createMyList(this.props.videos[0].id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>
+            }
+          })}
+          {listbutton} */}
+          {/* <div onClick={() => this.props.createMyList(this.props.videos[0].id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd}/> <p className="playText">My List</p> </div> */}
+          
 
 
 
@@ -259,6 +300,7 @@ class Videos extends React.Component{
   )
   }
 }
+
 
 export default Videos;
 

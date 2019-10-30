@@ -10,7 +10,7 @@ class Api::MylistsController < ApplicationController
     end
 
     def create
-        debugger
+        # debugger
         @mylist = MyList.new(user_id: current_user.id, video_id: params[:videoId])
         if @mylist.save
             render json: {video_id: @mylist[:video_id]}

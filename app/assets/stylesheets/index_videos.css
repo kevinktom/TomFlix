@@ -75,6 +75,11 @@
     right: 10px;
 }
 
+#addlistbutton{
+    left: 237px;
+    width: 202px;
+}
+
 .playText{
     color:  white;
     font-family: Arial, Helvetica, sans-serif;
