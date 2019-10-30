@@ -28,12 +28,28 @@ class Mylist extends React.Component{
             }
         })
         // debugger
-        const videoArr = lists.map(video => {
+        const videoArr = lists.map((video, idx) => {
+            if (idx % 6 === 0){
+                return (
+                    <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivfirstlist' key={video.id}>
+                        <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
+                    </div>
+                )
+            }
+            else if (idx % 6 === 5){
+                return (
+                    <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivlastlist' key={video.id}>
+                        <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
+                    </div>
+                )
+            }
+            else{
             return (
-                <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodiv' key={video.id}>
+                <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivlist' key={video.id}>
                     <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
                 </div>
             );
+            }
         })
         return (
             <div className="indexGrid">
