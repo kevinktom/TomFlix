@@ -58,11 +58,11 @@ class Videos extends React.Component{
   handleMyList(){
     // let listbutton = document.getElementById("addlistbutton")
     if (this.state.indexlist) {
-      this.props.deleteMyList(this.props.videos[0].id);
+      this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
       this.setState({ indexlist: false });
     }
     else {
-      this.props.createMyList(this.props.videos[0].id);
+      this.props.createMyList(this.props.videos[0].id).then(this.props.fetchLists);
       this.setState({ indexlist: true });
     }
   }
@@ -75,35 +75,20 @@ class Videos extends React.Component{
     // debugger
 
   }
-  componentDidUpdate(prevProps){
-    // debugger
-    if (((prevProps.mylists.length !== this.props.mylists.length || this.props.videos.length !== prevProps.videos.length)) && (this.props.videos[0])){
-      this.props.mylists.forEach(list => {
-        // debugger
-        
-        if (list.video_id === this.props.videos[0].id) {
-          this.setState({indexlist: true});
-        }
-        else {
-          this.setState({ indexlist: false });
-        }
-      })
-    }
-  }
 
   render(){
     // debugger
     // let listbutton = <div></div>
-  //   if (this.props.mylists.length > 0){
-  //   this.props.mylists.forEach(list => {
-  //     if (list.video_id === this.props.videos[0].id) {
-  //       this.state.indexlist = true;
-  //     }
-  //     else{
-  //       this.state.indexlist = false;
-  //     }
-  //   })
-  // }
+    if (this.props.mylists.length > 0 && this.props.videos.length > 0){
+    this.props.mylists.forEach(list => {
+      if (list.video_id === this.props.videos[0].id) {
+        this.state.indexlist = true;
+      }
+      else{
+        this.state.indexlist = false;
+      }
+    })
+  }
     return (
 
     <div className='indexGrid'>
