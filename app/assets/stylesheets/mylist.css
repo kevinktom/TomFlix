@@ -13,7 +13,7 @@
     background: black;
     height: 100vh;
     width: 100vw;
-    position: fixed;
+    /* position: fixed; */
 }
 
 .blockrowList{
@@ -117,12 +117,13 @@
 .videodivlist:hover{
     margin: 0 40px;
     transform: scale(1.75);
+    z-index: 1;
 }
 
 .addList{
-    position: relative;
-    right: 110px;
-    bottom: 73px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
     border-radius: 50%;
     border: 2px solid #b2b2b2;
     padding: 10px;

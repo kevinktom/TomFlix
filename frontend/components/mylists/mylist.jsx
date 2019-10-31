@@ -11,6 +11,7 @@ class Mylist extends React.Component{
 
     handleHoverPlay(e) {
         // let vid = document.getElementById("mainvid");
+        // debugger
         e.persist();
         e.target.play().then(null, () => {
             e.target.muted = true
@@ -55,8 +56,10 @@ class Mylist extends React.Component{
             if (idx % 6 === 0){
                 return (
                     <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivfirstlist' key={video.id}>
-                        <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
-                        <img className="addList" src={window.removelist} alt="" />
+                        <div>
+                            <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
+                            <img className="addList" src={window.removelist} alt="" />
+                        </div>
                     </div>
                 )
             }
