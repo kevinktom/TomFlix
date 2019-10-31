@@ -10,7 +10,7 @@ class Video extends React.Component {
     }
 
     handleHoverPlay(e) {
-        debugger
+        // debugger
         let vid = document.getElementById("mainvid");
         e.persist();
         e.target.play().then(null, () => {

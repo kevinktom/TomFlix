@@ -45,7 +45,7 @@ class Videos extends React.Component{
 
 
   handleMute(){
-    // debugger
+    debugger
     let vid = document.getElementById("mainvid")
     if (this.state.muted){
       this.setState({muted: false});
@@ -102,7 +102,7 @@ class Videos extends React.Component{
       {IndividualVideos.length >= 2 ? 
         <div className="mainVideoDiv">
             {/* autoPlay loop */}
-            <video autoPlay loop muted={false} className="mainVideo" id="mainvid" > <source src={IndividualVideos[0].props.video.video_url} type="video/mp4"/> </video> 
+            <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
             {/* <div className='mainVideoDescription'>{IndividualVideos[1].props.video.description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
