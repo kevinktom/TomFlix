@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {logout} from '../../actions/session_actions';
 // import Nav from '../navbar/navbar';
 import NavBarContainer from '../navbar/navbar_container';
+import VideoContainer from '../video/video_container';
 
 
 // export const Videos = (props) => {
@@ -89,37 +90,42 @@ class Videos extends React.Component{
       }
     })
   }
+
+  const IndividualVideos = this.props.videos.map(video => {
+    return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />)
+  })
+  
     return (
 
     <div className='indexGrid'>
       <NavBarContainer />
-      {this.props.videos.length >= 2 ? 
+      {IndividualVideos.length >= 2 ? 
         <div className="mainVideoDiv">
             {/* autoPlay loop */}
-            <video autoPlay loop muted={false} className="mainVideo" id="mainvid" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
-            {/* <div className='mainVideoDescription'>{this.props.videos[1].description}</div> */}
+            <video autoPlay loop muted={false} className="mainVideo" id="mainvid" > <source src={IndividualVideos[0].props.video.video_url} type="video/mp4"/> </video> 
+            {/* <div className='mainVideoDescription'>{IndividualVideos[1].props.video.description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
           {!this.state.muted ? 
           <img src={window.soundon} className="soundindex" id="soundon" onClick={this.handleMute}/> : 
           <img src={window.soundoff} className="soundindex" id="soundoff" onClick={this.handleMute}/> }
           <div id="mainvidrating">
-            <p >{this.props.videos[0].maturity_rating}</p>
+            <p >{IndividualVideos[0].props.video.maturity_rating}</p>
           </div>
-          <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[0].id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
+          <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
           {this.state.indexlist ? 
               <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
               <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
           {/* {this.props.mylists.forEach(list => {
-            if (list.video_id === this.props.videos[0].id){
-              listbutton = <div onClick={() => this.props.deleteMyList(this.props.videos[0].id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div>
+            if (list.video_id === IndividualVideos[0].props.video.id){
+              listbutton = <div onClick={() => this.props.deleteMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div>
             }
             else{
-              listbutton = <div onClick={() => this.props.createMyList(this.props.videos[0].id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>
+              listbutton = <div onClick={() => this.props.createMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>
             }
           })}
           {listbutton} */}
-          {/* <div onClick={() => this.props.createMyList(this.props.videos[0].id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd}/> <p className="playText">My List</p> </div> */}
+          {/* <div onClick={() => this.props.createMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd}/> <p className="playText">My List</p> </div> */}
           
 
 
@@ -127,30 +133,30 @@ class Videos extends React.Component{
           <div className="rowsection"> 
             <p className="genreName" >Fantasy/Sci-fi</p>
             <div className='blockrow'>
-              <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[0].id}`)} className='videodivfirst'>
-                <video className="rowvideo" poster={this.props.videos[0].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[0].video_url} type="video/mp4" /> </video>
-                {/* <p className='videotitle'>{this.props.videos[1].title}</p> */}
+              <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)} className='videodivfirst'>
+                <video className="rowvideo" poster={IndividualVideos[0].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[0].props.video.video_url} type="video/mp4" /> </video>
+                {/* <p className='videotitle'>{IndividualVideos[1].props.video.title}</p> */}
               </div>
 
-              {/* <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[1].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[1].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[1].video_url} type="video/mp4" /> </video>
+              {/* <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[1].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[1].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[1].props.video.video_url} type="video/mp4" /> </video>
                   
               </div>
 
-              <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[2].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[2].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[2].video_url} type="video/mp4" /> </video>
+              <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[2].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[2].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[2].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[3].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[3].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[3].video_url} type="video/mp4" /> </video>
+              <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[3].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[3].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[3].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[4].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[4].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[4].video_url} type="video/mp4" /> </video>
+              <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[4].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[4].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[4].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick= { () => this.props.history.push(`/browse/${this.props.videos[5].id}`)} className='videodivlast'>
-                <video className="rowvideo" poster={this.props.videos[5].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[5].video_url} type="video/mp4" /> </video>
+              <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[5].props.video.id}`)} className='videodivlast'>
+                <video className="rowvideo" poster={IndividualVideos[5].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[5].props.video.video_url} type="video/mp4" /> </video>
               </div> */}
             </div>
           </div>
@@ -165,34 +171,34 @@ class Videos extends React.Component{
 
         </div> : <div className='mainBackground'> </div>}
 
-        {this.props.videos.length >= 2 ? 
+        {IndividualVideos.length >= 2 ? 
         
         <div className="middlebottomhalf">
           <div className="secondsection">
             <p className="genreName2" >Comedy</p>
             <div className='blockrow2'>
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[6].id}`)} className='videodivfirst'>
-                <video className="rowvideo" poster={this.props.videos[6].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[6].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[6].props.video.id}`)} className='videodivfirst'>
+                <video className="rowvideo" poster={IndividualVideos[6].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[6].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              {/* <div onClick={() => this.props.history.push(`/browse/${this.props.videos[7].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[7].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[7].video_url} type="video/mp4" /> </video>
+              {/* <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[7].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[7].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[7].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[8].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[8].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[8].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[8].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[8].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[8].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[9].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[9].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[9].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[9].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[9].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[9].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[10].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[10].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[10].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[10].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[10].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[10].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[11].id}`)} className='videodivlast'>
-                <video className="rowvideo" poster={this.props.videos[11].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[11].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[11].props.video.id}`)} className='videodivlast'>
+                <video className="rowvideo" poster={IndividualVideos[11].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[11].props.video.video_url} type="video/mp4" /> </video>
               </div> */}
             </div>
           </div>
@@ -202,28 +208,28 @@ class Videos extends React.Component{
           <div className="secondsection">
             <p className="genreName2" >Because you watched Bohemian Rhapsody</p>
             <div className='blockrow2'>
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[18].id}`)} className='videodivfirst'>
-                <video className="rowvideo" poster={this.props.videos[18].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[18].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[18].props.video.id}`)} className='videodivfirst'>
+                <video className="rowvideo" poster={IndividualVideos[18].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[18].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              {/* <div onClick={() => this.props.history.push(`/browse/${this.props.videos[19].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[19].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[19].video_url} type="video/mp4" /> </video>
+              {/* <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[19].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[19].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[19].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[22].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[22].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[22].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[22].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[22].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[22].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[21].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[21].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[21].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[21].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[21].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[21].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[20].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[20].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[20].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[20].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[20].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[20].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[23].id}`)} className='videodivlast'>
-                <video className="rowvideo" poster={this.props.videos[23].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[23].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[23].props.video.id}`)} className='videodivlast'>
+                <video className="rowvideo" poster={IndividualVideos[23].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[23].props.video.video_url} type="video/mp4" /> </video>
               </div> */}
             </div>
           </div> 
@@ -234,29 +240,29 @@ class Videos extends React.Component{
           <div className="secondsection">
             <p className="genreName2" >Children & Family Movies</p>
             <div className='blockrow2'>
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[12].id}`)} className='videodivfirst'>
-                <video className="rowvideo" poster={this.props.videos[12].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[12].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[12].props.video.id}`)} className='videodivfirst'>
+                <video className="rowvideo" poster={IndividualVideos[12].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[12].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              {/* <div onClick={() => this.props.history.push(`/browse/${this.props.videos[13].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[13].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[13].video_url} type="video/mp4" /> </video>
+              {/* <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[13].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[13].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[13].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[16].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[16].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[16].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[16].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[16].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[16].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[15].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[15].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[15].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[15].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[15].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[15].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[14].id}`)} className='videodiv'>
-                <video className="rowvideo" poster={this.props.videos[14].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[14].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[14].props.video.id}`)} className='videodiv'>
+                <video className="rowvideo" poster={IndividualVideos[14].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[14].props.video.video_url} type="video/mp4" /> </video>
               </div>
 
-              <div onClick={() => this.props.history.push(`/browse/${this.props.videos[17].id}`)} className='videodivlast'>
-                <video className="rowvideo" poster={this.props.videos[17].photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.videos[17].video_url} type="video/mp4" /> </video>
+              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[17].props.video.id}`)} className='videodivlast'>
+                <video className="rowvideo" poster={IndividualVideos[17].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[17].props.video.video_url} type="video/mp4" /> </video>
               </div> */}
               
             </div>
@@ -276,15 +282,16 @@ class Videos extends React.Component{
 
           : <div className="bottomhalf"></div>}
       {/* <h1>Welcome to the best version of Netflix</h1> */}
-        {/* {this.props.videos.length >= 1 ?
+        {/* {IndividualVideos.lenprops.video.gth >= 1 ?
           <div>
-      <video controls className='testvid' > <source src={this.props.videos[0].video_url} type="video/mp4" /> </video> 
+      <video controls className='testvid' > <source src={IndividualVideos[0].props.video.video_url} type="video/mp4" /> </video> 
           </div> : <div className='mainBackground'> </div>} */}
       {/* <button onClick={this.props.logoutCurrentUser}>Logout</button> */}
     </div>
   )
   }
 }
+
 
 
 export default Videos;

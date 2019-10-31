@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
+import VideoContainer from '../video/video_container';
 
 class Mylist extends React.Component{
     constructor(props){
@@ -46,18 +47,23 @@ class Mylist extends React.Component{
             if (list.user_id === parseInt(currentUser)){
                 this.props.videos.forEach(video => {
                     if (video.id === list.video_id){
-                        lists.push(video);
+                        lists.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay}/>);
                     }
                 })
             }
         })
         // debugger
         const videoArr = lists.map((video, idx) => {
+            // debugger
             if (idx % 6 === 0){
                 return (
-                    <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivfirstlist' key={video.id}>
+                    // class = firstlist, lastlist, list
+                    // video
+                    // <listVideoContainer video={video} klass="div" />
+                    <div onClick={() => this.props.history.push(`/browse/${video.props.video.id}`)} className='videodivfirstlist' key={video.props.video.id}>
                         <div>
-                            <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
+                            {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
+                            {video}
                             <img className="addList" src={window.removelist} alt="" />
                         </div>
                     </div>
@@ -65,19 +71,29 @@ class Mylist extends React.Component{
             }
             else if (idx % 6 === 5){
                 return (
-                    <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivlastlist' key={video.id}>
-                        <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
+                    <div onClick={() => this.props.history.push(`/browse/${video.props.video.id}`)} className='videodivlastlist' key={video.props.video.id}>
+
+                        {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
+                        {video}
                     </div>
                 )
             }
             else{
             return (
-                <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivlist' key={video.id}>
-                    <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
-                    
+                <div onClick={() => this.props.history.push(`/browse/${video.props.video.id}`)} className='videodivlist' key={video.props.video.id}>
+                    {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
+                    {video}
                 </div>
             );
             }
+            // else{
+            // return (
+            //     <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivlist' key={video.id}>
+            //         <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
+                    
+            //     </div>
+            // );
+            // }
         })
         return (
             <div className="indexGrid">

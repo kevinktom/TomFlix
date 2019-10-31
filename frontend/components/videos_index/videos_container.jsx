@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import React from 'react';
 import Videos from './videos';
 import {renderVideos} from '../../actions/video_actions';
 import * as mylistActions from '../../actions/mylist_actions';
