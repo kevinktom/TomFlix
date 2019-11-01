@@ -13,6 +13,17 @@ class Mylist extends React.Component{
     handleHoverPlay(e) {
         // let vid = document.getElementById("mainvid");
         // debugger
+
+
+        //USE THIS FOR DIV ON HOVER PLAY
+        // let video = document.getElementsByClassName("videodivfirstlist")[0].firstChild.firstChild
+        // video.persist();
+        // video.play().then(null, () => {
+        //     video.muted = true
+        //     video.play();
+        // });
+
+
         e.persist();
         e.target.play().then(null, () => {
             e.target.muted = true
