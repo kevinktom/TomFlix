@@ -19,6 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return ({
         fetchLists: () => dispatch(mylistActions.fetchLists()),
+        deleteMyList: (videoId) => dispatch(mylistActions.deleteMyList(videoId)),
         renderVideos: () => dispatch(renderVideos())
     })
 }

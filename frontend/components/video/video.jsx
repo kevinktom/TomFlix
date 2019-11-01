@@ -28,6 +28,18 @@ class Video extends React.Component {
         e.currentTarget.load();
     }
 
+    handleMyList() {
+        // let listbutton = document.getElementById("addlistbutton")
+        if (this.state.myList) {
+            this.props.deleteMyList(this.props.video.id).then(this.props.fetchLists);
+            this.setState({ myList: false });
+        }
+        else {
+            this.props.createMyList(this.props.video.id).then(this.props.fetchLists);
+            this.setState({ myList: true });
+        }
+    }
+
     // videos -> VIDEOCONTAINER <VideoContainer video={video} handleHoverPlay={this.handleHoverPLay}/>
         // mylist -> VIDEOCONTAINER <VideoContainer video={video} handleHoverPlay={this.handleHoverPLay}/>
     render(){

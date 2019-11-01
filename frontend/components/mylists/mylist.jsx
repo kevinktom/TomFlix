@@ -47,14 +47,14 @@ class Mylist extends React.Component{
             if (list.user_id === parseInt(currentUser)){
                 this.props.videos.forEach(video => {
                     if (video.id === list.video_id){
-                        lists.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay}/>);
+                        lists.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />);
                     }
                 })
             }
         })
         // debugger
         const videoArr = lists.map((video, idx) => {
-            // debugger
+            debugger
             if (idx % 6 === 0){
                 return (
                     // class = firstlist, lastlist, list
@@ -64,7 +64,12 @@ class Mylist extends React.Component{
                         <div>
                             {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            <img className="addList" src={window.removelist} alt="" />
+                            {/* {video.state.myList ? 
+                            <img className="addList" src={window.removelist} alt="" /> : 
+                                <img className="addList" src={window.addlist} alt="" />
+                            }  */}
+                            <img className="addList" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} />
+                            
                         </div>
                     </div>
                 )
@@ -75,6 +80,7 @@ class Mylist extends React.Component{
 
                         {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                         {video}
+                        <img className="addList" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} />
                     </div>
                 )
             }
@@ -83,6 +89,7 @@ class Mylist extends React.Component{
                 <div onClick={() => this.props.history.push(`/browse/${video.props.video.id}`)} className='videodivlist' key={video.props.video.id}>
                     {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                     {video}
+                    <img className="addList" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} />
                 </div>
             );
             }
