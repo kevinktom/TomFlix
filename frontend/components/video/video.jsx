@@ -45,7 +45,8 @@ class Video extends React.Component {
     render(){
 
     return(
-        <video className="rowvideo" poster={this.props.video.photo_url} onMouseOver={this.props.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.video.video_url} type="video/mp4" /> </video>
+        <video className="rowvideo" poster={this.props.video.photo_url} onClick={() => this.props.history.push(`/browse/${this.props.video.id}`)} > <source src={this.props.video.video_url} type="video/mp4" /> </video>
+        // <video className="rowvideo" poster={this.props.video.photo_url} onMouseOver={this.props.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={this.props.video.video_url} type="video/mp4" /> </video>
     )
     }
 }

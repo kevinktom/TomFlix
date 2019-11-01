@@ -132,5 +132,5 @@
     transition: border .3s ;
     cursor: pointer;
     /* opacity: 80%; */
-    z-index: 2;
+    /* z-index: 2; */
 }
