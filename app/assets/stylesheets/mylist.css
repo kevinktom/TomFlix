@@ -134,3 +134,7 @@
     /* opacity: 80%; */
     /* z-index: 2; */
 }
+
+.hiddenIcons{
+    display: none;
+}
