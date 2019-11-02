@@ -12,7 +12,8 @@ const mapStateToProps = (state,ownProps) => {
         // mylists: Object.values(state.entities.mylists),
         // videos: Object.values(state.entities.videos)
         video: ownProps.video,
-        handleHoverPlay: ownProps.handleHoverPlay
+        handleHoverPlay: ownProps.handleHoverPlay,
+        indexList: ownProps.indexList,
          
     })
 }

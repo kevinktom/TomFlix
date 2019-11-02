@@ -18,16 +18,18 @@ import VideoContainer from '../video/video_container';
 class Videos extends React.Component{
   constructor(props){
     super(props);
-    this.state = {muted: false, indexlist: false};
+    this.state = {muted: false, indexlist: false, listchange: false};
     this.handleHoverPlay = this.handleHoverPlay.bind(this);
     this.handleHoverLeave = this.handleHoverLeave.bind(this);
     this.handleMute = this.handleMute.bind(this);
     this.handleMyList = this.handleMyList.bind(this);
+    this.handleVideoList = this.handleVideoList.bind(this);
   }
 
   handleHoverPlay(e){
     let vid = document.getElementById("mainvid");
     let video = e.currentTarget.children[0];
+    video.nextSibling.classList.remove("hiddenIcons");
     // debugger
     e.persist();
     video.play().then(null, () => {
@@ -55,6 +57,7 @@ class Videos extends React.Component{
     video.pause();
     video.currentTime = 0;
     video.load();
+    video.nextSibling.classList.add("hiddenIcons");
   }
 
   // handleHoverLeave(e){
@@ -87,6 +90,19 @@ class Videos extends React.Component{
       this.setState({ indexlist: true });
     }
   }
+
+  handleVideoList(video){
+    debugger
+    if (video.props.indexList){
+      this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
+      video.props.indexList = false;
+
+    }
+    else{
+      this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
+      video.props.indexList = true;
+    }
+  }
   
   componentDidMount(){
     // const allProps = this.props;
@@ -110,10 +126,17 @@ class Videos extends React.Component{
       }
     })
   }
-
+  
   const IndividualVideos = this.props.videos.map(video => {
-    return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />)
+    let indexList = false;
+    this.props.mylists.forEach(list => {
+      if (list.video_id === video.id){
+        indexList = true;
+      }
+    })
+    return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} indexList={indexList}/>)
   })
+  // debugger
   
     return (
 
@@ -157,6 +180,9 @@ class Videos extends React.Component{
               <div className='videodivfirst'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[0]}
+                    {IndividualVideos[0].props.indexList ?
+                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
+                      <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[0])}/> }
                 </div>
               </div>
 
