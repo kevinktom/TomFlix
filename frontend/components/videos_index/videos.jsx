@@ -18,7 +18,7 @@ import VideoContainer from '../video/video_container';
 class Videos extends React.Component{
   constructor(props){
     super(props);
-    this.state = {muted: false, indexlist: false, listchange: false};
+    this.state = { muted: false, indexlist: false, listchange: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]};
     this.handleHoverPlay = this.handleHoverPlay.bind(this);
     this.handleHoverLeave = this.handleHoverLeave.bind(this);
     this.handleMute = this.handleMute.bind(this);
@@ -81,6 +81,7 @@ class Videos extends React.Component{
 
   handleMyList(){
     // let listbutton = document.getElementById("addlistbutton")
+    // debugger
     if (this.state.indexlist) {
       this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
       this.setState({ indexlist: false });
@@ -92,15 +93,19 @@ class Videos extends React.Component{
   }
 
   handleVideoList(video){
-    debugger
-    if (video.props.indexList){
+    // debugger
+    let tempState = this.state.listchange.slice();
+    if (this.state.listchange[video.props.index]){
       this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
-      video.props.indexList = false;
+      tempState[video.props.index] = false;
+      this.setState({listchange: tempState}); //The state isnt changing for some reason
 
     }
     else{
+      debugger
       this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
-      video.props.indexList = true;
+      tempState[video.props.index] = true;
+      this.setState({ listchange: tempState });
     }
   }
   
@@ -127,14 +132,18 @@ class Videos extends React.Component{
     })
   }
   
-  const IndividualVideos = this.props.videos.map(video => {
-    let indexList = false;
+  const IndividualVideos = this.props.videos.map((video, idx) => {
+    // let indexList = false;
     this.props.mylists.forEach(list => {
       if (list.video_id === video.id){
-        indexList = true;
+        // indexList = true;
+        this.state.listchange[idx] = true;
+      }
+      else{
+        this.state.listchange[idx] = false;
       }
     })
-    return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} indexList={indexList}/>)
+    return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx}/>)
   })
   // debugger
   
@@ -180,7 +189,7 @@ class Videos extends React.Component{
               <div className='videodivfirst'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[0]}
-                    {IndividualVideos[0].props.indexList ?
+                    {this.state.listchange[0] ?
                       <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[0])}/> }
                 </div>
