@@ -158,12 +158,13 @@ class Videos extends React.Component{
   
   componentDidMount(){
     // const allProps = this.props;
-    this.props.renderVideos();
+    this.props.renderVideos().then(() => this.checkMyList());
     // debugger
     this.props.fetchLists();
-    debugger
-    if (this.props.videos.length > 0 && this.props.mylists.length > 0) {
+    // debugger
+    // if (this.props.videos.length > 0 && this.props.mylists.length > 0) {
        
+    //   this.checkMyList();
 
         // let indexliststatus = false;
         // // debugger
@@ -199,9 +200,8 @@ class Videos extends React.Component{
         // // debugger
         // this.setState({ listchange: currentState });
 
-        this.checkMyList();
 
-      }
+      // }
 
     
   }
