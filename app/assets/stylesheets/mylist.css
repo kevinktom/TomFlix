@@ -122,17 +122,22 @@
 
 .addList{
     position: absolute;
-    right: 20px;
+    right: 12px;
     bottom: 20px;
     border-radius: 50%;
-    border: 2px solid #b2b2b2;
-    padding: 10px;
+    border: 1px solid #b2b2b2;
+    padding: 5px;
     background: rgba(0,0,0,0.45);
     /* width: 25px; */
     transition: border .3s ;
     cursor: pointer;
     /* opacity: 80%; */
     /* z-index: 2; */
+}
+
+.addList:hover{
+    transform: scale(1.15);
+    border-color: white;
 }
 
 .hiddenIcons{

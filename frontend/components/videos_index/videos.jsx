@@ -161,48 +161,6 @@ class Videos extends React.Component{
     this.props.renderVideos().then(() => this.checkMyList());
     // debugger
     this.props.fetchLists();
-    // debugger
-    // if (this.props.videos.length > 0 && this.props.mylists.length > 0) {
-       
-    //   this.checkMyList();
-
-        // let indexliststatus = false;
-        // // debugger
-        // // indexliststatus = false;
-        // for (let i = 0; i < this.props.mylists.length; i++) {
-        //   if (this.props.mylists[i].video_id === this.props.videos[0].id) {
-        //     indexliststatus = true;
-        //     //   break;
-        //     // }
-        //     // else {
-        //   }
-        // }
-        // if (this.state.indexlist !== indexliststatus) {
-        //   this.setState({ indexlist: indexliststatus })
-        // }
-
-
-        // let currentState = this.state.listchange.slice();
-        // this.props.videos.forEach((video, idx) => {
-        //   currentState[idx] = false;
-        //   this.props.mylists.forEach(list => {
-        //     if (list.video_id === video.id) {
-        //       // indexList = true;
-        //       currentState[idx] = true; // change to setState
-        //       //   return;
-
-        //       // }
-        //       // else {
-        //     }
-        //   })
-
-        // })
-        // // debugger
-        // this.setState({ listchange: currentState });
-
-
-      // }
-
     
   }
 
@@ -210,47 +168,9 @@ class Videos extends React.Component{
     // debugger
     if (this.props.videos.length > 0 && this.props.mylists.length > 0){
       if (prevProps.mylists.length !== this.props.mylists.length){
-        
-        // let indexliststatus = false;
-        // // debugger
-        // // indexliststatus = false;
-        // for (let i = 0; i < this.props.mylists.length; i++) {
-        //   if (this.props.mylists[i].video_id === this.props.videos[0].id) {
-        //     indexliststatus = true;
-        //   //   break;
-        //   // }
-        //   // else {
-        //   }
-        // }
-        // if (this.state.indexlist !== indexliststatus){
-        //   this.setState({ indexlist: indexliststatus })
-        // }
-
-
-        // let currentState = this.state.listchange.slice();
-        // this.props.videos.forEach((video, idx) => {
-        //   currentState[idx] = false;
-        //   this.props.mylists.forEach(list => {
-        //     if (list.video_id === video.id) {
-        //       // indexList = true;
-        //       currentState[idx] = true; // change to setState
-        //     //   return;
-
-        //     // }
-        //     // else {
-        //     }
-        //   })
-
-        // })
-        // // debugger
-        // this.setState({ listchange: currentState });
-
         this.checkMyList();
-
       }
-
     }
-    
   }
 
 
@@ -336,7 +256,7 @@ class Videos extends React.Component{
               <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
           {/* {this.props.mylists.forEach(list => {
             if (list.video_id === IndividualVideos[0].props.video.id){
-              listbutton = <div onClick={() => this.props.deleteMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div>
+              listbutton = <div onClick={() => this.props.deleteMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.minicheck} /> <p className="playText">My List</p> </div>
             }
             else{
               listbutton = <div onClick={() => this.props.createMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>
@@ -356,7 +276,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[0]}
                     {this.state.listchange[0] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[0])}/> }
                 </div>
               </div>
@@ -366,7 +286,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[1]}
                   {this.state.listchange[1] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[1])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[1])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[1])}/> }
                 </div>
               </div>
@@ -375,7 +295,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {IndividualVideos[2]}
                   {this.state.listchange[2] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[2])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[2])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[2])}/> }
                 </div>
               </div>
@@ -384,7 +304,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {IndividualVideos[3]}
                   {this.state.listchange[3] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[3])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[3])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[3])}/> }
                 </div>
               </div>
@@ -393,7 +313,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[4]}
                   {this.state.listchange[4] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[4])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[4])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[4])}/> }
                 </div>
               </div>
@@ -402,7 +322,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {IndividualVideos[5]}
                   {this.state.listchange[5] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[5])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[5])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[5])}/> }
                 </div>
               </div> */}
@@ -431,7 +351,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[6]} 
                     {this.state.listchange[6] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[6])} /> :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[6])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[6])} />}
                   </div>
               </div>
@@ -441,7 +361,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[7]}
                   {this.state.listchange[7] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[7])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[7])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[7])}/> }
                 </div>
               </div>
@@ -450,7 +370,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[8]}
                   {this.state.listchange[8] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[8])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[8])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[8])}/> }
                 </div>
               </div>
@@ -459,7 +379,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[9]}
                   {this.state.listchange[9] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[9])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[9])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[9])}/> }
                 </div>
               </div>
@@ -468,7 +388,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[10]}
                   {this.state.listchange[10] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[10])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[10])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[10])}/> }
                 </div>
               </div>
@@ -477,7 +397,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {IndividualVideos[11]}
                   {this.state.listchange[11] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[11])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[11])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[11])}/> }
                 </div>
               </div> */}
@@ -496,7 +416,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[18]}
                     {this.state.listchange[18] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[18])} /> :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[18])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[18])} />}
                 </div>
               </div>
@@ -505,7 +425,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[19]}
                   {this.state.listchange[19] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[19])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[19])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[19])}/> }
                 </div>
               </div>
@@ -514,7 +434,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {IndividualVideos[20]}
                   {this.state.listchange[20] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[20])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[20])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[20])}/> }
                 </div>
               </div>
@@ -523,7 +443,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[21]}
                   {this.state.listchange[21] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[21])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[21])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[21])}/> }
                 </div>
               </div>
@@ -532,7 +452,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[22]}
                   {this.state.listchange[22] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[22])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[22])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[22])}/> }
                 </div>
               </div>
@@ -541,7 +461,7 @@ class Videos extends React.Component{
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {IndividualVideos[23]}
                   {this.state.listchange[23] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[23])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[23])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[23])}/> }
                 </div>
               </div> */}
@@ -588,7 +508,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[12]}
                     {this.state.listchange[12] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[12])} /> :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[12])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[12])} />}
                   </div>
                 </div>
@@ -597,7 +517,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[13]}
                     {this.state.listchange[13] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[13])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[13])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[13])}/> }
                   </div>
                 </div>
@@ -606,7 +526,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                     {IndividualVideos[14]}
                     {this.state.listchange[14] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[14])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[14])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[14])}/> }
                   </div>
                 </div>
@@ -615,7 +535,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[15]}
                     {this.state.listchange[15] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[15])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[15])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[15])}/> }
                   </div>
                 </div>
@@ -624,7 +544,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[16]}
                     {this.state.listchange[16] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[16])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[16])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[16])}/> }
                   </div>
                 </div>
@@ -633,7 +553,7 @@ class Videos extends React.Component{
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} >
                     {IndividualVideos[17]}
                     {this.state.listchange[17] ?
-                      <img className="addList hiddenIcons" src={window.indexListRemove} onClick={() => this.handleVideoList(IndividualVideos[17])}/>   :
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[17])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[17])}/> }
                   </div>
                 </div> */}
