@@ -7,7 +7,7 @@ class Mylist extends React.Component{
         super(props);
         this.handleHoverPlay = this.handleHoverPlay.bind(this);
         this.handleHoverLeave = this.handleHoverLeave.bind(this);
-
+        this.removeMyList = this.removeMyList.bind(this);
     }
 
     handleHoverPlay(e) {
@@ -66,6 +66,10 @@ class Mylist extends React.Component{
         // debugger
     }
 
+    removeMyList(video){
+        this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
+    }
+
     render(){
         debugger
         let lists = [];
@@ -96,7 +100,7 @@ class Mylist extends React.Component{
                             <img className="addList" src={window.removelist} alt="" /> : 
                                 <img className="addList" src={window.addlist} alt="" />
                             }  */}
-                            <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} />
+                            <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                             
                         </div>
                     </div>
