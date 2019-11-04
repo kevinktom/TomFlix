@@ -143,3 +143,19 @@
 .hiddenIcons{
     display: none;
 }
+
+.videotitle{
+    position: absolute;
+    left: 12px;
+    bottom: 20px;
+    color: white;
+    /* border-radius: 50%; */
+    /* border: 1px solid #b2b2b2; */
+    /* padding: 5px; */
+    /* background: rgba(0,0,0,0.45); */
+    /* width: 25px; */
+    transition: border .3s ;
+    /* cursor: pointer; */
+    /* opacity: 80%; */
+    /* z-index: 2; */
+}

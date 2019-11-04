@@ -103,7 +103,8 @@ class Nav extends React.Component {
                                      
                                             <div  className="divdropcaret"><img src={window.upcaret} /></div>
                                             <Link to='/browse' className='dropitem'> Account </Link>
-                                            <Link to='/browse' className='dropitem'> Help </Link>
+                                            {/* <Link to='/browse' className='dropitem'> Help </Link> */}
+                                            <a href='https://kevinktom.github.io/' className='dropitem' target="_blank"> Portfolio </a>
                                             <button onClick={this.props.logoutCurrentUser} className="signoutbutton">Sign out of Tomflix</button>
                                         
                                         </div>: null

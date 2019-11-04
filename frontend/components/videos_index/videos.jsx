@@ -254,17 +254,6 @@ class Videos extends React.Component{
           {this.state.listchange[0] ? 
               <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
               <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
-          {/* {this.props.mylists.forEach(list => {
-            if (list.video_id === IndividualVideos[0].props.video.id){
-              listbutton = <div onClick={() => this.props.deleteMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.minicheck} /> <p className="playText">My List</p> </div>
-            }
-            else{
-              listbutton = <div onClick={() => this.props.createMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>
-            }
-          })}
-          {listbutton} */}
-          {/* <div onClick={() => this.props.createMyList(IndividualVideos[0].props.video.id)} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd}/> <p className="playText">My List</p> </div> */}
-          
 
 
 
@@ -278,6 +267,7 @@ class Videos extends React.Component{
                     {this.state.listchange[0] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[0])}/> }
+                    {/* <p className="videotitle">{IndividualVideos[0].props.video.title}</p> */}
                 </div>
               </div>
 
