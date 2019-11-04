@@ -67,11 +67,12 @@ class Mylist extends React.Component{
     }
 
     removeMyList(video){
-        this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
+        this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists());
+        // debugger
     }
 
     render(){
-        debugger
+        // debugger
         let lists = [];
         const currentUser = this.props.currentUser;
         this.props.mylists.forEach(list => {
@@ -112,7 +113,8 @@ class Mylist extends React.Component{
                         <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                             {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} />
+                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
+                            <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.removeMyLst(video)} />
                         </div>
                     </div>
                 )
@@ -123,7 +125,8 @@ class Mylist extends React.Component{
                     <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                         {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                         {video}
-                        <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} />
+                        {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
+                        <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.removeMyList(video)} />
                     </div>
                 </div>
             );

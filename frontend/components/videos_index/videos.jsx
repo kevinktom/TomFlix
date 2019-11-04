@@ -93,20 +93,37 @@ class Videos extends React.Component{
   }
 
   handleVideoList(video){
-    debugger
-    let tempState = this.state.listchange.slice();
-    if (this.state.listchange[video.props.index]){
-      this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
-      tempState[video.props.index] = false;
-      this.setState({listchange: tempState}); //The state isnt changing for some reason
+    // debugger
+    // let tempState = this.state.listchange.slice();
 
+    let currentState = this.state.listchange.slice();
+    this.props.videos.forEach((vid, idx) => {
+      currentState[idx] = false;
+      this.props.mylists.forEach(list => {
+        if (list.video_id === vid.id) {
+          // indexList = true;
+          // debugger
+          currentState[idx] = true; // change to setState
+        //   return;
+        // }
+        // else {
+        }
+      })
+
+    })
+    if (currentState[video.props.index]){
+      this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
+      currentState[video.props.index] = false;
+      this.setState({listchange: currentState}); //The state isnt changing for some reason
+      // debugger
     }
     else{
       // debugger
       this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
-      tempState[video.props.index] = true;
-      this.setState({ listchange: tempState });
+      currentState[video.props.index] = true;
+      this.setState({ listchange: currentState });
     }
+    // debugger
   }
   
   componentDidMount(){
@@ -117,74 +134,85 @@ class Videos extends React.Component{
     // debugger
 
 
-  //   if (this.props.mylists.length > 0 && this.props.videos.length > 0) {
-  //     let indexliststatus
-  //     // debugger
-  //     for (let i = 0; i < this.props.mylists.length; i++) {
-  //       if (this.props.mylists[i] === this.props.videos[0].id) {
-  //         indexliststatus = true;
-  //         break;
-  //       }
-  //       else {
-  //         indexliststatus = false;
-  //       }
-  //     }
-  //   this.setState({ indexlist: indexliststatus })
+    if (this.props.videos.length > 0 && this.props.mylists.length > 0) {
+       
+
+        let indexliststatus = false;
+        // debugger
+        // indexliststatus = false;
+        for (let i = 0; i < this.props.mylists.length; i++) {
+          if (this.props.mylists[i].video_id === this.props.videos[0].id) {
+            indexliststatus = true;
+            //   break;
+            // }
+            // else {
+          }
+        }
+        if (this.state.indexlist !== indexliststatus) {
+          this.setState({ indexlist: indexliststatus })
+        }
+
+
+        let currentState = this.state.listchange.slice();
+        this.props.videos.forEach((video, idx) => {
+          currentState[idx] = false;
+          this.props.mylists.forEach(list => {
+            if (list.video_id === video.id) {
+              // indexList = true;
+              currentState[idx] = true; // change to setState
+              //   return;
+
+              // }
+              // else {
+            }
+          })
+
+        })
+        // debugger
+        this.setState({ listchange: currentState });
+
+      }
+
     
-
-  //   let currentState = this.state.listchange.slice();
-  //   this.props.videos.forEach((video, idx) => {
-  //     this.props.mylists.forEach(list => {
-  //       if (list.video_id === video.id) {
-  //         // indexList = true;
-  //         currentState[idx] = true; // change to setState
-
-  //       }
-  //       else {
-  //         currentState[idx] = false;
-  //       }
-  //     })
-
-  //   })
-  //   this.setState({ listchange: currentState });
-
-  // }
   }
 
   componentDidUpdate(prevProps){
     // debugger
     if (this.props.videos.length > 0 && this.props.mylists.length > 0){
-      if (prevProps.mylists !== this.props.mylists){
+      if (prevProps.mylists.length !== this.props.mylists.length){
         
-        let indexliststatus
+        let indexliststatus = false;
         // debugger
+        // indexliststatus = false;
         for (let i = 0; i < this.props.mylists.length; i++) {
           if (this.props.mylists[i].video_id === this.props.videos[0].id) {
             indexliststatus = true;
-            break;
-          }
-          else {
-            indexliststatus = false;
+          //   break;
+          // }
+          // else {
           }
         }
-        this.setState({ indexlist: indexliststatus })
+        if (this.state.indexlist !== indexliststatus){
+          this.setState({ indexlist: indexliststatus })
+        }
 
 
         let currentState = this.state.listchange.slice();
         this.props.videos.forEach((video, idx) => {
+          currentState[idx] = false;
           this.props.mylists.forEach(list => {
             if (list.video_id === video.id) {
               // indexList = true;
               currentState[idx] = true; // change to setState
-              return;
+            //   return;
 
-            }
-            else {
-              currentState[idx] = false;
+            // }
+            // else {
             }
           })
 
         })
+        // debugger
         this.setState({ listchange: currentState });
 
       }
