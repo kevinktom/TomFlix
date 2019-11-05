@@ -43,16 +43,6 @@ class Videos extends React.Component{
     this.setState({ muted: true });
     vid.muted = true;
   }
-  // handleHoverPlay(e){
-  //   let vid = document.getElementById("mainvid");
-  //   e.persist();
-  //   e.target.play().then(null, () => {
-  //     e.target.muted = true
-  //     e.target.play();
-  //   });
-  //   this.setState({ muted: true });
-  //   vid.muted = true;
-  // }
 
 
   handleHoverLeave(e){
@@ -65,12 +55,6 @@ class Videos extends React.Component{
     video.nextSibling.nextSibling.classList.add("hiddenIcons");
     video.nextSibling.nextSibling.nextSibling.classList.add("hiddenIcons");
   }
-
-  // handleHoverLeave(e){
-  //   e.currentTarget.pause();
-  //   e.currentTarget.currentTime = 0;
-  //   e.currentTarget.load();
-  // }
 
 
   handleMute(){

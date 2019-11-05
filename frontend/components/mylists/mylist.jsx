@@ -18,6 +18,8 @@ class Mylist extends React.Component{
         //USE THIS FOR DIV ON HOVER PLAY
         let video = e.currentTarget.children[0];
         video.nextSibling.classList.remove("hiddenIcons");
+        video.nextSibling.nextSibling.classList.remove("hiddenIcons");
+        video.nextSibling.nextSibling.nextSibling.classList.remove("hiddenIcons");
         // debugger
         e.persist();
         video.play().then(null, () => {
@@ -46,7 +48,9 @@ class Mylist extends React.Component{
         video.pause();
         video.currentTime = 0;
         video.load();
-        video.nextSibling.classList.add("hiddenIcons")
+        video.nextSibling.classList.add("hiddenIcons");
+        video.nextSibling.nextSibling.classList.add("hiddenIcons");
+        video.nextSibling.nextSibling.nextSibling.classList.add("hiddenIcons");
         // }
     }
 
@@ -102,6 +106,10 @@ class Mylist extends React.Component{
                                 <img className="addList" src={window.addlist} alt="" />
                             }  */}
                             <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
+                            <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
+                            <div className="redplayborder hiddenIcons">
+                                <img className="redplay" src={window.redplay2} />
+                            </div>
                             
                         </div>
                     </div>
@@ -115,6 +123,10 @@ class Mylist extends React.Component{
                             {video}
                             {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
                             <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
+                            <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
+                            <div className="redplayborder hiddenIcons">
+                                <img className="redplay" src={window.redplay2} />
+                            </div>
                         </div>
                     </div>
                 )
@@ -127,6 +139,10 @@ class Mylist extends React.Component{
                         {video}
                         {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
                         <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
+                        <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
+                        <div className="redplayborder hiddenIcons">
+                            <img className="redplay" src={window.redplay2} />
+                        </div>
                     </div>
                 </div>
             );
