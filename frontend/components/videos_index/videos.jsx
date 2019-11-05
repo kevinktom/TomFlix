@@ -28,10 +28,12 @@ class Videos extends React.Component{
   }
 
   handleHoverPlay(e){
+    // debugger
     let vid = document.getElementById("mainvid");
     let video = e.currentTarget.children[0];
     video.nextSibling.classList.remove("hiddenIcons");
     video.nextSibling.nextSibling.classList.remove("hiddenIcons");
+    video.nextSibling.nextSibling.nextSibling.classList.remove("hiddenIcons");
     // debugger
     e.persist();
     video.play().then(null, () => {
@@ -61,6 +63,7 @@ class Videos extends React.Component{
     video.load();
     video.nextSibling.classList.add("hiddenIcons");
     video.nextSibling.nextSibling.classList.add("hiddenIcons");
+    video.nextSibling.nextSibling.nextSibling.classList.add("hiddenIcons");
   }
 
   // handleHoverLeave(e){
@@ -269,7 +272,10 @@ class Videos extends React.Component{
                     {this.state.listchange[0] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[0])}/> }
-                  <p className="videotitleover hiddenIcons">{IndividualVideos[0].props.video.title}</p>
+                    <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)} >{IndividualVideos[0].props.video.title}</p>
+                    <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -281,6 +287,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[1])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[1])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[1].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -291,6 +300,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[2])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[2])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[2].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -301,6 +313,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[3])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[3])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[3].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -311,6 +326,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[4])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[4])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[4].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -321,6 +339,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[5])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[5])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[5].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div> */}
 
@@ -351,6 +372,10 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[6])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[6])} />}
                       <p className="videotitleover hiddenIcons">{IndividualVideos[6].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
+                      {/* <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[6])} /> */}
                   </div>
               </div>
                   
@@ -362,6 +387,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[7])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[7])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[7].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
               
@@ -372,6 +400,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[8])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[8])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[8].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -382,6 +413,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[9])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[9])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[9].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -392,6 +426,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[10])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[10])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[10].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -402,6 +439,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[11])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[11])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[11].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div> */}
 
@@ -422,6 +462,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[18])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[18])} />}
                       <p className="videotitleover hiddenIcons">{IndividualVideos[18].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -432,6 +475,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[19])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[19])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[19].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -442,6 +488,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[20])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[20])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[20].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -452,6 +501,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[21])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[21])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[21].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -462,6 +514,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[22])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[22])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[22].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div>
 
@@ -472,6 +527,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[23])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[23])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[23].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                 </div>
               </div> */}
 
@@ -520,6 +578,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[12])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[12])} />}
                       <p className="videotitleover hiddenIcons">{IndividualVideos[12].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                   </div>
                 </div>
 
@@ -530,6 +591,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[13])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[13])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[13].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                   </div>
                 </div>
 
@@ -540,6 +604,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[14])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[14])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[14].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                   </div>
                 </div>
 
@@ -550,6 +617,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[15])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[15])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[15].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                   </div>
                 </div>
 
@@ -560,6 +630,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[16])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[16])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[16].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                   </div>
                 </div>
 
@@ -570,6 +643,9 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[17])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[17])}/> }
                       <p className="videotitleover hiddenIcons">{IndividualVideos[17].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
                   </div>
                 </div> */}
               
