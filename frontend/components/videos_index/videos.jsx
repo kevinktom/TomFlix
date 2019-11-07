@@ -19,7 +19,7 @@ class Videos extends React.Component{
     this.handleHoverPlay = this.handleHoverPlay.bind(this);
     this.handleHoverLeave = this.handleHoverLeave.bind(this);
     this.handleMute = this.handleMute.bind(this);
-    this.handleMyList = this.handleMyList.bind(this);
+    // this.handleMyList = this.handleMyList.bind(this);
     this.handleVideoList = this.handleVideoList.bind(this);
     this.checkMyList = this.checkMyList.bind(this);
   }
@@ -66,43 +66,30 @@ class Videos extends React.Component{
     }
   }
 
-  handleMyList(){
-    let currState = this.state.listchange.slice();
-    if (currState[0]) {
-      this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
-      currState[0] = false;
-      this.setState({ listchange: currState }); // batch set state after the loop ****
-    }
-    else {
-      this.props.createMyList(this.props.videos[0].id).then(this.props.fetchLists);
-      currState[0] = true;
-      this.setState({ listchange: currState });
-    }
-    // if (this.state.indexlist) {
-    //   this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
-    //   this.setState({ indexlist: false }); // batch set state after the loop ****
-    // }
-    // else {
-    //   this.props.createMyList(this.props.videos[0].id).then(this.props.fetchLists);
-    //   this.setState({ indexlist: true });
-    // }
-  }
+  // handleMyList(){
+  //   let currState = this.state.listchange.slice();
+  //   if (currState[0]) {
+  //     this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
+  //     currState[0] = false;
+  //     this.setState({ listchange: currState }); // batch set state after the loop ****
+  //   }
+  //   else {
+  //     this.props.createMyList(this.props.videos[0].id).then(this.props.fetchLists);
+  //     currState[0] = true;
+  //     this.setState({ listchange: currState });
+  //   }
+  // }
 
   handleVideoList(video){
-    // debugger
-    // let tempState = this.state.listchange.slice();
 
     let currentState = this.state.listchange.slice();
     this.props.videos.forEach((vid, idx) => {
       currentState[idx] = false;
       this.props.mylists.forEach(list => {
         if (list.video_id === vid.id) {
-          // indexList = true;
-          // debugger
-          currentState[idx] = true; // change to setState
-        //   return;
-        // }
-        // else {
+
+          currentState[idx] = true; 
+
         }
       })
 
@@ -238,8 +225,8 @@ class Videos extends React.Component{
           </div>
           <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
           {this.state.listchange[0] ? 
-              <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
-              <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
+              <div onClick={() => this.handleVideoList(IndividualVideos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
+              <div onClick={() => this.handleVideoList(IndividualVideos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
 
 
 

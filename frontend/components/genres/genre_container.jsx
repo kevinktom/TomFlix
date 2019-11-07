@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => {
         fetchGenre: id => dispatch(getGenre(id)),
         renderVideos: () => dispatch(renderVideos()),
         createMyList: (videoId) => dispatch(mylistActions.createMyList(videoId)),
-        deleteMyList: (videoId) => dispatch(mylistActions.deleteMyList(videoId))
+        deleteMyList: (videoId) => dispatch(mylistActions.deleteMyList(videoId)),
+        fetchLists: () => dispatch(mylistActions.fetchLists())
     });
 }
 
