@@ -97,8 +97,8 @@ class Mylist extends React.Component{
                     // class = firstlist, lastlist, list
                     // video
                     // <listVideoContainer video={video} klass="div" />
-                    <div  className='videodivfirstlist' key={video.props.video.id}>
-                        <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
+                    <div   key={video.props.video.id}>
+                        <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivfirstlist'>
                             {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
                             {/* {video.state.myList ? 
@@ -117,8 +117,8 @@ class Mylist extends React.Component{
             }
             else if (idx % 6 === 5){
                 return (
-                    <div  className='videodivlastlist' key={video.props.video.id}>
-                        <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
+                    <div   key={video.props.video.id}>
+                        <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlastlist'>
                             {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
                             {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
@@ -133,8 +133,8 @@ class Mylist extends React.Component{
             }
             else{
             return (
-                <div className='videodivlist' key={video.props.video.id}>
-                    <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
+                <div  key={video.props.video.id}>
+                    <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlist'>
                         {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                         {video}
                         {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
