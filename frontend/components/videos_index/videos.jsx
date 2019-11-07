@@ -243,7 +243,7 @@ class Videos extends React.Component{
               </div>
 
 
-              {/* <div className='videodiv'>
+              <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[1]}
                   {this.state.listchange[1] ?
@@ -306,7 +306,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
-              </div> */}
+              </div>
 
               
             </div>
@@ -343,7 +343,7 @@ class Videos extends React.Component{
               </div>
                   
 
-              {/* <div className='videodiv'>
+              <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[7]}
                   {this.state.listchange[7] ?
@@ -406,7 +406,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
-              </div> */}
+              </div>
 
             </div>
           </div>
@@ -431,7 +431,7 @@ class Videos extends React.Component{
                 </div>
               </div>
 
-              {/* <div className='videodiv'>
+              <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[19]}
                   {this.state.listchange[19] ?
@@ -444,18 +444,6 @@ class Videos extends React.Component{
                 </div>
               </div>
 
-              <div >
-                  <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
-                  {IndividualVideos[20]}
-                  {this.state.listchange[20] ?
-                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[20])}/>   :
-                      <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[20])}/> }
-                      <p className="videotitleover hiddenIcons">{IndividualVideos[20].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
-                      <img className="redplay" src={window.redplay2}  />
-                    </div>
-                </div>
-              </div>
 
               <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
@@ -484,6 +472,19 @@ class Videos extends React.Component{
               </div>
 
               <div >
+                  <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
+                  {IndividualVideos[20]}
+                  {this.state.listchange[20] ?
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[20])}/>   :
+                      <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[20])}/> }
+                      <p className="videotitleover hiddenIcons">{IndividualVideos[20].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
+                </div>
+              </div>
+              
+              <div >
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {IndividualVideos[23]}
                   {this.state.listchange[23] ?
@@ -494,7 +495,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
-              </div> */}
+              </div>
 
             </div>
           </div> 
@@ -505,35 +506,7 @@ class Videos extends React.Component{
           <div className="secondsection">
             <p className="genreName2" >Children & Family Movies</p>
             <div className='blockrow2'>
-              {/* <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[12].props.video.id}`)} className='videodivfirst'>
-                <video className="rowvideo" poster={IndividualVideos[12].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[12].props.video.video_url} type="video/mp4" /> </video>
-              </div> */}
-
-              {/* <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[13].props.video.id}`)} className='videodiv'>
-                <video className="rowvideo" poster={IndividualVideos[13].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[13].props.video.video_url} type="video/mp4" /> </video>
-              </div>
-
-              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[16].props.video.id}`)} className='videodiv'>
-                <video className="rowvideo" poster={IndividualVideos[16].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[16].props.video.video_url} type="video/mp4" /> </video>
-              </div>
-
-
-              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[15].props.video.id}`)} className='videodiv'>
-                <video className="rowvideo" poster={IndividualVideos[15].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[15].props.video.video_url} type="video/mp4" /> </video>
-              </div>
-
-              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[14].props.video.id}`)} className='videodiv'>
-                <video className="rowvideo" poster={IndividualVideos[14].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[14].props.video.video_url} type="video/mp4" /> </video>
-              </div>
-
-              <div onClick={() => this.props.history.push(`/browse/${IndividualVideos[17].props.video.id}`)} className='videodivlast'>
-                <video className="rowvideo" poster={IndividualVideos[17].props.video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={IndividualVideos[17].props.video.video_url} type="video/mp4" /> </video>
-              </div> */}
-
-
-
-
-
+             
                 <div className='videodivfirst'>
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[12]}
@@ -547,7 +520,7 @@ class Videos extends React.Component{
                   </div>
                 </div>
 
-                {/* <div className='videodiv'>
+                <div className='videodiv'>
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[13]}
                     {this.state.listchange[13] ?
@@ -560,18 +533,6 @@ class Videos extends React.Component{
                   </div>
                 </div>
 
-                <div >
-                  <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
-                    {IndividualVideos[14]}
-                    {this.state.listchange[14] ?
-                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[14])}/>   :
-                      <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[14])}/> }
-                      <p className="videotitleover hiddenIcons">{IndividualVideos[14].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
-                      <img className="redplay" src={window.redplay2}  />
-                    </div>
-                  </div>
-                </div>
 
                 <div className='videodiv'>
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
@@ -599,7 +560,7 @@ class Videos extends React.Component{
                   </div>
                 </div>
 
-                <div className="videodivlast">
+                <div className="videodiv">
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} >
                     {IndividualVideos[17]}
                     {this.state.listchange[17] ?
@@ -610,7 +571,20 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                   </div>
-                </div> */}
+                </div>
+
+                <div >
+                  <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlast'>
+                    {IndividualVideos[14]}
+                    {this.state.listchange[14] ?
+                      <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[14])}/>   :
+                      <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[14])}/> }
+                      <p className="videotitleover hiddenIcons">{IndividualVideos[14].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons">
+                      <img className="redplay" src={window.redplay2}  />
+                    </div>
+                  </div>
+                </div>
               
             </div>
           </div> 
@@ -628,12 +602,7 @@ class Videos extends React.Component{
         </div>
 
           : <div className="bottomhalf"></div>}
-      {/* <h1>Welcome to the best version of Netflix</h1> */}
-        {/* {IndividualVideos.lenprops.video.gth >= 1 ?
-          <div>
-      <video controls className='testvid' > <source src={IndividualVideos[0].props.video.video_url} type="video/mp4" /> </video> 
-          </div> : <div className='mainBackground'> </div>} */}
-      {/* <button onClick={this.props.logoutCurrentUser}>Logout</button> */}
+      
     </div>
   )
   }

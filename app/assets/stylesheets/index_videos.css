@@ -136,6 +136,29 @@
     z-index: 2;
 }
 
+.videodivcontainer{
+    transition-duration: 750ms;
+}
+
+.videodivcontainer:hover{
+    margin: 0 40px;
+    z-index: 2;
+}
+
+.videodivdoubleclass{
+    display: inline-block;
+    background-color: transparent;
+    padding: 1.5px;
+    height: 169px;
+    width: 301px;
+    transition-duration: 750ms;
+}
+
+.videodivdoubleclass:hover{
+    transform: scale(1.75);
+    z-index: 2;
+}
+
 .videodivfirst{
     display: inline-block;
     background-color: transparent;
