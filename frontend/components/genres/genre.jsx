@@ -7,12 +7,17 @@ class GenreShow extends React.Component {
         super(props);
         this.handleHoverPlay = this.handleHoverPlay.bind(this);
         this.handleHoverLeave = this.handleHoverLeave.bind(this);
-        this.state = { muted: false, indexlist: false, listchange: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false] };
+        this.state = { 
+          muted: false, 
+          indexlist: false, 
+          listchange: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+        };
         this.handleMute = this.handleMute.bind(this);
         this.filterVideos = this.filterVideos.bind(this);
         this.handleMyList = this.handleMyList.bind(this);
         this.handleVideoList = this.handleVideoList.bind(this);
         this.checkMyList = this.checkMyList.bind(this);
+        this.mainVideoCreator = this.mainVideoCreator.bind(this);
 
     }
 
@@ -64,7 +69,6 @@ class GenreShow extends React.Component {
       this.props.renderVideos().then(() => this.checkMyList());
       // debugger
       this.props.fetchLists();
-
     }
 
     componentDidUpdate(prevProps) {
@@ -73,6 +77,11 @@ class GenreShow extends React.Component {
         if (prevProps.mylists.length !== this.props.mylists.length) {
           this.checkMyList();
         }
+      }
+      // debugger
+      if (this.props.match.params.genreId !== prevProps.match.params.genreId){
+        this.props.fetchGenre(this.props.match.params.genreId);
+        this.props.renderVideos();
       }
     }
 
@@ -152,20 +161,28 @@ class GenreShow extends React.Component {
       return videos
     }
 
+    mainVideoCreator(video){
+      return <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" src={video} type="video/mp4"> </video>
+    }
+
 
     render() {
+      // debugger
+      let mainvid;
       let videos = [];  
       if (this.props.genre){
         videos = this.filterVideos();
-        debugger
+        // debugger
         }
         let genresRender
         if (videos.length === 20){
+          // debugger
+          mainvid = videos[10].props.video.video_url
           genresRender = 
           <div>
 
               <div className="mainVideoDiv">
-                <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={videos[10].props.video.video_url} type="video/mp4" /> </video>
+                {this.mainVideoCreator(mainvid)} 
                 <img src={window.minions} className="mainvideoLogo" />
                 {!this.state.muted ?
                   <img src={window.soundon} className="soundindex" id="soundon" onClick={this.handleMute} /> :
@@ -469,13 +486,16 @@ class GenreShow extends React.Component {
 
 
         else if(videos.length === 4){
-          debugger
+          // debugger
+          
+          mainvid = videos[0].props.video.video_url
           genresRender =
             <div>
    
             <div className="mainVideoDiv">
               {/* autoPlay loop */}
-              <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={videos[0].props.video.video_url} type="video/mp4" /> </video>
+              {/* <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={videos[0].props.video.video_url} type="video/mp4" /> </video> */}
+              {this.mainVideoCreator(mainvid)}
               {/* <div className='mainVideoDescription'>{videos[1].props.video.description}</div> */}
               {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
               <img src={window.office} className="mainvideoLogo" />
