@@ -144,62 +144,14 @@ class Videos extends React.Component{
 
 
   render(){
-    // debugger
-    // let listbutton = <div></div>
-
-
-    // if (this.props.mylists.length > 0 && this.props.videos.length > 0){
-    //   let indexliststatus
-    //   for(let i = 0; i < this.props.mylists.length; i++){
-    //     if (this.props.mylists[i] === this.props.videos[0].id){
-    //       indexliststatus = true;
-    //       break;
-    //     }
-    //     else{
-    //       indexliststatus = false;
-    //     }
-    //   }
-    //   this.setState({indexlist: indexliststatus})
-
-
-      // this.props.mylists.forEach(list => {
-      //   if (list.video_id === this.props.videos[0].id) {
-      //     indexliststatus = true;
-      //     // this.state.indexlist = true;
-      //     // this.setState({indexlist: true})
-      //     return;
-      //   }
-      //   else{
-      //     indexliststatus = false;
-      //     // this.state.indexlist = false;
-      //     // this.setState({ indexlist: false })
-      //   }
-      // })
-
-  // }
+    
   
   const IndividualVideos = this.props.videos.map((video, idx) => {
-    // let indexList = false;
+    
     return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx}/>)
   })
   
-  // let currentState = this.state.listchange.slice();
-  // this.props.videos.forEach((video, idx) => {
-  //   this.props.mylists.forEach(list => {
-  //     if (list.video_id === video.id){
-  //       // indexList = true;
-  //       currentState[idx] = true; // change to setState
-        
-  //     }
-  //     else{
-  //       currentState[idx] = false;
-  //     }
-  //   })
-
-  // })
-  // this.setState({listchange: currentState});
-
-  // debugger
+  
   
     return (
 
@@ -221,7 +173,7 @@ class Videos extends React.Component{
           <div onClick= { () => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon}/> <p className="playText">Play</p> </div>
           {this.state.listchange[0] ? 
               <div onClick={() => this.handleVideoList(IndividualVideos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
-              <div onClick={() => this.handleVideoList(IndividualVideos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div> }
+              <div onClick={() => this.handleVideoList(IndividualVideos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.addmainlister} /> <p className="playText">My List</p> </div> }
 
 
 
@@ -483,7 +435,7 @@ class Videos extends React.Component{
                     </div>
                 </div>
               </div>
-              
+
               <div >
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {IndividualVideos[23]}

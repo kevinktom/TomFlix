@@ -176,7 +176,7 @@ class GenreShow extends React.Component {
                 <div onClick={() => this.props.history.push(`/browse/${videos[10].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon} /> <p className="playText">Play</p> </div>
                 {this.state.listchange[14] ?
                   <div onClick={() => this.handleVideoList(videos[10])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
-                  <div onClick={() => this.handleVideoList(videos[10])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>}
+                  <div onClick={() => this.handleVideoList(videos[10])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.addmainlister} /> <p className="playText">My List</p> </div>}
 
               <div className="rowsection">
                 <p className="genreName" >Watch It Again</p>
@@ -488,7 +488,7 @@ class GenreShow extends React.Component {
               <div onClick={() => this.props.history.push(`/browse/${videos[0].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon} /> <p className="playText">Play</p> </div>
               {this.state.listchange[6] ?
                 <div onClick={() => this.handleVideoList(videos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
-                <div onClick={() => this.handleVideoList(videos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>}
+                <div onClick={() => this.handleVideoList(videos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.addmainlister} /> <p className="playText">My List</p> </div>}
 
 
 
