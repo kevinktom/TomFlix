@@ -78,6 +78,7 @@ class GenreShow extends React.Component {
 
     handleMyList() {
       let currState = this.state.listchange.slice();
+      debugger
       if (currState[0]) {
         this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
         currState[0] = false;
@@ -107,7 +108,7 @@ class GenreShow extends React.Component {
     if (currentState[video.props.index]) {
       this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = false;
-      this.setState({ listchange: currentState }); //The state isnt changing for some reason
+      this.setState({ listchange: currentState });
       // debugger
     }
     else {
@@ -125,31 +126,28 @@ class GenreShow extends React.Component {
         currentState[idx] = false;
         this.props.mylists.forEach(list => {
           if (list.video_id === video.id) {
-            // indexList = true;
-            currentState[idx] = true; // change to setState
-            //   return;
 
-            // }
-            // else {
+            currentState[idx] = true; 
+
           }
         })
 
       })
-      // debugger
+
       this.setState({ listchange: currentState });
     }
 
     filterVideos(){
-        // debugger
-        // let vids = this.props.videos.filter(video => {
+      // let vids = this.props.videos.filter(video => {
         //     return (video.genre_ids.includes(this.props.genre.id))
         // });
-      let videos = this.props.videos.map((video, idx) => {
-        // let indexList = false;
-        return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx} />)
-      }) 
-      videos = videos.filter(video => {
-        return (video.video.genre_ids.includes(this.props.genre.id))
+        let videos = this.props.videos.map((video, idx) => {
+          // let indexList = false;
+          return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx} />)
+        }) 
+        videos = videos.filter(video => {
+          // debugger
+        return (video.props.video.genre_ids.includes(this.props.genre.id))
       })
       return videos
     }
@@ -159,6 +157,7 @@ class GenreShow extends React.Component {
       let videos = [];  
       if (this.props.genre){
         videos = this.filterVideos();
+        debugger
         }
         let genresRender
         if (videos.length === 20){
@@ -175,7 +174,7 @@ class GenreShow extends React.Component {
                   <p >{videos[0].props.video.maturity_rating}</p>
                 </div>
                 <div onClick={() => this.props.history.push(`/browse/${videos[10].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon} /> <p className="playText">Play</p> </div>
-                {this.state.listchange[10] ?
+                {this.state.listchange[14] ?
                   <div onClick={() => this.handleVideoList(videos[10])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
                   <div onClick={() => this.handleVideoList(videos[10])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>}
 
@@ -200,7 +199,7 @@ class GenreShow extends React.Component {
                   <div >
                     <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {videos[19]}
-                  {this.state.listchange[19] ?
+                  {this.state.listchange[23] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[19])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[19])}/> }
                       <p className="videotitleover hiddenIcons">{videos[19].props.video.title}</p>
@@ -213,7 +212,7 @@ class GenreShow extends React.Component {
               <div >
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {videos[18]}
-                  {this.state.listchange[18] ?
+                  {this.state.listchange[22] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[18])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[18])}/> }
                       <p className="videotitleover hiddenIcons">{videos[18].props.video.title}</p>
@@ -226,7 +225,7 @@ class GenreShow extends React.Component {
               <div >
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {videos[17]}
-                  {this.state.listchange[17] ?
+                  {this.state.listchange[21] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[17])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[17])}/> }
                       <p className="videotitleover hiddenIcons">{videos[17].props.video.title}</p>
@@ -239,7 +238,7 @@ class GenreShow extends React.Component {
               <div>
                     <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {videos[16]}
-                  {this.state.listchange[16] ?
+                  {this.state.listchange[20] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[16])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[16])}/> }
                       <p className="videotitleover hiddenIcons">{videos[16].props.video.title}</p>
@@ -252,7 +251,7 @@ class GenreShow extends React.Component {
               <div >
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {videos[15]}
-                  {this.state.listchange[15] ?
+                  {this.state.listchange[19] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[15])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[15])}/> }
                     <p className="videotitleover hiddenIcons">{videos[15].props.video.title}</p>
@@ -275,7 +274,7 @@ class GenreShow extends React.Component {
                 <div className='videodivfirst'>
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {videos[14]}
-                    {this.state.listchange[14] ?
+                    {this.state.listchange[18] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[14])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[14])} />}
                     <p className="videotitleover hiddenIcons">{videos[14].props.video.title}</p>
@@ -290,7 +289,7 @@ class GenreShow extends React.Component {
                 <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {videos[13]}
-                  {this.state.listchange[13] ?
+                  {this.state.listchange[17] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[13])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[13])}/> }
                       <p className="videotitleover hiddenIcons">{videos[13].props.video.title}</p>
@@ -303,7 +302,7 @@ class GenreShow extends React.Component {
               <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {videos[12]}
-                  {this.state.listchange[12] ?
+                  {this.state.listchange[16] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[12])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[12])}/> }
                       <p className="videotitleover hiddenIcons">{videos[12].props.video.title}</p>
@@ -316,7 +315,7 @@ class GenreShow extends React.Component {
               <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {videos[11]}
-                  {this.state.listchange[11] ?
+                  {this.state.listchange[15] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[11])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[11])}/> }
                       <p className="videotitleover hiddenIcons">{videos[11].props.video.title}</p>
@@ -329,7 +328,7 @@ class GenreShow extends React.Component {
               <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {videos[9]}
-                  {this.state.listchange[9] ?
+                  {this.state.listchange[13] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[9])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[9])}/> }
                       <p className="videotitleover hiddenIcons">{videos[9].props.video.title}</p>
@@ -342,7 +341,7 @@ class GenreShow extends React.Component {
               <div >
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className="videodivlast">
                   {videos[8]}
-                  {this.state.listchange[8] ?
+                  {this.state.listchange[12] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[8])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[8])}/> }
                       <p className="videotitleover hiddenIcons">{videos[8].props.video.title}</p>
@@ -365,7 +364,7 @@ class GenreShow extends React.Component {
                 <div className='videodivfirst'>
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {videos[7]}
-                    {this.state.listchange[7] ?
+                    {this.state.listchange[10] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[7])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[7])} />}
                     <p className="videotitleover hiddenIcons">{videos[7].props.video.title}</p>
@@ -378,7 +377,7 @@ class GenreShow extends React.Component {
                 <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {videos[6]}
-                  {this.state.listchange[6] ?
+                  {this.state.listchange[9] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[6])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[6])}/> }
                       <p className="videotitleover hiddenIcons">{videos[6].props.video.title}</p>
@@ -487,9 +486,9 @@ class GenreShow extends React.Component {
                 <p >{videos[0].props.video.maturity_rating}</p>
               </div>
               <div onClick={() => this.props.history.push(`/browse/${videos[0].props.video.id}`)} className="playButton transparentPlay"> <img src={window.playicon} /> <p className="playText">Play</p> </div>
-              {this.state.listchange[0] ?
-                <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
-                <div onClick={this.handleMyList} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>}
+              {this.state.listchange[6] ?
+                <div onClick={() => this.handleVideoList(videos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListRemove} /> <p className="playText">My List</p> </div> :
+                <div onClick={() => this.handleVideoList(videos[0])} className="playButton transparentPlay" id="addlistbutton"> <img src={window.indexListAdd} /> <p className="playText">My List</p> </div>}
 
 
 
@@ -500,7 +499,7 @@ class GenreShow extends React.Component {
                   <div className='videodivfirst'>
                     <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                       {videos[0]}
-                      {this.state.listchange[0] ?
+                      {this.state.listchange[6] ?
                         <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[0])} /> :
                         <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[0])} />}
                       <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[0].props.video.id}`)} >{videos[0].props.video.title}</p>
@@ -514,7 +513,7 @@ class GenreShow extends React.Component {
                  <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {videos[1]}
-                  {this.state.listchange[1] ?
+                  {this.state.listchange[7] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[1])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[1])}/> }
                       <p className="videotitleover hiddenIcons">{videos[1].props.video.title}</p>
@@ -526,7 +525,7 @@ class GenreShow extends React.Component {
               <div >
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {videos[2]}
-                  {this.state.listchange[2] ?
+                  {this.state.listchange[8] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[2])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[2])}/> }
                       <p className="videotitleover hiddenIcons">{videos[2].props.video.title}</p>
@@ -538,7 +537,7 @@ class GenreShow extends React.Component {
               <div >
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodiv'>
                   {videos[3]}
-                  {this.state.listchange[3] ?
+                  {this.state.listchange[11] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[3])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[3])}/> }
                       <p className="videotitleover hiddenIcons">{videos[3].props.video.title}</p>

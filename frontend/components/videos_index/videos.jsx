@@ -97,7 +97,7 @@ class Videos extends React.Component{
     if (currentState[video.props.index]){
       this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = false;
-      this.setState({listchange: currentState}); //The state isnt changing for some reason
+      this.setState({listchange: currentState}); 
       // debugger
     }
     else{
@@ -115,17 +115,12 @@ class Videos extends React.Component{
       currentState[idx] = false;
       this.props.mylists.forEach(list => {
         if (list.video_id === video.id) {
-          // indexList = true;
-          currentState[idx] = true; // change to setState
-          //   return;
+          currentState[idx] = true; 
 
-          // }
-          // else {
         }
       })
 
     })
-    // debugger
     this.setState({ listchange: currentState });
   }
   
