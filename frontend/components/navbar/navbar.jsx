@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom';
 class Nav extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showMenu: false};
+        this.state = {showMenu: false, search: ""};
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+        this.updateSearch = this.updateSearch.bind(this);
     }
 
     //SEARCH BAR
@@ -19,11 +20,7 @@ class Nav extends React.Component {
     //onchange callback that changes the state based on user input
     //have a timer in the state 0.5 seconds and reset when the user types. debunce function. 
     
-    // componentDidMount() {
-    //     // debugger
-    //     // const allProps = this.props;
-    //     // this.props.renderNav();
-    // }
+    
 
     showMenu(e){
         // debugger
@@ -69,6 +66,10 @@ class Nav extends React.Component {
             }
         });
     }
+
+    updateSearch(e){
+        this.setState({search: e.target.value})
+    }
     
     render() {
         
@@ -89,6 +90,7 @@ class Nav extends React.Component {
                     <div>
                         <div className='linksSecond'>
                             <a href="" className="iconSizes"><img src={window.search} /></a>
+                            <input type="text" value={this.state.search} onChange={this.updateSearch}/>
                             <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github} /> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
                                 <div className="dropdown" onMouseLeave={this.closeMenu}>
