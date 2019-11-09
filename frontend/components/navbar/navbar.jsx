@@ -2,6 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import { debounce } from "debounce";
 
 
 class Nav extends React.Component {
@@ -68,7 +69,10 @@ class Nav extends React.Component {
     }
 
     updateSearch(e){
-        this.setState({search: e.target.value})
+        this.setState({search: e.target.value});
+        if (this.state.search.length > 0){
+            debounce(() => this.props.history.push(`/search/${this.state.search}`))
+        }
     }
     
     render() {
