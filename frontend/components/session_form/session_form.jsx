@@ -26,24 +26,13 @@ class SessionForm extends React.Component{
   }
 
   handleSubmit(e){
-    // debugger
     e.preventDefault();
     this.props.action(this.state).then(() => this.props.history.push({pathname: '/'}));
   }
 
-  // renderErrors(){
-  //   let errors = this.props.errors.map((error, i) => {
-  //     return (
-  //       <li key={i}
-  //         error={error}>{error}
-  //       </li>
-  //     )
-  //   })
-  //   return errors;
-  // }
+  
 
   renderErrors(){
-    // debugger
     if (this.props.errors.length > 0){
       return (<div className="errors">{this.props.errors[0]}</div>)
     }
@@ -72,17 +61,15 @@ class SessionForm extends React.Component{
           <div>
             <h1 className='head'>{this.props.formType}</h1>
             <form onSubmit={this.handleSubmit}>
-              {/* <ul className="errors">
-                {this.renderErrors()}
-              </ul> */}
+
               {this.renderErrors()}
-              {/* <div className="errors">{this.props.errors[0]}</div> */}
+
               <label htmlFor="email"></label>
               <input id="email" onChange={this.update('email')} type="email" placeholder="Email" className='textField' autoComplete="off"/>
               <br/>
               <label htmlFor="password"> </label>
               <input id="password" placeholder="Password" onChange={this.update('password')} type="password" className='textField' autoComplete="off"/>
-              {/* <p className='errors'>{this.renderIndividualErrors(invalidPassword)}</p> */}
+
               <br/>
               <input type="submit" value={this.props.formType} className='sessionSignin'/>
             </form>

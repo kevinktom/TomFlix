@@ -8,13 +8,14 @@ import SplashContainer from './splash/splash_form_container';
 import VideoPlayerContainer from './video_player/video_player_container';
 import GenreContainer from './genres/genre_container';
 import MylistContainer from './mylists/mylist_container';
+import Search from './search/search_container';
 
 
 const App = () => {
   return(
     <div>
       <header>
-        {/* <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/> */}
+        
       </header>
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
@@ -23,6 +24,7 @@ const App = () => {
         <ProtectedRoute exact path='/browse/my-list' component={MylistContainer}/>
         <ProtectedRoute exact path='/browse/:videoId' component={VideoPlayerContainer}/>
         <ProtectedRoute exact path='/genre/:genreId' component={GenreContainer}/>
+        <ProtectedRoute exact path='/search/:searchinput' component={Search}/>
         <AuthRoute exact path='/' component={SplashContainer}/>
       </Switch>
     </div>

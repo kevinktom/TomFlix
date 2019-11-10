@@ -42,6 +42,50 @@ class Search extends React.Component {
         video.nextSibling.nextSibling.nextSibling.classList.add("hiddenIcons");
     }
 
+    handleVideoList(video) {
+
+        let currentState = this.state.listchange.slice();
+        this.props.videos.forEach((vid, idx) => {
+            currentState[idx] = false;
+            this.props.mylists.forEach(list => {
+                if (list.video_id === vid.id) {
+
+                    currentState[idx] = true;
+
+                }
+            })
+
+        })
+        if (currentState[video.props.index]) {
+            this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
+            currentState[video.props.index] = false;
+            this.setState({ listchange: currentState });
+            // debugger
+        }
+        else {
+            // debugger
+            this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
+            currentState[video.props.index] = true;
+            this.setState({ listchange: currentState });
+        }
+        // debugger
+    }
+
+    checkMyList() {
+        let currentState = this.state.listchange.slice();
+        this.props.videos.forEach((video, idx) => {
+            currentState[idx] = false;
+            this.props.mylists.forEach(list => {
+                if (list.video_id === video.id) {
+                    currentState[idx] = true;
+
+                }
+            })
+
+        })
+        this.setState({ listchange: currentState });
+    }
+
     //OLD BEFORE DIV OVER VIDEO TAG
     // handleHoverLeave(e) {
     //     // debugger
@@ -72,6 +116,9 @@ class Search extends React.Component {
                 })
             }
         })
+
+        let searchVideos = [];
+
         // debugger
         const videoArr = lists.map((video, idx) => {
             // debugger

@@ -69,10 +69,23 @@ class Nav extends React.Component {
     }
 
     updateSearch(e){
-        this.setState({search: e.target.value});
-        if (this.state.search.length > 0){
-            debounce(() => this.props.history.push(`/search/${this.state.search}`))
+        this.setState({search: e.target.value})
+        // if (this.state.search.length > 0) {
+        //     // debounce(this.props.history.push(`/search/${this.state.search}`), 1000, false);
+        //     this.props.history.push(`/search/${this.state.search}`)
+        // }
+    }
+
+    componentDidUpdate(prevProps){
+        // debugger
+        if (this.state.search.length > 0 && prevProps.match.params.searchinput !==  this.state.search) {
+            // debounce(this.props.history.push(`/search/${this.state.search}`), 10000, false);
+            this.props.history.push(`/search/${this.state.search}`);
         }
+        // else if (this.state.search.length === 0 && prevProps.match.params.searchinput !== this.state.search) {
+        //     // debounce(this.props.history.push(`/browse`), 10000, false);
+        //     this.props.history.push(`/browse`)
+        // }        
     }
     
     render() {

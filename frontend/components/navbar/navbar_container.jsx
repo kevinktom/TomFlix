@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Nav from './navbar';
 import { renderVideos } from '../../actions/video_actions';
+import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = state => {
@@ -23,4 +24,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));
