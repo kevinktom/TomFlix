@@ -87,7 +87,7 @@ class GenreShow extends React.Component {
 
     handleMyList() {
       let currState = this.state.listchange.slice();
-      debugger
+      // debugger
       if (currState[0]) {
         this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
         currState[0] = false;

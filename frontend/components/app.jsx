@@ -9,6 +9,7 @@ import VideoPlayerContainer from './video_player/video_player_container';
 import GenreContainer from './genres/genre_container';
 import MylistContainer from './mylists/mylist_container';
 import Search from './search/search_container';
+import NavBar from './navbar/navbar_container';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <header>
         
       </header>
+      {/* <ProtectedRoute path='/' component={NavBar} /> */}
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 

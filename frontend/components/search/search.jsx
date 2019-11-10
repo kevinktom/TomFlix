@@ -104,6 +104,7 @@ class Search extends React.Component {
 
 
     render() {
+        debugger
         let lists = [];
         const currentUser = this.props.currentUser;
         this.props.mylists.forEach(list => {
