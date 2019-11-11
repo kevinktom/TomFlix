@@ -2,7 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
-// import { debounce } from "debounce";
+import { debounce } from "debounce";
 
 
 class Nav extends React.Component {
@@ -81,8 +81,16 @@ class Nav extends React.Component {
     }
 
     updateSearch(e){
-        // debugger
-        this.debounce(this.setState({search: e.target.value}, () => { if (this.state.search === '') this.props.history.push(this.props.history[this.props.history - 2]) }), 10000)
+        debugger
+        let newSearch = e.target.value;
+        e.persist();
+        debounce(() =>
+                    {debugger 
+                    this.setState({search: newSearch}, 
+                    () => { if (this.state.search === '') 
+                    this.props.history.push(this.props.history[this.props.history - 2]) 
+                        }
+                )}, 2000, false)(e)
         // if (this.state.search.length > 0) {
         //     // debounce(this.props.history.push(`/search/${this.state.search}`), 1000, false);
         //     this.props.history.push(`/search/${this.state.search}`)
@@ -96,7 +104,7 @@ class Nav extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        // debugger
+        debugger
         if (this.state.search.length > 0 && prevProps.match.params.searchinput !==  this.state.search) {
             // debounce(this.props.history.push(`/search/${this.state.search}`), 10000, false);
             // const varTimeoutId = timeout
