@@ -6,11 +6,12 @@ import { renderVideos } from '../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     let userId = state.sessions.id;
     return ({
         currentUser: state.entities.users[userId],
-        videos: Object.values(state.entities.videos)
+        videos: Object.values(state.entities.videos),
+        searchurl: ownProps.searchurl
         // genres: state.entities.genres 
     })
 }

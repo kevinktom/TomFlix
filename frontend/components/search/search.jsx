@@ -104,24 +104,32 @@ class Search extends React.Component {
 
 
     render() {
-        debugger
-        let lists = [];
-        const currentUser = this.props.currentUser;
-        this.props.mylists.forEach(list => {
-            // debugger
-            if (list.user_id === parseInt(currentUser)) {
-                this.props.videos.forEach(video => {
-                    if (video.id === list.video_id) {
-                        lists.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />);
-                    }
-                })
-            }
-        })
+        // debugger
+        // let lists = [];
+        // const currentUser = this.props.currentUser;
+        // this.props.mylists.forEach(list => {
+        //     // debugger
+        //     if (list.user_id === parseInt(currentUser)) {
+        //         this.props.videos.forEach(video => {
+        //             if (video.id === list.video_id) {
+        //                 lists.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />);
+        //             }
+        //         })
+        //     }
+        // })
 
         let searchVideos = [];
+        let urlsearch = this.props.match.params.searchinput.toLowerCase();
+        this.props.videos.forEach(video => {
+            let videotitle = video.title.toLowerCase();
+            if (videotitle.includes(urlsearch)){
+                searchVideos.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />);
+            }
+        })
+        // debugger
 
         // debugger
-        const videoArr = lists.map((video, idx) => {
+        const videoArr = searchVideos.map((video, idx) => {
             // debugger
             if (idx % 6 === 0) {
                 return (
@@ -182,7 +190,7 @@ class Search extends React.Component {
         })
         return (
             <div className="indexGrid">
-                <NavBarContainer />
+                <NavBarContainer searchurl = {this.props.match.params.searchinput} />
                 {this.props.videos.length >= 1 ?
                     <div className="mylist">
                         {/* <p id="mylisttext">My List</p> */}

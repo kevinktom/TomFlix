@@ -2,7 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
-import { debounce } from "debounce";
+// import { debounce } from "debounce";
 
 
 class Nav extends React.Component {
@@ -13,6 +13,7 @@ class Nav extends React.Component {
         this.closeMenu = this.closeMenu.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
         this.searchDefaultText = this.searchDefaultText.bind(this);
+        this.debounce = this.debounce.bind(this);
     }
 
     //SEARCH BAR
@@ -39,6 +40,16 @@ class Nav extends React.Component {
         if (e.currentTarget.className === "dropdown-content" || e.currentTarget.className === "dropdown" || e.currentTarget.className === "hiddenbridge"){
 
         this.setState({showMenu: false})
+        }
+    }
+
+    debounce(func, delay){
+        let inDebounce
+        return function () {
+            const context = this
+            const args = arguments
+            clearTimeout(inDebounce)
+            inDebounce = setTimeout(() => func.apply(context, args), delay)
         }
     }
 
@@ -70,7 +81,8 @@ class Nav extends React.Component {
     }
 
     updateSearch(e){
-        this.setState({search: e.target.value}, () => { if (this.state.search === '') this.props.history.push(this.props.history[this.props.history - 2]) })
+        // debugger
+        this.debounce(this.setState({search: e.target.value}, () => { if (this.state.search === '') this.props.history.push(this.props.history[this.props.history - 2]) }), 10000)
         // if (this.state.search.length > 0) {
         //     // debounce(this.props.history.push(`/search/${this.state.search}`), 1000, false);
         //     this.props.history.push(`/search/${this.state.search}`)
@@ -99,6 +111,7 @@ class Nav extends React.Component {
     
     render() {
         debugger
+        // let paramurl = this.props.params.searchinput;
         return (
             <>
             <nav className='entireNav'>
@@ -116,7 +129,7 @@ class Nav extends React.Component {
                     <div>
                         <div className='linksSecond'>
                             <a href="" className="iconSizes"><img src={window.search} /></a>
-                            <input type="text" value={this.state.search} onChange={this.updateSearch}/>
+                            <input type="text" value={this.props.searchurl} onChange={this.updateSearch}/>
                             <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github} /> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
                                 <div className="dropdown" onMouseLeave={this.closeMenu}>
