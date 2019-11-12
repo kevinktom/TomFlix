@@ -162,7 +162,7 @@ class GenreShow extends React.Component {
     }
 
     mainVideoCreator(video){
-      debugger
+      // debugger
       if (video.includes("minions")){
         return <video autoPlay loop muted={this.state.muted} className="mainVideo videoPosition" id="mainvid" src={video} type="video/mp4"> </video>
 

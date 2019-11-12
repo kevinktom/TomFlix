@@ -139,7 +139,7 @@ class Search extends React.Component {
 
         // debugger
         const videoArr = searchVideos.map((video, idx) => {
-            debugger
+            // debugger
             if (idx % 6 === 0) {
                 return (
                     // class = firstlist, lastlist, list
