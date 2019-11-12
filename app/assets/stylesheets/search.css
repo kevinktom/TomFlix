@@ -7,8 +7,10 @@
 
 .unopenedSearch{
     left: 130px;
+    transition: .5s linear all;
 }
 
 .unopenedSearchBar{
     display: none;
+    transition: .5s linear all;
 }

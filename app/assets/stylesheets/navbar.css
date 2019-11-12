@@ -147,6 +147,7 @@
     opacity: .91;
     height: 120px;
     /* transition: all 1s ease; */
+    
     animation: fade 2s linear forwards;
 }
 
@@ -219,6 +220,7 @@
     font-size: 15px;
     padding-left: 40px;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .searchIcon{

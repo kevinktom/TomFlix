@@ -31,7 +31,9 @@ class Videos extends React.Component{
       video.muted = true
       video.play();
     });
-    this.setState({ muted: true });
+    if (this._isMounted){
+      this.setState({ muted: true });
+    }
     vid.muted = true;
   }
 
@@ -51,12 +53,14 @@ class Videos extends React.Component{
   handleMute(){
     // debugger
     let vid = document.getElementById("mainvid")
-    if (this.state.muted){
+    if (this.state.muted && this._isMounted){
       this.setState({muted: false});
     }
     else{
-      this.setState({muted: true});
-      vid.muted = true;
+      if (this._isMounted){
+        this.setState({muted: true});
+        vid.muted = true;
+      }
     }
   }
 
@@ -91,14 +95,18 @@ class Videos extends React.Component{
     if (currentState[video.props.index]){
       this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = false;
-      this.setState({listchange: currentState}); 
+      if (this._isMounted){
+        this.setState({listchange: currentState}); 
+      }
       // debugger
     }
     else{
       // debugger
       this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = true;
-      this.setState({ listchange: currentState });
+      if (this._isMounted){
+        this.setState({ listchange: currentState });
+      }
     }
     // debugger
   }
@@ -115,15 +123,21 @@ class Videos extends React.Component{
       })
 
     })
-    this.setState({ listchange: currentState });
+    if (this._isMounted){
+      this.setState({ listchange: currentState });
+    }
   }
   
   componentDidMount(){
     // const allProps = this.props;
+    this._isMounted = true
     this.props.renderVideos().then(() => this.checkMyList());
     // debugger
     this.props.fetchLists();
     
+  }
+  componentWillUnmount(){
+    this._isMounted = false;
   }
 
   componentDidUpdate(prevProps){
@@ -182,7 +196,7 @@ class Videos extends React.Component{
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(IndividualVideos[0])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[0])}/> }
                     <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)} >{IndividualVideos[0].props.video.title}</p>
-                    <div className = "redplayborder hiddenIcons">
+                    <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${IndividualVideos[0].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>

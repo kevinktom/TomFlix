@@ -8,7 +8,7 @@ import { debounce } from "debounce";
 class Nav extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showMenu: false, search: ""};
+        this.state = { showMenu: false, search: this.props.searchurl};
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
@@ -18,7 +18,9 @@ class Nav extends React.Component {
         this.debouncedHandleChange = debounce(this.updateSearch, 1000, false).bind(this)
         this.persistedHandleChange = e => {
             // debugger
-            e.persist()
+            // let eclone = e.target;
+            this.setState({ search: e.target.value })
+            // e.persist()
             this.debouncedHandleChange(e)
         }
         this.toggleSearchShow = this.toggleSearchShow.bind(this);
@@ -137,10 +139,18 @@ class Nav extends React.Component {
         // debugger
         // let newSearch = e.target.value;
         // e.persist();
-        this.setState({search: e.target.value}, 
-            () => { if (this.state.search === '') 
-            this.props.history.push(`/browse`)}
-                )
+         
+            if (this.state.search === '') {
+            this.props.history.push(`/browse`)
+            }
+        else{
+            this.props.history.push(`/search/${this.state.search}`);
+        }
+                
+        // this.setState({search: e.target.value}, 
+        //     () => { if (this.state.search === '') 
+        //     this.props.history.push(`/browse`)}
+        //         )
     }
 
     // debouncedUpdateSearch(e){
@@ -156,7 +166,7 @@ class Nav extends React.Component {
     toggleSearchShow(){
         let searchIcon = document.getElementById("searchIconId");
         let searchBar = document.getElementById("searchBarId");
-        debugger
+        // debugger
         if(searchIcon.classList.contains("unopenedSearch")){
             searchIcon.classList.remove("unopenedSearch");
             searchBar.classList.remove("unopenedSearchBar");
@@ -167,19 +177,21 @@ class Nav extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps){
-        // debugger
-        if (this.state.search.length > 0 && prevProps.match.params.searchinput !==  this.state.search) {
-            // debounce(this.props.history.push(`/search/${this.state.search}`), 10000, false);
-            // const varTimeoutId = timeout
-            // debounce()  { canceltimeout(timeout id) function - starts timeout  }
-            this.props.history.push(`/search/${this.state.search}`);
-        }
-        // else if (this.state.search.length === 0 && prevProps.match.params.searchinput !== this.state.search) {
-        //     // debounce(this.props.history.push(`/browse`), 10000, false);
-        //     this.props.history.push(`/browse`)
-        // }        
-    }
+    // componentDidUpdate(prevProps){
+    //     // debugger
+    //     if (this.state.search.length > 0 && prevProps.match.params.searchinput !==  this.state.search) {
+    //         // debounce(this.props.history.push(`/search/${this.state.search}`), 10000, false);
+    //         // const varTimeoutId = timeout
+    //         // debounce()  { canceltimeout(timeout id) function - starts timeout  }
+
+
+    //         // this.props.history.push(`/search/${this.state.search}`);
+    //     }
+    //     // else if (this.state.search.length === 0 && prevProps.match.params.searchinput !== this.state.search) {
+    //     //     // debounce(this.props.history.push(`/browse`), 10000, false);
+    //     //     this.props.history.push(`/browse`)
+    //     // }        
+    // }
     
     render() {
         // debugger
@@ -203,7 +215,7 @@ class Nav extends React.Component {
                     <div className="iconsandsearch"> 
                         <div className="searchbar">
                                 <a className="iconSizes"><img className="searchIcon unopenedSearch" id="searchIconId" src={window.search} onClick={this.toggleSearchShow} /></a>
-                                <input className="inputsearch unopenedSearchBar" id="searchBarId" type="text" value={this.props.searchurl} onChange={this.persistedHandleChange}/>
+                                <input className="inputsearch unopenedSearchBar" placeholder="Titles" id="searchBarId" type="text" value={this.state.search} onChange={this.persistedHandleChange}/>
 
                         </div>
                         <div className='linksSecond'>
