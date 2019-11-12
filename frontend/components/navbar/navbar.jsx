@@ -136,7 +136,7 @@ class Nav extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        debugger
+        // debugger
         if (this.state.search.length > 0 && prevProps.match.params.searchinput !==  this.state.search) {
             // debounce(this.props.history.push(`/search/${this.state.search}`), 10000, false);
             // const varTimeoutId = timeout
