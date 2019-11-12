@@ -33,7 +33,7 @@ class VideoShow extends React.Component {
         // debugger
         return (
             <div onMouseMove = {() => this.showBackButton} className='showVideoBackground'>
-                <div className='backbutton hiddenbutton' onClick={() => this.props.history.push(`/browse`)}> <img src={window.backindexarrow} className="backarrow"/>  </div>
+                <div className='backbutton hiddenbutton' onClick={() => this.props.history.goBack()}> <img src={window.backindexarrow} className="backarrow"/>  </div>
                 {this.props.video ? <div className='showVideoParent'>
                     <video controls autoPlay className="showVideo"> <source src={this.props.video.video_url} type="video/mp4" /> </video> </div> : <p>no video</p>}
             </div>

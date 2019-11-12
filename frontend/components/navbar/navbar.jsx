@@ -14,6 +14,7 @@ class Nav extends React.Component {
         this.updateSearch = this.updateSearch.bind(this);
         this.searchDefaultText = this.searchDefaultText.bind(this);
         this.debounce = this.debounce.bind(this);
+        this.debouncedUpdateSearch = this.debouncedUpdateSearch.bind(this);
     }
 
     //SEARCH BAR
@@ -43,15 +44,30 @@ class Nav extends React.Component {
         }
     }
 
-    debounce(func, delay){
-        let inDebounce
-        return function () {
-            const context = this
-            const args = arguments
-            clearTimeout(inDebounce)
-            inDebounce = setTimeout(() => func.apply(context, args), delay)
-        }
-    }
+    // debounce(func, delay){
+    //     let inDebounce
+    //     return function () {
+    //         const context = this
+    //         const args = arguments
+    //         clearTimeout(inDebounce)
+    //         inDebounce = setTimeout(() => func.apply(context, args), delay)
+    //     }
+    // }
+
+    debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
 
     componentDidMount(){
         let scrollpos = window.scrollY;
@@ -80,21 +96,37 @@ class Nav extends React.Component {
         });
     }
 
+    // updateSearch(e){
+    //     // debugger
+    //     let newSearch = e.target.value;
+    //     // newSearch.persist();
+    //     e.persist();
+    //     this.debounce(() =>
+    //                 {
+    //                 this.setState({search: newSearch}, 
+    //                 () => { if (this.state.search === '') 
+    //                 // this.props.history.push(this.props.history[this.props.history - 2]) 
+    //                 this.props.history.push(`/browse`);
+    //                     }
+    //             )}, 1000, false)(e)
+                
+    //     // if (this.state.search.length > 0) {
+    //     //     // debounce(this.props.history.push(`/search/${this.state.search}`), 1000, false);
+    //     //     this.props.history.push(`/search/${this.state.search}`)
+    //     // }
+    // }
+
     updateSearch(e){
-        debugger
         let newSearch = e.target.value;
         e.persist();
-        debounce(() =>
-                    {debugger 
-                    this.setState({search: newSearch}, 
-                    () => { if (this.state.search === '') 
-                    this.props.history.push(this.props.history[this.props.history - 2]) 
-                        }
-                )}, 2000, false)(e)
-        // if (this.state.search.length > 0) {
-        //     // debounce(this.props.history.push(`/search/${this.state.search}`), 1000, false);
-        //     this.props.history.push(`/search/${this.state.search}`)
-        // }
+        this.setState({search: newSearch}, 
+            () => { if (this.state.search === '') 
+            this.props.history.push(`/browse`)}
+                )
+    }
+
+    debouncedUpdateSearch(e){
+        debounce(this.updateSearch(e), 1000, false)
     }
 
     searchDefaultText(){
@@ -118,7 +150,7 @@ class Nav extends React.Component {
     }
     
     render() {
-        debugger
+        // debugger
         // let paramurl = this.props.params.searchinput;
         return (
             <>
@@ -134,10 +166,13 @@ class Nav extends React.Component {
                             <Link to='/browse/my-list' className='singleLinks'> My List </Link>
                         </div>
                     </div>
-                    <div>
+                    <div className="iconsandsearch"> 
+                        <div className="searchbar">
+                            <a href="" className="iconSizes"><img className="searchIcon" src={window.search} /></a>
+                            <input className="inputsearch" type="text" value={this.props.searchurl} onChange={this.debouncedUpdateSearch}/>
+
+                        </div>
                         <div className='linksSecond'>
-                            <a href="" className="iconSizes"><img src={window.search} /></a>
-                            <input type="text" value={this.props.searchurl} onChange={this.updateSearch}/>
                             <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github} /> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
                                 <div className="dropdown" onMouseLeave={this.closeMenu}>

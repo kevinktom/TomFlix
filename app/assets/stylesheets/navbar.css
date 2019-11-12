@@ -91,7 +91,7 @@
 .linksSecond{
     display: flex;
     justify-content: space-between;
-    width: 160px;
+    width: 100px;
     height: 70px;
     align-items: center;
     position: relative;
@@ -194,5 +194,34 @@
     width: 40px;
 }
 
+
+.iconsandsearch{
+    display: flex;
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 272px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    right: 80px;
+}
+
+.inputsearch{
+    height: 40%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    border: solid 1.5px white;
+    font-size: 15px;
+    padding-left: 40px;
+}
+
+.searchIcon{
+    position: relative;
+    left: 33px;
+}
 
 
