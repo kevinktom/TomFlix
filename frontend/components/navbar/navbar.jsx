@@ -168,7 +168,7 @@ class Nav extends React.Component {
                     </div>
                     <div className="iconsandsearch"> 
                         <div className="searchbar">
-                            <a href="" className="iconSizes"><img className="searchIcon" src={window.search} /></a>
+                            <a  className="iconSizes"><img className="searchIcon" src={window.search} /></a>
                             <input className="inputsearch" type="text" value={this.props.searchurl} onChange={this.debouncedUpdateSearch}/>
 
                         </div>

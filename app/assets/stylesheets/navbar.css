@@ -86,6 +86,7 @@
 }
 .iconSizes img{
     max-height: 24px;
+    cursor: pointer;
 }
 
 .linksSecond{
@@ -211,12 +212,13 @@
 }
 
 .inputsearch{
-    height: 40%;
+    height: 45%;
     width: 100%;
     background-color: rgba(0,0,0,0.8);
     border: solid 1.5px white;
     font-size: 15px;
     padding-left: 40px;
+    color: white;
 }
 
 .searchIcon{

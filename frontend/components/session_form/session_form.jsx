@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Type from 'typed.js'
 
 
 class SessionForm extends React.Component{
@@ -20,10 +21,24 @@ class SessionForm extends React.Component{
   }
 
   handleDemo(e){
-    const testUser = { email: "hire@me.please", password: "password" }
     e.preventDefault();
-    this.props.demo(testUser);
+    const testUser = { strings: ["hire@me.please"], typeSpeed: 50 }
+    const testPassword = { strings: ["password"], typeSpeed: 50 }
+    new Type(".demoemail", testUser);
+    setTimeout(() => {
+      new Type(".demopassword", testPassword);
+    }, 1400)
+
+    setTimeout(() => {
+      this.props.demo({ email: "hire@me.please", password: "password"});
+    }, 2100)
+    
   }
+  // handleDemo(e){
+    //   const testUser = { email: "hire@me.please", password: "password" }
+    //   e.preventDefault();
+  //   this.props.demo(testUser);
+  // }
 
   handleSubmit(e){
     e.preventDefault();
@@ -65,10 +80,10 @@ class SessionForm extends React.Component{
               {this.renderErrors()}
 
               <label htmlFor="email"></label>
-              <input id="email" onChange={this.update('email')} type="email" placeholder="Email" className='textField' autoComplete="off"/>
+              <input id="email" onChange={this.update('email')} type="email" placeholder="Email" className='textField demoemail' autoComplete="off"/>
               <br/>
               <label htmlFor="password"> </label>
-              <input id="password" placeholder="Password" onChange={this.update('password')} type="password" className='textField' autoComplete="off"/>
+              <input id="password" placeholder="Password" onChange={this.update('password')} type="password" className='textField demopassword' autoComplete="off"/>
 
               <br/>
               <input type="submit" value={this.props.formType} className='sessionSignin'/>
