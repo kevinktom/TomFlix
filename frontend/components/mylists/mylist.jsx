@@ -107,7 +107,7 @@ class Mylist extends React.Component{
                             }  */}
                             <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
-                            <div className="redplayborder hiddenIcons">
+                            <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
                                 <img className="redplay" src={window.redplay2} />
                             </div>
                             
@@ -124,7 +124,7 @@ class Mylist extends React.Component{
                             {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
                             <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
-                            <div className="redplayborder hiddenIcons">
+                            <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
                                 <img className="redplay" src={window.redplay2} />
                             </div>
                         </div>
@@ -140,7 +140,7 @@ class Mylist extends React.Component{
                         {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
                         <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                         <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
-                        <div className="redplayborder hiddenIcons">
+                        <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
                             <img className="redplay" src={window.redplay2} />
                         </div>
                     </div>

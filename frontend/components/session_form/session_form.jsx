@@ -90,8 +90,8 @@ class SessionForm extends React.Component{
             </form>
           </div>
           <div>
-            <a href="https://github.com/kevinktom" className="github"><img src={window.github} /> </a>
-            <a href="https://www.linkedin.com/in/kevin-tom-b36951a9/" className="linkedin"><img src={window.linkedin} /> </a>
+            <a href="https://github.com/kevinktom" className="github" target="_blank"><img src={window.github} /> </a>
+            <a href="https://www.linkedin.com/in/kevinktom/" className="linkedin" target="_blank"><img src={window.linkedin} /> </a>
             <label className='textthreelabel'>New to Tomflix?&nbsp;
               <div className='textthreediv'> 
                 {this.props.navLink}

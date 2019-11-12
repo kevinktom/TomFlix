@@ -213,7 +213,7 @@ class GenreShow extends React.Component {
                         <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[1])} /> :
                         <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[1])} />}
                       <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[1].props.video.id}`)} >{videos[1].props.video.title}</p>
-                      <div className="redplayborder hiddenIcons">
+                      <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[1].props.video.id}`)}>
                         <img className="redplay" src={window.redplay2} />
                       </div>
                     </div>
@@ -226,8 +226,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[23] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[19])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[19])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[19].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[19].props.video.id}`)}>{videos[19].props.video.title}</p>
+                      <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[19].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -239,8 +239,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[22] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[18])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[18])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[18].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[18].props.video.id}`)}>{videos[18].props.video.title}</p>
+                      <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[18].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -252,8 +252,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[21] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[17])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[17])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[17].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[17].props.video.id}`)}>{videos[17].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[17].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -265,9 +265,9 @@ class GenreShow extends React.Component {
                   {this.state.listchange[20] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[16])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[16])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[16].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
-                      <img className="redplay" src={window.redplay2}  />
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[16].props.video.id}`)}>{videos[16].props.video.title}</p>
+                      <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[16].props.video.id}`)}>
+                        <img className="redplay" src={window.redplay2} />
                     </div>
                 </div>
               </div>
@@ -278,8 +278,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[19] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[15])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[15])}/> }
-                    <p className="videotitleover hiddenIcons">{videos[15].props.video.title}</p>
-                    <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[15].props.video.id}`)}>{videos[15].props.video.title}</p>
+                    <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[15].props.video.id}`)}>
                     <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -301,8 +301,8 @@ class GenreShow extends React.Component {
                     {this.state.listchange[18] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[14])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[14])} />}
-                    <p className="videotitleover hiddenIcons">{videos[14].props.video.title}</p>
-                    <div className="redplayborder hiddenIcons">
+                    <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[14].props.video.id}`)}>{videos[14].props.video.title}</p>
+                    <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[14].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2} />
                     </div>
                     {/* <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[6])} /> */}
@@ -316,8 +316,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[17] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[13])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[13])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[13].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[13].props.video.id}`)}>{videos[13].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[13].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -329,8 +329,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[16] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[12])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[12])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[12].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[12].props.video.id}`)}>{videos[12].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[12].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -342,10 +342,10 @@ class GenreShow extends React.Component {
                   {this.state.listchange[15] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[11])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[11])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[11].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[11].props.video.id}`)}>{videos[11].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[11].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
-                    </div>
+                    </div> onClick={() => this.props.history.push(`/browse/${videos[16].props.video.id}`)}
                 </div>
               </div>
 
@@ -355,8 +355,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[13] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[9])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[9])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[9].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[9].props.video.id}`)}>{videos[9].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[9].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -368,8 +368,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[12] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[8])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[8])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[8].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[8].props.video.id}`)}>{videos[8].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[8].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -391,8 +391,8 @@ class GenreShow extends React.Component {
                     {this.state.listchange[10] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[7])} /> :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[7])} />}
-                    <p className="videotitleover hiddenIcons">{videos[7].props.video.title}</p>
-                    <div className="redplayborder hiddenIcons">
+                    <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[7].props.video.id}`)}>{videos[7].props.video.title}</p>
+                    <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[7].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2} />
                     </div>
                   </div>
@@ -404,8 +404,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[9] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[6])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[6])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[6].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[6].props.video.id}`)}>{videos[6].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[6].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -417,8 +417,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[5] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[5])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[5])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[5].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[5].props.video.id}`)}>{videos[5].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[5].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -430,8 +430,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[4] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[4])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[4])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[4].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[4].props.video.id}`)}>{videos[4].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[4].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -443,8 +443,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[3] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[3])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[3])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[3].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[3].props.video.id}`)}>{videos[3].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[3].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -456,8 +456,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[2] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[2])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[2])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[2].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[2].props.video.id}`)}>{videos[2].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[2].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -530,7 +530,7 @@ class GenreShow extends React.Component {
                         <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[0])} /> :
                         <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[0])} />}
                       <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[0].props.video.id}`)} >{videos[0].props.video.title}</p>
-                      <div className="redplayborder hiddenIcons">
+                      <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[0].props.video.id}`)}>
                         <img className="redplay" src={window.redplay2} />
                       </div>
                     </div>
@@ -543,8 +543,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[7] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[1])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[1])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[1].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[1].props.video.id}`)}>{videos[1].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[1].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -555,8 +555,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[8] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[2])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[2])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[2].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[2].props.video.id}`)}>{videos[2].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[2].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -567,8 +567,8 @@ class GenreShow extends React.Component {
                   {this.state.listchange[11] ?
                       <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(videos[3])}/>   :
                       <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[3])}/> }
-                      <p className="videotitleover hiddenIcons">{videos[3].props.video.title}</p>
-                      <div className = "redplayborder hiddenIcons">
+                      <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[3].props.video.id}`)}>{videos[3].props.video.title}</p>
+                      <div className = "redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[3].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
@@ -580,8 +580,8 @@ class GenreShow extends React.Component {
                 <div className="bottomhalftvshows">
                   <div className="bottomdivtext">
                     <p className='footertext'>Questions? Email KevinKTom@gmail.com</p>
-                    <a href="https://github.com/kevinktom" className="github"><img src={window.github} /> </a>
-                    <a href="https://www.linkedin.com/in/kevin-tom-b36951a9/" className="linkedin"><img src={window.linkedin} /> </a>
+                    <a href="https://github.com/kevinktom" className="github" target="_blank"><img src={window.github} /> </a>
+                    <a href="https://www.linkedin.com/in/kevinktom/" className="linkedin" target="_blank"><img src={window.linkedin} /> </a>
                   </div>
                 </div>
               </div>

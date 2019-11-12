@@ -169,7 +169,7 @@ class Search extends React.Component {
                                 <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(video)} /> :
                                 <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(video)} />}
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
-                            <div className="redplayborder hiddenIcons">
+                            <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
                                 <img className="redplay" src={window.redplay2} />
                             </div>
 
@@ -189,7 +189,7 @@ class Search extends React.Component {
                                 <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(video)} /> :
                                 <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(video)} />}
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
-                            <div className="redplayborder hiddenIcons">
+                            <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
                                 <img className="redplay" src={window.redplay2} />
                             </div>
                         </div>
@@ -208,7 +208,7 @@ class Search extends React.Component {
                                 <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(video)} /> :
                                 <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(video)} />}
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
-                            <div className="redplayborder hiddenIcons">
+                            <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
                                 <img className="redplay" src={window.redplay2} />
                             </div>
                         </div>

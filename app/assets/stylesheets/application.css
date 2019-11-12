@@ -144,3 +144,7 @@
     text-decoration: none;
     color: white;
 }
+
+.containerSplash .haveAccount a:hover{
+    text-decoration: underline;
+}

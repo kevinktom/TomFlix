@@ -13,9 +13,9 @@ class Nav extends React.Component {
         this.closeMenu = this.closeMenu.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
         this.searchDefaultText = this.searchDefaultText.bind(this);
-        this.debounce = this.debounce.bind(this);
+        // this.debounce = this.debounce.bind(this);
         // this.debouncedUpdateSearch = this.debouncedUpdateSearch.bind(this);
-        this.debouncedHandleChange = this.debounce(this.updateSearch, 1000, false).bind(this)
+        this.debouncedHandleChange = debounce(this.updateSearch, 1000, false).bind(this)
         this.persistedHandleChange = e => {
             // debugger
             // let eclone = e.target;
@@ -69,20 +69,20 @@ class Nav extends React.Component {
     //     }
     // }
 
-    debounce(func, wait, immediate) {
-    var timeout;
-    return function () {
-        var context = this, args = arguments;
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
+//     debounce(func, wait, immediate) {
+//     var timeout;
+//     return function () {
+//         var context = this, args = arguments;
+//         var later = function () {
+//             timeout = null;
+//             if (!immediate) func.apply(context, args);
+//         };
+//         var callNow = immediate && !timeout;
+//         clearTimeout(timeout);
+//         timeout = setTimeout(later, wait);
+//         if (callNow) func.apply(context, args);
+//     };
+// };
 
     componentDidMount(){
         this._isMounted = true
@@ -234,7 +234,7 @@ class Nav extends React.Component {
 
                         </div>
                         <div className='linksSecond'>
-                                <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github}/> </a>
+                                <a href="https://github.com/kevinktom" className="iconSizes" target="_blank"><img src={window.github}/> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
                                 <div className="dropdown" onMouseLeave={this.closeMenu}>
                                     <div onMouseEnter={this.showMenu} className='userandcaret'>
