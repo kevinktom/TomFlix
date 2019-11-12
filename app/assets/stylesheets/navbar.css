@@ -76,7 +76,7 @@
 .linksFirst{
     display: flex;
     justify-content: space-between;
-    width: 380px;
+    width: 265px;
     position: relative;
     left: 75px;
 }

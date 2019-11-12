@@ -223,7 +223,7 @@ class Nav extends React.Component {
                             <Link to='/genre/5' className='singleLinks'> Movies </Link> */}
                             <Link to='/genre/21' className='singleLinks'> TV Shows </Link>
                             <Link to='/genre/22' className='singleLinks'> Movies </Link>
-                            <Link to='/browse' className='singleLinks'> Recently Added </Link>
+                            {/* <Link to='/browse' className='singleLinks'> Recently Added </Link> */}
                             <Link to='/browse/my-list' className='singleLinks'> My List </Link>
                         </div>
                     </div>

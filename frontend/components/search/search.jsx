@@ -230,7 +230,7 @@ class Search extends React.Component {
                     </div>
 
                     : <div className="bottomhalf"></div>}
-
+        
 
             </div>
         )
