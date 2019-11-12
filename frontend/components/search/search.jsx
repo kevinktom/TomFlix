@@ -59,14 +59,18 @@ class Search extends React.Component {
         if (currentState[video.props.index]) {
             this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
             currentState[video.props.index] = false;
-            this.setState({ listchange: currentState });
+            if (this._isMounted){
+                this.setState({ listchange: currentState });
+            }
             // debugger
         }
         else {
             // debugger
             this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
             currentState[video.props.index] = true;
-            this.setState({ listchange: currentState });
+            if (this._isMounted) {
+                this.setState({ listchange: currentState });
+            }
         }
         // debugger
     }
@@ -83,7 +87,9 @@ class Search extends React.Component {
             })
 
         })
-        this.setState({ listchange: currentState });
+        if (this._isMounted) {
+            this.setState({ listchange: currentState });
+        }
     }
 
     //OLD BEFORE DIV OVER VIDEO TAG
@@ -97,9 +103,14 @@ class Search extends React.Component {
     // }
 
     componentDidMount() {
+        this._isMounted = true;
         this.props.renderVideos().then(() => this.checkMyList());
         this.props.fetchLists();
        
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     componentDidUpdate(prevProps) {

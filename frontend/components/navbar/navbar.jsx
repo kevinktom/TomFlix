@@ -15,11 +15,13 @@ class Nav extends React.Component {
         this.searchDefaultText = this.searchDefaultText.bind(this);
         this.debounce = this.debounce.bind(this);
         // this.debouncedUpdateSearch = this.debouncedUpdateSearch.bind(this);
-        this.debouncedHandleChange = debounce(this.updateSearch, 1000, false).bind(this)
+        this.debouncedHandleChange = this.debounce(this.updateSearch, 1000, false).bind(this)
         this.persistedHandleChange = e => {
             // debugger
             // let eclone = e.target;
-            this.setState({ search: e.target.value })
+            if (this._isMounted){
+                this.setState({ search: e.target.value })
+            }
             // e.persist()
             this.debouncedHandleChange(e)
         }
@@ -43,14 +45,17 @@ class Nav extends React.Component {
         if (!e.currentTarget.className === "dropdown" && !e.currentTarget.className === "userIcon" && !e.currentTarget.className === "dropdown-content"){
             return this.closeMenu(e);
         }
-        this.setState({showMenu: true});
+        if (this._isMounted){
+            this.setState({showMenu: true});
+        }
     }
 
     closeMenu(e){
         // debugger
         if (e.currentTarget.className === "dropdown-content" || e.currentTarget.className === "dropdown" || e.currentTarget.className === "hiddenbridge"){
-
-        this.setState({showMenu: false})
+            if (this._isMounted){
+                this.setState({showMenu: false})
+            }
         }
     }
 
@@ -80,6 +85,7 @@ class Nav extends React.Component {
 };
 
     componentDidMount(){
+        this._isMounted = true
         let scrollpos = window.scrollY;
         // let root = document.getElementById('root').getElementsByTagName("div")[0].getElementsByClassName("indexGrid")[0];
         let navbar = document.getElementsByClassName("entireNav")[0].getElementsByClassName("navLinks")[0];
@@ -104,6 +110,15 @@ class Nav extends React.Component {
                 remove_class_on_scroll();
             }
         });
+        if(this.state.search){
+            if (this.state.search.length > 0){
+                this.toggleSearchShow();
+            }
+        }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     // updateSearch(e){
@@ -135,7 +150,7 @@ class Nav extends React.Component {
     //             )
     // }
 
-    updateSearch(e){
+    updateSearch(){
         // debugger
         // let newSearch = e.target.value;
         // e.persist();
@@ -144,7 +159,7 @@ class Nav extends React.Component {
             this.props.history.push(`/browse`)
             }
         else{
-            this.props.history.push(`/search/${this.state.search}`);
+            this.props.history.push(`/search/${this.state.search}`).toggleSearchShow();
         }
                 
         // this.setState({search: e.target.value}, 

@@ -129,10 +129,8 @@ class Videos extends React.Component{
   }
   
   componentDidMount(){
-    // const allProps = this.props;
     this._isMounted = true
     this.props.renderVideos().then(() => this.checkMyList());
-    // debugger
     this.props.fetchLists();
     
   }
