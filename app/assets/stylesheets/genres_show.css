@@ -37,3 +37,12 @@
     left: 53px;
     top: -34px;
 }
+
+.genreVideoDiv{
+    background-color: #141414;
+}
+
+.videoPosition{
+    position: relative;
+    top: -21px;
+}

@@ -29,13 +29,13 @@ tvshows = Genre.create!(genre: "TV Shows")
 
 
 #first row
-inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "Movie")
-inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptiontest.mp4'), filename: 'inceptiontest.mp4')
-inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
-
 # inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "Movie")
-# inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptionmain.mp4'), filename: 'inceptionmain.mp4')
+# inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptiontest.mp4'), filename: 'inceptiontest.mp4')
 # inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
+
+inceptiontest = Video.create!(title: "Inception", description: "In this mind-bending sci-fi thriller, a man runs an espionage business built around entering the subconscious of his targets to mold their thoughts.", year: 2010, maturity_rating: "PG-13", runtime: "2h 28m", video_type: "Movie")
+inceptiontest.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inceptionmain.mp4'), filename: 'inceptionmain.mp4')
+inceptiontest.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
 
 avengers = Video.create!(title: "Avengers: Endgame", description: "I Love You 3000.", year: 2019, maturity_rating: "PG-13", runtime: "3h 2m", video_type: "Movie")
 avengers.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/avengers.mp4'), filename: 'avengers.mp4')

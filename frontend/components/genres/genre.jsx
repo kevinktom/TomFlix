@@ -162,7 +162,14 @@ class GenreShow extends React.Component {
     }
 
     mainVideoCreator(video){
-      return <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" src={video} type="video/mp4"> </video>
+      debugger
+      if (video.includes("minions")){
+        return <video autoPlay loop muted={this.state.muted} className="mainVideo videoPosition" id="mainvid" src={video} type="video/mp4"> </video>
+
+      }
+      else{
+        return <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" src={video} type="video/mp4"> </video>
+      }
     }
 
 
@@ -181,7 +188,7 @@ class GenreShow extends React.Component {
           genresRender = 
           <div>
 
-              <div className="mainVideoDiv">
+            <div className="mainVideoDiv genreVideoDiv">
                 {this.mainVideoCreator(mainvid)} 
                 <img src={window.minions} className="mainvideoLogo" />
                 {!this.state.muted ?
