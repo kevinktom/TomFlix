@@ -4,3 +4,11 @@
     width: 100vw;
     /* position: fixed; */
 }
+
+.unopenedSearch{
+    left: 130px;
+}
+
+.unopenedSearchBar{
+    display: none;
+}

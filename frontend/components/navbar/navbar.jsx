@@ -14,8 +14,16 @@ class Nav extends React.Component {
         this.updateSearch = this.updateSearch.bind(this);
         this.searchDefaultText = this.searchDefaultText.bind(this);
         this.debounce = this.debounce.bind(this);
-        this.debouncedUpdateSearch = this.debouncedUpdateSearch.bind(this);
+        // this.debouncedUpdateSearch = this.debouncedUpdateSearch.bind(this);
+        this.debouncedHandleChange = debounce(this.updateSearch, 1000, false).bind(this)
+        this.persistedHandleChange = e => {
+            // debugger
+            e.persist()
+            this.debouncedHandleChange(e)
+        }
+        this.toggleSearchShow = this.toggleSearchShow.bind(this);
     }
+    
 
     //SEARCH BAR
     //MSP MDP to get videos
@@ -116,22 +124,46 @@ class Nav extends React.Component {
     //     // }
     // }
 
+    // updateSearch(e){
+    //     let newSearch = e.target.value;
+    //     e.persist();
+    //     this.setState({search: newSearch}, 
+    //         () => { if (this.state.search === '') 
+    //         this.props.history.push(`/browse`)}
+    //             )
+    // }
+
     updateSearch(e){
-        let newSearch = e.target.value;
-        e.persist();
-        this.setState({search: newSearch}, 
+        // debugger
+        // let newSearch = e.target.value;
+        // e.persist();
+        this.setState({search: e.target.value}, 
             () => { if (this.state.search === '') 
             this.props.history.push(`/browse`)}
                 )
     }
 
-    debouncedUpdateSearch(e){
-        debounce(this.updateSearch(e), 1000, false)
-    }
+    // debouncedUpdateSearch(e){
+    //     debounce(this.updateSearch(e), 1000, false)
+    // }
 
     searchDefaultText(){
         if (this.props.match.params.searchinput){
             return this.props.match.params.searchinput;
+        }
+    }
+
+    toggleSearchShow(){
+        let searchIcon = document.getElementById("searchIconId");
+        let searchBar = document.getElementById("searchBarId");
+        debugger
+        if(searchIcon.classList.contains("unopenedSearch")){
+            searchIcon.classList.remove("unopenedSearch");
+            searchBar.classList.remove("unopenedSearchBar");
+        }
+        else{
+            searchIcon.classList.add("unopenedSearch");
+            searchBar.classList.add("unopenedSearchBar");
         }
     }
 
@@ -160,20 +192,22 @@ class Nav extends React.Component {
                         <Link to='/browse'><img src={window.logo} className="navlogo" /> </Link>
                         <div className='linksFirst'>
                             <Link to='/browse' className='singleLinks'> Home </Link>
-                            <Link to='/genre/6' className='singleLinks'> TV Shows </Link>
-                            <Link to='/genre/5' className='singleLinks'> Movies </Link>
+                            {/* <Link to='/genre/6' className='singleLinks'> TV Shows </Link>
+                            <Link to='/genre/5' className='singleLinks'> Movies </Link> */}
+                            <Link to='/genre/21' className='singleLinks'> TV Shows </Link>
+                            <Link to='/genre/22' className='singleLinks'> Movies </Link>
                             <Link to='/browse' className='singleLinks'> Recently Added </Link>
                             <Link to='/browse/my-list' className='singleLinks'> My List </Link>
                         </div>
                     </div>
                     <div className="iconsandsearch"> 
                         <div className="searchbar">
-                            <a  className="iconSizes"><img className="searchIcon" src={window.search} /></a>
-                            <input className="inputsearch" type="text" value={this.props.searchurl} onChange={this.debouncedUpdateSearch}/>
+                                <a className="iconSizes"><img className="searchIcon unopenedSearch" id="searchIconId" src={window.search} onClick={this.toggleSearchShow} /></a>
+                                <input className="inputsearch unopenedSearchBar" id="searchBarId" type="text" value={this.props.searchurl} onChange={this.persistedHandleChange}/>
 
                         </div>
                         <div className='linksSecond'>
-                            <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github} /> </a>
+                                <a href="https://github.com/kevinktom" className="iconSizes"><img src={window.github}/> </a>
                             {/* <a href="" className="iconSizes"><img src={window.notification} /></a> */}
                                 <div className="dropdown" onMouseLeave={this.closeMenu}>
                                     <div onMouseEnter={this.showMenu} className='userandcaret'>

@@ -154,7 +154,7 @@ class Videos extends React.Component{
       {IndividualVideos.length >= 2 ? 
         <div className="mainVideoDiv">
             {/* autoPlay loop */}
-            <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
+            <video loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
             {/* <div className='mainVideoDescription'>{IndividualVideos[1].props.video.description}</div> */}
           {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
@@ -189,7 +189,7 @@ class Videos extends React.Component{
               </div>
 
 
-              <div className='videodiv'>
+              {/* <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[1]}
                   {this.state.listchange[1] ?
@@ -252,7 +252,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
-              </div>
+              </div> */}
 
               
             </div>
@@ -289,7 +289,7 @@ class Videos extends React.Component{
               </div>
                   
 
-              <div className='videodiv'>
+              {/* <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[7]}
                   {this.state.listchange[7] ?
@@ -352,7 +352,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div>
@@ -377,7 +377,7 @@ class Videos extends React.Component{
                 </div>
               </div>
 
-              <div className='videodiv'>
+              {/* <div className='videodiv'>
                 <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                   {IndividualVideos[19]}
                   {this.state.listchange[19] ?
@@ -441,7 +441,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div> 
@@ -466,7 +466,7 @@ class Videos extends React.Component{
                   </div>
                 </div>
 
-                <div className='videodiv'>
+                {/* <div className='videodiv'>
                   <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}>
                     {IndividualVideos[13]}
                     {this.state.listchange[13] ?
@@ -530,7 +530,7 @@ class Videos extends React.Component{
                       <img className="redplay" src={window.redplay2}  />
                     </div>
                   </div>
-                </div>
+                </div> */}
               
             </div>
           </div> 
