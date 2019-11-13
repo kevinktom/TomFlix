@@ -20,7 +20,7 @@ Features
   1. Videos can be played on a fullscreen video player 
   1. Users can navigate to different links on the navbar which display different categories such as Movies & TV Shows
 
-Video Hover
+Video Hover & MyList
 ---------------
 
 ![Alt Text](https://media.giphy.com/media/kH79aHkhiZCIQ2PBsJ/giphy.gif)
@@ -29,6 +29,8 @@ Video Hover
 * Uses event listeners to play, pause, and set the time of the video with "onMouseOver" and "onMouseLeave"
 * On click of the video will bring the user to the video player where the video will play
 * Videos scale on hover after 750 milliseconds 
+* Video hover mutes the main video
+* CRUD functionality reflected in real time for MyList
 
 ### Event Handlers
 ```
