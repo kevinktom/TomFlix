@@ -118,8 +118,8 @@ class Nav extends React.Component {
                         <Link to='/browse'><img src={window.logo} className="navlogo" /> </Link>
                         <div className='linksFirst'>
                             <Link to='/browse' className='singleLinks'> Home </Link>
-                            <Link to='/genre/7' className='singleLinks'> TV Shows </Link>
-                            <Link to='/genre/6' className='singleLinks'> Movies </Link>
+                            <Link to='/genre/10' className='singleLinks'> TV Shows </Link>
+                            <Link to='/genre/9' className='singleLinks'> Movies </Link>
                             <Link to='/browse/my-list' className='singleLinks'> My List </Link>
                         </div>
                     </div>
