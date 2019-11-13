@@ -18,7 +18,6 @@ const App = () => {
       <header>
         
       </header>
-      {/* <ProtectedRoute path='/' component={NavBar} /> */}
       <Switch>
         <AuthRoute path='/signin' component={LoginFormContainer}/> 
         <AuthRoute path='/signup' component={SignUpContainer}/> 

@@ -18,16 +18,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     };
     store = configureStore(preloadedState)
   }
-
-  // window.login = actions.login;
-  // window.signup = actions.signup;
-  // window.logout = actions.logout;
-  // window.createlist = mylists.createMyList;
-  // window.getlists = mylists.fetchLists;
-  // window.deletelist = mylists.deleteMyList;
-  // window.getgenre = genreactions.getGenre;
-  // window.dispatch = store.dispatch;
-  // // window.
-  // window.getState = store.getState();
   ReactDOM.render(<Root store={store}/>, root)
 })

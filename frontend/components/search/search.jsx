@@ -10,7 +10,6 @@ class Search extends React.Component {
         }
         this.handleHoverPlay = this.handleHoverPlay.bind(this);
         this.handleHoverLeave = this.handleHoverLeave.bind(this);
-        // this.removeMyList = this.removeMyList.bind(this);
         this.handleVideoList = this.handleVideoList.bind(this);
         this.checkMyList = this.checkMyList.bind(this);
 
@@ -22,7 +21,6 @@ class Search extends React.Component {
         video.nextSibling.classList.remove("hiddenIcons");
         video.nextSibling.nextSibling.classList.remove("hiddenIcons");
         video.nextSibling.nextSibling.nextSibling.classList.remove("hiddenIcons");
-        // debugger
         e.persist();
         video.play().then(null, () => {
             video.muted = true
@@ -62,17 +60,14 @@ class Search extends React.Component {
             if (this._isMounted){
                 this.setState({ listchange: currentState });
             }
-            // debugger
         }
         else {
-            // debugger
             this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
             currentState[video.props.index] = true;
             if (this._isMounted) {
                 this.setState({ listchange: currentState });
             }
         }
-        // debugger
     }
 
     checkMyList() {
@@ -92,15 +87,6 @@ class Search extends React.Component {
         }
     }
 
-    //OLD BEFORE DIV OVER VIDEO TAG
-    // handleHoverLeave(e) {
-    //     // debugger
-    //     // if (e.target.className !== "rowvideo" && e.target.className !== "addList"){
-    //         e.currentTarget.pause();
-    //         e.currentTarget.currentTime = 0;
-    //         e.currentTarget.load();
-    //     // }
-    // }
 
     componentDidMount() {
         this._isMounted = true;
@@ -114,7 +100,6 @@ class Search extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
         if (this.props.videos.length > 0 && this.props.mylists.length > 0) {
             if (prevProps.mylists.length !== this.props.mylists.length) {
                 this.checkMyList();
@@ -124,20 +109,6 @@ class Search extends React.Component {
 
 
     render() {
-        // debugger
-        // let lists = [];
-        // const currentUser = this.props.currentUser;
-        // this.props.mylists.forEach(list => {
-        //     // debugger
-        //     if (list.user_id === parseInt(currentUser)) {
-        //         this.props.videos.forEach(video => {
-        //             if (video.id === list.video_id) {
-        //                 lists.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} />);
-        //             }
-        //         })
-        //     }
-        // })
-
         let searchVideos = [];
         let urlsearch = this.props.match.params.searchinput.toLowerCase();
         this.props.videos.forEach((video, idx) => {
@@ -146,25 +117,13 @@ class Search extends React.Component {
                 searchVideos.push(<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx} />);
             }
         })
-        // debugger
 
-        // debugger
         const videoArr = searchVideos.map((video, idx) => {
-            // debugger
             if (idx % 6 === 0) {
                 return (
-                    // class = firstlist, lastlist, list
-                    // video
-                    // <listVideoContainer video={video} klass="div" />
                     <div key={video.props.video.id}>
                         <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivfirstlist'>
-                            {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            {/* {video.state.myList ? 
-                            <img className="addList" src={window.removelist} alt="" /> : 
-                                <img className="addList" src={window.addlist} alt="" />
-                            }  */}
-                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} /> */}
                             {this.state.listchange[video.props.index] ?
                                 <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(video)} /> :
                                 <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(video)} />}
@@ -181,10 +140,7 @@ class Search extends React.Component {
                 return (
                     <div key={video.props.video.id}>
                         <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlastlist'>
-                            {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
-                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} /> */}
                             {this.state.listchange[video.props.index] ?
                                 <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(video)} /> :
                                 <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(video)} />}
@@ -200,10 +156,7 @@ class Search extends React.Component {
                 return (
                     <div key={video.props.video.id}>
                         <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlist'>
-                            {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
-                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} /> */}
                             {this.state.listchange[video.props.index] ?
                                 <img className="addList hiddenIcons" src={window.minicheck} onClick={() => this.handleVideoList(video)} /> :
                                 <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(video)} />}
@@ -222,7 +175,6 @@ class Search extends React.Component {
                 <NavBarContainer searchurl = {this.props.match.params.searchinput} />
                 {this.props.videos.length >= 1 ?
                     <div className="searchlist">
-                        {/* <p id="mylisttext">My List</p> */}
                         <div className="secondsectionList">
                             {videoArr}
 

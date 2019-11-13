@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
 User.destroy_all
@@ -60,13 +53,13 @@ thematrix.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/thematri
 
 #second row comedy
 
-theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG-13", runtime: "1 Minute 27 Seconds", video_type: "TV Show")
-theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/seedtheoffice.mp4'), filename: 'seedtheoffice.mp4')
-theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
-
 # theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG-13", runtime: "1 Minute 27 Seconds", video_type: "TV Show")
-# theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.mp4'), filename: 'theoffice.mp4')
+# theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/seedtheoffice.mp4'), filename: 'seedtheoffice.mp4')
 # theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
+
+theoffice = Video.create!(title: "The Office", description: "Imitation is the sincerest form of flattery.", year: 2013, maturity_rating: "PG-13", runtime: "1 Minute 27 Seconds", video_type: "TV Show")
+theoffice.video_url.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.mp4'), filename: 'theoffice.mp4')
+theoffice.photo.attach(io: open('https://tomflix-seeds.s3.amazonaws.com/theoffice.jpg'), filename: 'theoffice.jpg')
 
 
 community = Video.create!(title: "Community", description: "Cool cool cool.", year: 2009, maturity_rating: "PG-13", runtime: "25m", video_type: "TV Show")

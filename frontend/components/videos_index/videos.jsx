@@ -8,24 +8,20 @@ class Videos extends React.Component{
     super(props);
     this.state = { 
       muted: false, 
-      indexlist: false, 
       listchange: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]};
     this.handleHoverPlay = this.handleHoverPlay.bind(this);
     this.handleHoverLeave = this.handleHoverLeave.bind(this);
     this.handleMute = this.handleMute.bind(this);
-    // this.handleMyList = this.handleMyList.bind(this);
     this.handleVideoList = this.handleVideoList.bind(this);
     this.checkMyList = this.checkMyList.bind(this);
   }
 
   handleHoverPlay(e){
-    // debugger
     let vid = document.getElementById("mainvid");
     let video = e.currentTarget.children[0];
     video.nextSibling.classList.remove("hiddenIcons");
     video.nextSibling.nextSibling.classList.remove("hiddenIcons");
     video.nextSibling.nextSibling.nextSibling.classList.remove("hiddenIcons");
-    // debugger
     e.persist();
     video.play().then(null, () => {
       video.muted = true
@@ -40,7 +36,6 @@ class Videos extends React.Component{
 
   handleHoverLeave(e){
     let video = e.currentTarget.children[0];
-    // debugger
     video.pause();
     video.currentTime = 0;
     video.load();
@@ -51,7 +46,6 @@ class Videos extends React.Component{
 
 
   handleMute(){
-    // debugger
     let vid = document.getElementById("mainvid")
     if (this.state.muted && this._isMounted){
       this.setState({muted: false});
@@ -64,19 +58,6 @@ class Videos extends React.Component{
     }
   }
 
-  // handleMyList(){
-  //   let currState = this.state.listchange.slice();
-  //   if (currState[0]) {
-  //     this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
-  //     currState[0] = false;
-  //     this.setState({ listchange: currState }); // batch set state after the loop ****
-  //   }
-  //   else {
-  //     this.props.createMyList(this.props.videos[0].id).then(this.props.fetchLists);
-  //     currState[0] = true;
-  //     this.setState({ listchange: currState });
-  //   }
-  // }
 
   handleVideoList(video){
 
@@ -98,17 +79,14 @@ class Videos extends React.Component{
       if (this._isMounted){
         this.setState({listchange: currentState}); 
       }
-      // debugger
     }
     else{
-      // debugger
       this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = true;
       if (this._isMounted){
         this.setState({ listchange: currentState });
       }
     }
-    // debugger
   }
 
   checkMyList(){
@@ -139,7 +117,6 @@ class Videos extends React.Component{
   }
 
   componentDidUpdate(prevProps){
-    // debugger
     if (this.props.videos.length > 0 && this.props.mylists.length > 0){
       if (prevProps.mylists.length !== this.props.mylists.length){
         this.checkMyList();
@@ -165,10 +142,7 @@ class Videos extends React.Component{
       <NavBarContainer />
       {IndividualVideos.length >= 2 ? 
         <div className="mainVideoDiv">
-            {/* autoPlay loop */}
             <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={this.props.videos[0].video_url} type="video/mp4"/> </video> 
-            {/* <div className='mainVideoDescription'>{IndividualVideos[1].props.video.description}</div> */}
-          {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
           <img src={window.inceptionlogo} className="mainvideoLogo"/>
           {!this.state.muted ? 
           <img src={window.soundon} className="soundindex" id="soundon" onClick={this.handleMute}/> : 
@@ -301,7 +275,6 @@ class Videos extends React.Component{
                         onClick={() => this.props.history.push(`/browse/${IndividualVideos[6].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2}  />
                     </div>
-                      {/* <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(IndividualVideos[6])} /> */}
                   </div>
               </div>
                   

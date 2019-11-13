@@ -7,7 +7,6 @@ import * as mylistActions from '../../actions/mylist_actions';
 const mapStateToProps = (state, ownProps) => {
     
     let genreId = ownProps.match.params.genreId;
-    // debugger
     return ({
         genre: state.entities.genres[genreId],
         mylists: Object.values(state.entities.mylists),

@@ -4,8 +4,6 @@
     height: 280px;
     width: 100%;
     top: 140px;
-    /* bottom: 0; */
-    /* background-color: grey; */
     z-index: 1;
 }
 
@@ -13,7 +11,6 @@
     background: black;
     height: 100vh;
     width: 100vw;
-    /* position: fixed; */
 }
 
 .blockrowList{
@@ -22,11 +19,8 @@
     height: 230px;
     width: 100%;
     bottom: 0;
-    /* background-color: lightpink; */
-    /* justify-content: center; */
     align-items: center;
     left: 55px;
-    /* z-index: 1; */
 }
 
 .blockrow2List{
@@ -34,17 +28,13 @@
     display: flex;
     height: 230px;
     width: 100%;
-    /* bottom: 0; */
     left: 50px;
     top: 185px;
-    /* background-color: lightpink; */
-    /* justify-content: center; */
     align-items: center;
 }
 
 .secondsectionList{
     position: relative;
-    /* display: block; */
     display: flex;
     flex-wrap: wrap;
     height: 260px;
@@ -52,8 +42,6 @@
     top: 145px;
     bottom: 0;
     text-align: center;
-    /* background-color: grey; */
-
     margin-left: 2.5%;
 }
 
@@ -79,7 +67,6 @@
 }
 
 .videodivfirstlist:hover{
-    /* transform: translateX(25%); */
     margin: 0 0 0 80px ;
     transform: scale(1.75);
     z-index: 1;
@@ -97,7 +84,6 @@
 }
 
 .videodivlastlist:hover{
-    /* transform: translateX(25%); */
     margin: 0 0 0 -80px ;
     transform: scale(1.75);
     z-index: 1;
@@ -122,19 +108,14 @@
 
 .addList{
     position: absolute;
-    /* right: 12px;
-    bottom: 20px; */
     left: 17px;
     bottom: 25px;
     border-radius: 50%;
     border: 1px solid #b2b2b2;
     padding: 5px;
     background: rgba(0,0,0,0.45);
-    /* width: 25px; */
     transition: border .3s ;
     cursor: pointer;
-    /* opacity: 80%; */
-    /* z-index: 2; */
 }
 
 .addList:hover{

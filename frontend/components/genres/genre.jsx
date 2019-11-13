@@ -9,7 +9,6 @@ class GenreShow extends React.Component {
         this.handleHoverLeave = this.handleHoverLeave.bind(this);
         this.state = { 
           muted: false, 
-          indexlist: false, 
           listchange: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
         };
         this.handleMute = this.handleMute.bind(this);
@@ -22,13 +21,11 @@ class GenreShow extends React.Component {
     }
 
     handleHoverPlay(e) {
-      // debugger
       let vid = document.getElementById("mainvid");
       let video = e.currentTarget.children[0];
       video.nextSibling.classList.remove("hiddenIcons");
       video.nextSibling.nextSibling.classList.remove("hiddenIcons");
       video.nextSibling.nextSibling.nextSibling.classList.remove("hiddenIcons");
-      // debugger
       e.persist();
       video.play().then(null, () => {
         video.muted = true
@@ -40,7 +37,6 @@ class GenreShow extends React.Component {
 
     handleHoverLeave(e) {
       let video = e.currentTarget.children[0];
-      // debugger
       video.pause();
       video.currentTime = 0;
       video.load();
@@ -51,7 +47,6 @@ class GenreShow extends React.Component {
 
 
     handleMute() {
-        // debugger
         let vid = document.getElementById("mainvid")
         if (this.state.muted) {
             this.setState({ muted: false });
@@ -64,21 +59,17 @@ class GenreShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
       this.props.fetchGenre(this.props.match.params.genreId);
       this.props.renderVideos().then(() => this.checkMyList());
-      // debugger
       this.props.fetchLists();
     }
 
     componentDidUpdate(prevProps) {
-      // debugger
       if (this.props.videos.length > 0 && this.props.mylists.length > 0) {
         if (prevProps.mylists.length !== this.props.mylists.length) {
           this.checkMyList();
         }
       }
-      // debugger
       if (this.props.match.params.genreId !== prevProps.match.params.genreId){
         this.props.fetchGenre(this.props.match.params.genreId);
         this.props.renderVideos();
@@ -87,11 +78,10 @@ class GenreShow extends React.Component {
 
     handleMyList() {
       let currState = this.state.listchange.slice();
-      // debugger
       if (currState[0]) {
         this.props.deleteMyList(this.props.videos[0].id).then(this.props.fetchLists);
         currState[0] = false;
-        this.setState({ listchange: currState }); // batch set state after the loop ****
+        this.setState({ listchange: currState }); 
       }
       else {
         this.props.createMyList(this.props.videos[0].id).then(this.props.fetchLists);
@@ -118,15 +108,12 @@ class GenreShow extends React.Component {
       this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = false;
       this.setState({ listchange: currentState });
-      // debugger
     }
     else {
-      // debugger
       this.props.createMyList(video.props.video.id).then(this.props.fetchLists);
       currentState[video.props.index] = true;
       this.setState({ listchange: currentState });
     }
-    // debugger
   }
 
     checkMyList() {
@@ -147,22 +134,16 @@ class GenreShow extends React.Component {
     }
 
     filterVideos(){
-      // let vids = this.props.videos.filter(video => {
-        //     return (video.genre_ids.includes(this.props.genre.id))
-        // });
         let videos = this.props.videos.map((video, idx) => {
-          // let indexList = false;
           return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx} />)
         }) 
         videos = videos.filter(video => {
-          // debugger
         return (video.props.video.genre_ids.includes(this.props.genre.id))
       })
       return videos
     }
 
     mainVideoCreator(video){
-      // debugger
       if (video.includes("minions")){
         return <video autoPlay loop muted={this.state.muted} className="mainVideo videoPosition" id="mainvid" src={video} type="video/mp4"> </video>
 
@@ -174,16 +155,13 @@ class GenreShow extends React.Component {
 
 
     render() {
-      // debugger
       let mainvid;
       let videos = [];  
       if (this.props.genre){
         videos = this.filterVideos();
-        // debugger
         }
         let genresRender
         if (videos.length === 20){
-          // debugger
           mainvid = videos[10].props.video.video_url
           genresRender = 
           <div>
@@ -289,7 +267,6 @@ class GenreShow extends React.Component {
                 </div>
               </div>
             </div> 
-          {/* </div> */}
 
           <div className="middlebottomhalfmovies">
             <div className="secondsection">
@@ -305,7 +282,6 @@ class GenreShow extends React.Component {
                     <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${videos[14].props.video.id}`)}>
                       <img className="redplay" src={window.redplay2} />
                     </div>
-                    {/* <img className="addList hiddenIcons" src={window.indexListAdd} onClick={() => this.handleVideoList(videos[6])} /> */}
                   </div>
                 </div>
 
@@ -493,18 +469,12 @@ class GenreShow extends React.Component {
 
 
         else if(videos.length === 4){
-          // debugger
-          
           mainvid = videos[0].props.video.video_url
           genresRender =
             <div>
    
             <div className="mainVideoDiv">
-              {/* autoPlay loop */}
-              {/* <video autoPlay loop muted={this.state.muted} className="mainVideo" id="mainvid" > <source src={videos[0].props.video.video_url} type="video/mp4" /> </video> */}
               {this.mainVideoCreator(mainvid)}
-              {/* <div className='mainVideoDescription'>{videos[1].props.video.description}</div> */}
-              {/* <Link to={`/browse/${video.id}`}>Play</Link>  */}
               <img src={window.office} className="mainvideoLogo" />
               {!this.state.muted ?
                 <img src={window.soundon} className="soundindex" id="soundon" onClick={this.handleMute} /> :

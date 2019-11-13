@@ -3,7 +3,6 @@ import {fetchGenre} from '../util/genre_api_util';
 export const FETCH_GENRE = "FETCH_GENRE";
 
 const receiveGenre = genre => {
-    // debugger
     return {
         type: FETCH_GENRE,
         genre

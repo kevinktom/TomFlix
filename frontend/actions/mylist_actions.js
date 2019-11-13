@@ -31,7 +31,6 @@ export const fetchLists = videos => dispatch => {
 }
 
 export const createMyList = (videoId) => dispatch => {
-    // debugger
     return myListActions.createList(videoId).then((vid) => dispatch(createList(vid)))
 }
 

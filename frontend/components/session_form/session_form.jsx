@@ -34,11 +34,7 @@ class SessionForm extends React.Component{
     }, 2100)
     
   }
-  // handleDemo(e){
-    //   const testUser = { email: "hire@me.please", password: "password" }
-    //   e.preventDefault();
-  //   this.props.demo(testUser);
-  // }
+
 
   handleSubmit(e){
     e.preventDefault();

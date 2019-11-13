@@ -6,7 +6,6 @@ import SessionForm from './session_form.jsx';
 
 
 const mapStateToProps = state => {
-  // debugger
   return ({
     errors: state.errors.session,
     formType: 'Sign Up',

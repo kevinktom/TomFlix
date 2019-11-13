@@ -1,16 +1,10 @@
 .indexGrid{
      display: grid;
-     /* grid-template-columns: 1fr 2.5fr 6fr 2fr; */
-     /* grid-template-rows: .5fr 8fr 3.5fr 3.5fr 3.5fr 3.5fr; */
      background: lightgrey;
      overflow: hidden;
-     /* align-items: center;
-     justify-content: center;
-     text-align: center; */
 }
 
 .entireNav{
-    /* height: 140px; */
     background-color: transparent;
     z-index: 3;
 }
@@ -22,27 +16,19 @@
     align-items: center;
     position: relative;
     left: 40px;
-    /* top: 4px; */
-    /* padding-left: 40px;
-    padding-top: 21px; */
 
 }
 
 .singleLinks{
     font-size: 14px;
-    /* color:#e5e5e5; */
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .singleLinks:hover{
-     color: #e5e5e5;
-     transition: color .75s ease;
- } */
+
 .singleLinks:hover{
      color: #a8a8a8;
-     /* color: #8c8c8c; */
      transition: color .75s ease;
  }
 
@@ -50,7 +36,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: transparent; */
     background-color: transparent;
     transition: background-color 1s ease;
     max-height: 68px;
@@ -63,7 +48,6 @@
   width: 100%;
 }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky .navLinks {
   padding-top: 60px;
 }
@@ -146,8 +130,6 @@
     bottom: -137px;
     opacity: .91;
     height: 120px;
-    /* transition: all 1s ease; */
-    
     animation: fade 2s linear forwards;
 }
 

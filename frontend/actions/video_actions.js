@@ -1,4 +1,3 @@
-// import {allvids} from '../util/video_api_util';
 import * as videoActions from '../util/video_api_util';
 
 export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
@@ -12,7 +11,6 @@ const receiveAllVideos = videos => {
 }
 
 const receiveVideo = video => {
-    // debugger
     return {
         type: FETCH_VIDEO,
         video
@@ -21,7 +19,6 @@ const receiveVideo = video => {
 
 export const renderVideos = videos => dispatch => {
     return videoActions.allvids(videos).then( videos => {
-        // debugger
         dispatch(receiveAllVideos(videos))});
 }
 

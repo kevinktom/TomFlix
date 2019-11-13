@@ -16,7 +16,6 @@
     position: relative;
     right: 30px;
     top: 20px;
-    /* margin-left: 40px; */
 }
 
 .containerSplash .sessionBox{
@@ -55,25 +54,8 @@
     margin-bottom: 16px;
     margin-left: 34px;
     cursor: pointer;
-
-    /* overflow: hidden;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite; */
 }
 
-/* @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-} */
 
  .containerSplash .sessionlogo{
     grid-column: 1/3;
@@ -106,9 +88,6 @@
      text-decoration: underline;
  }
 
- /* .textthreediv{
-     color: white;
- } */
 
  .containerSplash .textthreelabel{
      font-family: Arial, Helvetica, sans-serif;
@@ -157,10 +136,6 @@
  }
 
  .containerSplash .sessionBox .github{
-     /* opacity: .5; */
-     /* transition-property: opacity;
-     transition-duration: 200ms; */
-     /* filter:brightness(50%); */
      position: absolute;
      left: 110px;
      color: white;
@@ -176,14 +151,6 @@
      transition: opacity .75s ease;
  }
 
- /* .github a img{
-     transition: 1s; 
-     /* -webkit-transition: 1s; */
-     /* -webkit-filter: grayscale(100%);
-	 filter: grayscale(100%);
-	 -webkit-transition: .3s ease-in-out;
-	 transition: .3s ease-in-out;
- } */ 
 
  .containerSplash .sessionBox .linkedin{
      opacity: 1.0;

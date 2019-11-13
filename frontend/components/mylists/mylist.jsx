@@ -11,39 +11,19 @@ class Mylist extends React.Component{
     }
 
     handleHoverPlay(e) {
-        // let vid = document.getElementById("mainvid");
-        // debugger
-
-
-        //USE THIS FOR DIV ON HOVER PLAY
         let video = e.currentTarget.children[0];
         video.nextSibling.classList.remove("hiddenIcons");
         video.nextSibling.nextSibling.classList.remove("hiddenIcons");
         video.nextSibling.nextSibling.nextSibling.classList.remove("hiddenIcons");
-        // debugger
         e.persist();
         video.play().then(null, () => {
             video.muted = true
             video.play();
         });
-
-
-        // e.persist();
-        // e.target.play().then(null, () => {
-        //     e.target.muted = true
-        //     e.target.play();
-        // });
-
-
-        // this.setState({ muted: true });
-        // vid.muted = true;
     }
 
 
     handleHoverLeave(e) {
-        // debugger
-        // if (e.target.className !== "rowvideo" && e.target.className !== "addList"){
-        // debugger
         let video = e.currentTarget.children[0];
         video.pause();
         video.currentTime = 0;
@@ -51,36 +31,22 @@ class Mylist extends React.Component{
         video.nextSibling.classList.add("hiddenIcons");
         video.nextSibling.nextSibling.classList.add("hiddenIcons");
         video.nextSibling.nextSibling.nextSibling.classList.add("hiddenIcons");
-        // }
     }
 
-    //OLD BEFORE DIV OVER VIDEO TAG
-    // handleHoverLeave(e) {
-    //     // debugger
-    //     // if (e.target.className !== "rowvideo" && e.target.className !== "addList"){
-    //         e.currentTarget.pause();
-    //         e.currentTarget.currentTime = 0;
-    //         e.currentTarget.load();
-    //     // }
-    // }
 
     componentDidMount(){
         this.props.fetchLists();
         this.props.renderVideos();
-        // debugger
     }
 
     removeMyList(video){
         this.props.deleteMyList(video.props.video.id).then(this.props.fetchLists);
-        // debugger
     }
 
     render(){
-        // debugger
         let lists = [];
         const currentUser = this.props.currentUser;
         this.props.mylists.forEach(list => {
-            // debugger
             if (list.user_id === parseInt(currentUser)){
                 this.props.videos.forEach(video => {
                     if (video.id === list.video_id){
@@ -89,22 +55,13 @@ class Mylist extends React.Component{
                 })
             }
         })
-        // debugger
+
         const videoArr = lists.map((video, idx) => {
-            // debugger
             if (idx % 6 === 0){
                 return (
-                    // class = firstlist, lastlist, list
-                    // video
-                    // <listVideoContainer video={video} klass="div" />
                     <div   key={video.props.video.id}>
                         <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivfirstlist'>
-                            {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            {/* {video.state.myList ? 
-                            <img className="addList" src={window.removelist} alt="" /> : 
-                                <img className="addList" src={window.addlist} alt="" />
-                            }  */}
                             <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
                             <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
@@ -119,9 +76,7 @@ class Mylist extends React.Component{
                 return (
                     <div   key={video.props.video.id}>
                         <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlastlist'>
-                            {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                             {video}
-                            {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
                             <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                             <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
                             <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
@@ -135,9 +90,7 @@ class Mylist extends React.Component{
             return (
                 <div  key={video.props.video.id}>
                     <div onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave} className='videodivlist'>
-                        {/* <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video> */}
                         {video}
-                        {/* <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.props.deleteMyList(video.props.video.id)} /> */}
                         <img className="addList hiddenIcons" src={window.removelist} onClick={() => this.removeMyList(video)} />
                         <p className="videotitleover hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)} >{video.props.video.title}</p>
                         <div className="redplayborder hiddenIcons" onClick={() => this.props.history.push(`/browse/${video.id}`)}>
@@ -147,14 +100,7 @@ class Mylist extends React.Component{
                 </div>
             );
             }
-            // else{
-            // return (
-            //     <div onClick={() => this.props.history.push(`/browse/${video.id}`)} className='videodivlist' key={video.id}>
-            //         <video className="rowvideo" poster={video.photo_url} onMouseOver={this.handleHoverPlay} onMouseLeave={this.handleHoverLeave}> <source src={video.video_url} type="video/mp4" /> </video>
-                    
-            //     </div>
-            // );
-            // }
+         
         })
         return (
             <div className="indexGrid">

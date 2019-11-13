@@ -1,5 +1,4 @@
 export const getMyLists = () => {
-    // debugger
     return $.ajax({
         method: 'get',
         url: "api/mylists"

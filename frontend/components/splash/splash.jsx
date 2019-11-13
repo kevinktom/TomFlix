@@ -1,21 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import {login} from '../../actions/session_actions';
-
 export const Splash = (props) => {
-    // debugger
     const handleDemo = (e) => {
         const testUser = { email: "hire@me.please", password: "password" }
         e.preventDefault();
-        // debugger
         props.action(testUser);
     }
     return(
         <div className="containerSplash" >
             <img src={window.logo} className="sessionlogo"/>
             <img src={window.splash} className="background"/>
-            {/* <div className="containerSplash logo">ge</div> */}
             <h1 className='textone'>See what's next.</h1>
             <h2 className='texttwo'>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
             <Link to='/signin' className="signin"> <button> Sign In </button> </Link>
