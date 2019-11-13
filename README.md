@@ -23,7 +23,7 @@ Features
 Video Hover
 ---------------
 
-![Alt Text](https://media.giphy.com/media/WsuVzWBDQGZd3N06dC/giphy.gif)
+![Alt Text](https://media.giphy.com/media/kH79aHkhiZCIQ2PBsJ/giphy.gif)
 
 
 * Uses event listeners to play, pause, and set the time of the video with "onMouseOver" and "onMouseLeave"
