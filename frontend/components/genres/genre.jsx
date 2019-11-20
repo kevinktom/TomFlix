@@ -140,6 +140,7 @@ class GenreShow extends React.Component {
         videos = videos.filter(video => {
         return (video.props.video.genre_ids.includes(this.props.genre.id))
       })
+      
       return videos
     }
 

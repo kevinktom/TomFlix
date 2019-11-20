@@ -65,7 +65,7 @@ class Videos extends React.Component{
     this.props.videos.forEach((vid, idx) => {
       currentState[idx] = false;
       this.props.mylists.forEach(list => {
-        if (list.video_id === vid.id) {
+        if (list.video_id === vid.id && parseInt(currentUser.id) === list.user_id) {
 
           currentState[idx] = true; 
 
@@ -89,19 +89,19 @@ class Videos extends React.Component{
     }
   }
 
-  checkMyList(){
+  checkMyList() {
     let currentState = this.state.listchange.slice();
     this.props.videos.forEach((video, idx) => {
       currentState[idx] = false;
       this.props.mylists.forEach(list => {
         if (list.video_id === video.id) {
-          currentState[idx] = true; 
+          currentState[idx] = true;
 
         }
       })
 
     })
-    if (this._isMounted){
+    if (this._isMounted) {
       this.setState({ listchange: currentState });
     }
   }
@@ -128,7 +128,6 @@ class Videos extends React.Component{
 
   render(){
     
-  
   const IndividualVideos = this.props.videos.map((video, idx) => {
     
     return (<VideoContainer video={video} handleHoverPlay={this.handleHoverPlay} index={idx}/>)

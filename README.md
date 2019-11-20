@@ -23,7 +23,7 @@ Features
 Video Hover & MyList
 ---------------
 
-![Alt Text](https://media.giphy.com/media/kH79aHkhiZCIQ2PBsJ/giphy.gif)
+![Alt Text](https://media.giphy.com/media/YkKRRWLYbcAQQP8RLN/giphy.gif)
 
 
 * Uses event listeners to play, pause, and set the time of the video with "onMouseOver" and "onMouseLeave"
