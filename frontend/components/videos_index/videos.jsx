@@ -65,7 +65,7 @@ class Videos extends React.Component{
     this.props.videos.forEach((vid, idx) => {
       currentState[idx] = false;
       this.props.mylists.forEach(list => {
-        if (list.video_id === vid.id && parseInt(currentUser.id) === list.user_id) {
+        if (list.video_id === vid.id) {
 
           currentState[idx] = true; 
 
