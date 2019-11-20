@@ -35,6 +35,8 @@
     background-size: auto 100%;
     z-index: -1;
     filter: brightness(45%);
+    height: 100%;
+    width: 100%;
 }
 
 
