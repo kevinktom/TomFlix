@@ -9,7 +9,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "babel-loader": "^8.0.6",
     "debounce": "^1.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-redux": "^7.1.1",
