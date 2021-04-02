@@ -1,8 +1,17 @@
+const allVideosCache = {allVideos: null};
+
 export const allvids = () => {
-    return $.ajax({
-        method: "get",
-        url: "api/videos",
-    });
+    if (allVideosCache.allVideos !== null){
+        return allVideosCache.allVideos;
+    }
+    else{
+        const allVideos = $.ajax({
+            method: "get",
+            url: "api/videos",
+        });
+        allVideosCache.allVideos = allVideos;
+        return allVideos;
+    }
 };
 
 export const fetchVideo = id => {
